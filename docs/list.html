@@ -95,7 +95,7 @@
 
 <script>
 const CAT_ORDER = ['prohibited','prohibited_secondary','restricted','unknown'];
-const FILES = { kanagawa: 'regulations.json', tokyo: 'regulations_tokyo.json' };
+const FILES = { kanagawa: 'regulations_14_kanagawa.json', tokyo: 'regulations_13_tokyo.json' };
 const cache = {};
 let current = 'kanagawa';
 
@@ -119,7 +119,7 @@ function load(pref){
 
 function render(data){
   const meta = data._meta, cats = meta.categories, day = meta['確認日'] || '';
-  const common = meta['全県共通'] || meta['全都共通'] || [];
+  const common = meta['全域共通'] || [];
   document.getElementById('dayLabel').textContent = '情報確認日 ' + day;
   document.getElementById('topNote').innerHTML =
     '⚠ '+esc(meta['注記'])+'<br><b>グレー＝自治体独自の規制は確認されず（国の航空法等のみ）</b>。飛行判断は必ず DIPS・各管理者の最新情報で。';

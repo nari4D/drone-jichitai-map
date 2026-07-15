@@ -1,33 +1,35 @@
 # -*- coding: utf-8 -*-
-"""自治体別ドローン規制オーバーレイ生成(神奈川県・東京都／複数県対応)
+"""build_overlay.py — 自治体別ドローン規制オーバーレイ生成（全都道府県対応）
 
 入力:
-  data/boundaries_14_kanagawa.json  data/boundaries_13_tokyo.json
+  data/boundaries_<コード>_<県>.json
     = 国土交通省 国土数値情報 N03(行政区域) 2025 を市区町村単位に統合(dissolve)し簡略化したもの
       プロパティ: N03_001(都県) N03_003(郡/政令市) N03_004(区市町村) N03_007(コード)
-  data/regulations.json  data/regulations_tokyo.json  = 規制データ(唯一の一次データソース)
-出力(GitHub Pages 配信用に docs/ へ):
-  docs/kanagawa_drone_jichitai.geojson  docs/tokyo_drone_jichitai.geojson
+  data/regulations_<コード>_<県>.json = 規制データ（唯一の一次ソース）
+出力（GitHub Pages 配信用に docs/ へ）:
+  docs/overlay_<コード>_<県>.geojson   地図描画用
+  docs/regulations_<コード>_<県>.json  サイトが読む規制データ（data/ から複製）
+
+対象県の追加は scripts/prefectures.py だけ触ればよい。
 """
 import json
+import shutil
+import sys
 from pathlib import Path
 from collections import Counter
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from prefectures import (PREFECTURES, boundaries_file, overlay_file,  # noqa: E402
+                         regulations_file)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
-PREFS = [
-    {"name": "神奈川県", "boundaries": "boundaries_14_kanagawa.json",
-     "reg": "regulations.json", "common": "全県共通", "out": "kanagawa_drone_jichitai.geojson"},
-    {"name": "東京都", "boundaries": "boundaries_13_tokyo.json",
-     "reg": "regulations_tokyo.json", "common": "全都共通", "out": "tokyo_drone_jichitai.geojson"},
-]
-
 
 def build(pref):
-    boundaries = json.load(open(DATA / pref["boundaries"], encoding="utf-8"))
-    reg = json.load(open(DATA / pref["reg"], encoding="utf-8"))
+    boundaries = json.load(open(DATA / boundaries_file(pref), encoding="utf-8"))
+    reg = json.load(open(DATA / regulations_file(pref), encoding="utf-8"))
     cats = reg["_meta"]["categories"]
     official = reg["official_hp"]
 
@@ -71,11 +73,16 @@ def build(pref):
     out = {"type": "FeatureCollection",
            "name": f"{pref['name']} 自治体別ドローン規制(公園・海岸・施設等)",
            "features": out_features}
-    json.dump(out, open(DOCS / pref["out"], "w", encoding="utf-8"),
+    json.dump(out, open(DOCS / overlay_file(pref), "w", encoding="utf-8"),
               ensure_ascii=False, separators=(",", ":"))
 
+    # サイトが読む規制データを data/ から複製する。以前は手作業コピーで、
+    # data/ を更新して docs/ を忘れるとサイトだけ古いまま気づけなかった。
+    shutil.copyfile(DATA / regulations_file(pref), DOCS / regulations_file(pref))
+
     uniq = {ft["properties"]["自治体"]: ft["properties"]["区分"] for ft in out_features}
-    print(f"[{pref['name']}] features:{len(out_features)} 自治体:{len(uniq)} → docs/{pref['out']}")
+    print(f"[{pref['name']}] features:{len(out_features)} 自治体:{len(uniq)} "
+          f"→ docs/{overlay_file(pref)} + docs/{regulations_file(pref)}")
     for k, v in Counter(uniq.values()).items():
         print(f"    {v:2d}  {k}")
     if skipped:
@@ -83,5 +90,5 @@ def build(pref):
 
 
 if __name__ == "__main__":
-    for pref in PREFS:
+    for pref in PREFECTURES:
         build(pref)

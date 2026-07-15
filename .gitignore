@@ -24,5 +24,12 @@ desktop.ini
 README_FOR_CLAUDE_CODE.md
 
 # 注意: data/snapshots・data/discovery・reports は「無視しない」。
-# 巡回の状態（前回スナップショット/発見層のベースライン）は実行間で保持する必要があり、
-# GitHub Actions がこれらをコミットして次回の差分検出に使う。
+# 巡回の状態（前回スナップショット/発見層のベースライン/分類キュー）は実行間で保持する
+# 必要があり、GitHub Actions がこれらをコミットして次回の差分検出に使う。
+
+# 分類層の作業ファイル（判定パケット・LLMの判定・取得した本文のコピー）。
+# prepare → Claude → apply が1回のジョブ内で使い切るので実行間で持ち越す必要が無く、
+# 本文コピーでリポジトリが膨れるため無視する。
+# 監査証跡として残すのは data/discovery/classified.json（区分＋逐語引用）と
+# regulations*.json の sources[].quote のほう。
+data/classify/

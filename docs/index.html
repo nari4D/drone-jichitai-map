@@ -171,8 +171,8 @@ const jichitaiReg = L.layerGroup().addTo(map);
 function loadReg(url){
   fetch(url).then(r => r.json()).then(gj => makeRegLayer(gj).addTo(jichitaiReg)).catch(()=>{});
 }
-loadReg('kanagawa_drone_jichitai.geojson');
-loadReg('tokyo_drone_jichitai.geojson');
+loadReg('overlay_14_kanagawa.geojson');
+loadReg('overlay_13_tokyo.geojson');
 
 // デフォルトONにする国の情報レイヤー
 did.addTo(map);

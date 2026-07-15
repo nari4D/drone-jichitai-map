@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_watchlist.py — data/watchlist.json を再生成する（複数県対応 v2 構造）
+build_watchlist.py — data/watchlist.json を再生成する（全都道府県対応 v2 構造）
 
-各県の regulations ファイルから自動生成する（唯一のデータソースは regulations 側）:
-  - 神奈川県: data/regulations.json      （_meta.全県共通 を県共通URLに）
-  - 東京都:   data/regulations_tokyo.json （_meta.全都共通 を県共通URLに）
-生成ルール（共通）:
-  common_urls    = _meta.<共通キー>[].url
+各県の data/regulations_<コード>_<県>.json から自動生成する
+（唯一のデータソースは regulations 側）。生成ルール:
+  common_urls    = _meta.全域共通[].url
   municipalities = official_hp のキー全て
       watch_urls = [official_hp] + その自治体の sources[].url（詳細調査済みのみ）
       category_current = municipalities[name].category（無ければ unknown）
 
+対象県の追加は scripts/prefectures.py だけ触ればよい。
 使い方: python scripts/build_watchlist.py
 """
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from prefectures import PREFECTURES, regulations_file  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -29,13 +32,6 @@ KEYWORDS_CATEGORY_HINT = {
     "restricted": ["許可が必要", "申請", "届出", "事前連絡", "承認", "相談"],
 }
 
-# 県 → (regulations ファイル名, 県共通ソースの _meta キー)
-PREFECTURES = {
-    "神奈川県": ("regulations.json", "全県共通"),
-    "東京都": ("regulations_tokyo.json", "全都共通"),
-}
-
-
 def dedup(seq):
     seen, out = set(), []
     for x in seq:
@@ -45,10 +41,10 @@ def dedup(seq):
     return out
 
 
-def build_pref(reg_file, common_key):
-    """regulations ファイルから監視ブロックを生成（神奈川・東京で共通ロジック）。"""
-    reg = json.load(open(DATA / reg_file, encoding="utf-8"))
-    common = [s["url"] for s in reg["_meta"].get(common_key, []) if s.get("url")]
+def build_pref(pref):
+    """regulations ファイルから監視ブロックを生成（全県で共通ロジック）。"""
+    reg = json.load(open(DATA / regulations_file(pref), encoding="utf-8"))
+    common = [s["url"] for s in reg["_meta"].get("全域共通", []) if s.get("url")]
     detailed = reg.get("municipalities", {})
     munis = {}
     for name, hp in reg["official_hp"].items():
@@ -65,15 +61,12 @@ def build_pref(reg_file, common_key):
 
 def main():
     out = {
-        "_description": "自動巡回の監視対象（複数県対応 v2）。各URLを定期取得し、"
+        "_description": "自動巡回の監視対象（全都道府県対応 v2）。各URLを定期取得し、"
                         "ドローン関連キーワード周辺の文の差分・新規出現・リンク切れを検出する。",
         "_generator": "scripts/build_watchlist.py",
         "_keywords_positive": KEYWORDS_POSITIVE,
         "_keywords_category_hint": KEYWORDS_CATEGORY_HINT,
-        "prefectures": {
-            pref: build_pref(reg_file, common_key)
-            for pref, (reg_file, common_key) in PREFECTURES.items()
-        },
+        "prefectures": {p["name"]: build_pref(p) for p in PREFECTURES},
     }
     path = DATA / "watchlist.json"
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

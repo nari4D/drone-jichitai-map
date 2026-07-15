@@ -15,12 +15,13 @@ v2 の改良:
   - 条件付きGET（ETag / Last-Modified）で未変更ページはネットワーク側でスキップ（軽く・行儀よく）
   - PDF 本文抽出に対応（pdfminer.six。未導入環境では自動スキップ）
   - 差分の単位を「ページ全体」から「キーワード周辺の文」に変更 → レポートに変化文を提示
-  - 複数県対応の watchlist 構造（prefectures[県].municipalities）。旧構造も読める
+  - 全都道府県対応の watchlist 構造（prefectures[県].municipalities）。旧構造も読める
 
 設計思想（重要・不変）:
-  - このスクリプトは「変化の検出」までを全自動で行う。
-  - regulations.json の category(色)の確定はしない。誤分類を避けるため、
-    差分レポートを生成し、人 or LLM 判定→承認(PR)ステップに渡す。
+  - このスクリプトは「変化の検出」までを行う。regulations_*.json の区分は書き換えない。
+  - 既知ページの変化（規制の新設・改定・緩和）を差分レポートに出すのが役割。
+    区分の判定は分類層（classify_prepare.py → Claude → classify_apply.py）が担当し、
+    採否は逐語引用の機械照合で決まる。ここで誤分類の判断をしない。
 
 依存: requests, beautifulsoup4 （必須） / pdfminer.six （PDF対応。任意）
   pip install requests beautifulsoup4 pdfminer.six
@@ -285,9 +286,8 @@ def write_report(targets, changes, new_mentions, dead_links, pdf_skipped, n_fetc
     print(f"レポート出力: {report}")
 
 
-# TODO: LLM判定ステップ（別スクリプト or ここから呼ぶ）
-#   judge_with_llm(owner, url, added_snippets) → {category, evidence(逐語), confidence}
-#   出力は「提案」。regulations.json への反映は人間承認(PR)を必ず挟む。
+# 変化したページを分類キュー(data/discovery/queue.json)に積めば、分類層がそのまま
+# 拾って再判定できる（規制の新設・改定の自動反映）。未実装。
 
 if __name__ == "__main__":
     main()

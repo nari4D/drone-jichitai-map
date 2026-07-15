@@ -8,7 +8,7 @@
 
 本プロジェクトはその**自治体レベルのルールと「結局どこに聞けばいいか（確認先）」**を、国の空域情報と重ねて可視化します。国の空域だけを表示する地図は既にいくつもありますが、**自治体ごとの規制まで押さえている点が本プロジェクトの中心的な価値**です。
 
-現在の対象: 神奈川県（33自治体）・東京都（62自治体）。順次拡大予定。
+対象は全国の自治体（順次拡大）。収録済みの都道府県と件数は、地図・リストの表示が最新です。
 
 ## ⚠ 免責事項（重要）
 
@@ -39,34 +39,53 @@
 | 空港等周辺空域・管制圏等 | 国土交通省航空局（地理院地図経由） |
 | RZ/YZ（小型無人機等飛行禁止法） | 警察庁（地理院地図経由） |
 | 人口集中地区（DID 令和2年） | 総務省統計局 |
-| 各自治体の規制 | 各自治体の公式ページ（`data/regulations*.json` の `sources` に個別記載） |
+| 各自治体の規制 | 各自治体の公式ページ（`data/regulations_*.json` の `sources` に個別記載） |
 | 地名検索 | OpenStreetMap / Nominatim（地図移動用途のみ。規制の出典ではありません） |
 
 ## 構成
 
+ファイル名は `<種類>_<JISコード>_<ローマ字>` で統一しています（例: 神奈川県=14、東京都=13）。どの都道府県も無印にしません — 無印にすると、その県が暗黙のデフォルトになってしまうためです。
+
 ```
 data/      規制データ(唯一の一次ソース)・境界データ・監視リスト
-  regulations.json         神奈川県
-  regulations_tokyo.json   東京都
-  boundaries_14_kanagawa.json / boundaries_13_tokyo.json   国交省N03(2025)を市区町村単位に統合・簡略化
-  watchlist.json           巡回対象URL(regulationsから自動生成)
-docs/      公開用サイト(地図・リスト・描画用GeoJSON)
-scripts/   生成・監視スクリプト
+  regulations_<コード>_<県>.json   規制データ。都道府県ごとに1ファイル
+  boundaries_<コード>_<県>.json    国交省N03(2025)を市区町村単位に統合・簡略化
+  watchlist.json                   巡回対象URL(regulationsから自動生成)
+  discovery/                       発見層の状態と分類キュー(自動生成)
+docs/      公開用サイト
+  index.html / list.html           地図版・リスト版
+  overlay_<コード>_<県>.geojson    地図描画用(build_overlay.pyが生成)
+  regulations_<コード>_<県>.json   サイトが読む規制データ(build_overlay.pyがdata/から複製)
+scripts/
+  prefectures.py                   対象都道府県の定義。県の追加はここだけ触る
+  (生成・発見・監視・分類スクリプト)
 reports/   巡回/発見のレポート(自動生成)
 ```
 
 ## 仕組み
 
 ```
-[発見] discover.py      … sitemap差分 + 浅いクロールで新しいドローン関連ページを自動発見
-[監視] crawl_check.py   … 既知URLの「ドローン語周辺の文」の変化を検出
-        ↓ どちらも「検出」まで。分類は確定しない
-[判定] 人（必要ならLLMが提案）が公式ページを逐語確認して分類
+[発見] discover.py           … sitemap差分 + 浅いクロールでドローン関連ページを自動発見 → 分類キューへ
+[監視] crawl_check.py        … 既知URLの「ドローン語周辺の文」の変化を検出
         ↓
-[反映] regulations*.json を更新 → build_watchlist.py / build_overlay.py で再生成
+[分類] classify_prepare.py   … 公式ページ本文を取得・保存し、判定パケットを作る
+       Claude (GitHub Actions) … 保存済み本文だけを読み、逐語引用つきで区分を判定
+       classify_apply.py     … 引用が本文に存在するか機械検証 → 通ったものだけ反映
+        ↓
+[反映] regulations_*.json を更新 → build_watchlist.py / build_overlay.py で再生成 → サイトへ自動反映
 ```
 
-**設計の一線**: 自動化するのは「変化・候補の検出」まで。**分類の確定は必ず人の承認を経ます**（公園条例の一般規定をドローン禁止と誤読する等を避けるため）。
+対象は全国1,741自治体を見据えているため、発見から公開までを**全自動**で回すことを前提に設計しています。1件ずつ人が承認する運用ではスケールしません。
+
+**精度は人のレビューではなく構造で守ります**:
+
+- 入力は**公式ページ本文のみ**（自治体の公式ドメイン / `lg.jp` / `go.jp` に限定。ブログ・検索結果の要約は入れない）
+- 判定には**該当箇所の逐語引用を必須**とし、その引用が取得済みの本文に**逐語で存在するかを機械的に照合**する。一致しなければ採用しない
+- 引用にドローン語が含まれない（公園条例の一般規定のみ等）、引用が短すぎる、確信度が低い場合も、禁止と断定せず自動的に「**確認されず**」に倒す
+- 反映は**昇格のみ**（確認されず → 許可制 → 原則禁止）。逐語確認済みの既存データを自動判定が格下げ・上書きしない
+- 出典URLと引用文をデータに保存し、サイト上で誰でも根拠を検証できる
+
+判定するLLMの自己申告は信用せず、**採否は上記の決定論的な検証が決めます**（`scripts/classify_apply.py`）。引用を捏造しても、保存済みの公式本文と一致しなければ落ちます。これにより、公園条例の一般規定をドローン禁止と誤読するような**根拠のない断定が構造的に発生しません**。それでも自動収集である以上、正確性は保証されません（上記の免責事項を参照）。
 
 ### スクリプト
 
@@ -76,6 +95,8 @@ pip install requests beautifulsoup4 pdfminer.six
 python scripts/discover.py --budget 30      # 発見層(古い順にN自治体ずつローリング)
 python scripts/discover.py --probe          # sitemap有無の全数調査
 python scripts/crawl_check.py               # 既知URLの変化検出
+python scripts/classify_prepare.py --budget 20   # 分類層: 本文取得 → 判定パケット作成
+python scripts/classify_apply.py --dry-run       # 分類層: 判定を検証(--dry-runで書き込まない)
 python scripts/build_watchlist.py           # regulationsから監視リスト再生成
 python scripts/build_overlay.py             # 地図描画用GeoJSON再生成
 ```

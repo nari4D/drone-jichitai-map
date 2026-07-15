@@ -1,5 +1,5 @@
 {
-  "_description": "自動巡回の監視対象（複数県対応 v2）。各URLを定期取得し、ドローン関連キーワード周辺の文の差分・新規出現・リンク切れを検出する。",
+  "_description": "自動巡回の監視対象（全都道府県対応 v2）。各URLを定期取得し、ドローン関連キーワード周辺の文の差分・新規出現・リンク切れを検出する。",
   "_generator": "scripts/build_watchlist.py",
   "_keywords_positive": [
     "ドローン",

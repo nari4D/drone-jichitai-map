@@ -68,6 +68,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `新しいドローン関連ページを発見 ${date}`,
-              body: body + '\n\n---\n公式ページを**逐語確認**のうえ `data/regulations*.json` に反映してください。' +
-                    '\n（自動化は検出まで。分類の確定は人の承認を経ること／出典は公式一次情報のみ）'
+              body: body + '\n\n---\n発見分は `data/discovery/queue.json` に積まれ、' +
+                    '次回の classify ワークフロー（毎日 04:00 JST）が逐語確認のうえ自動反映します。' +
+                    '\nこのIssueは経過の記録用で、対応は不要です（出典は公式一次情報のみ）。'
             });
