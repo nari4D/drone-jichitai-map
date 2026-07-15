@@ -1,0 +1,398 @@
+{
+ "_meta": {
+  "確認日": "2026-07-03",
+  "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。",
+  "全県共通": [
+   {
+    "label": "神奈川県警 小型無人機等飛行禁止法(横須賀基地・厚木基地・キャンプ座間・相模総合補給廠等の周囲300m原則禁止)",
+    "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+   },
+   {
+    "label": "神奈川県 県立都市公園の利用における制限(ドローンは原則遠慮)",
+    "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+   },
+   {
+    "label": "神奈川県 海岸の許認可(海岸一時使用届・任意)",
+    "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+   }
+  ],
+  "categories": {
+   "prohibited": {
+    "label": "市管理公園等で原則禁止(公式確認済)",
+    "fill": "#6a1b9a",
+    "line": "#4a148c",
+    "fillOpacity": 0.55
+   },
+   "prohibited_secondary": {
+    "label": "公園条例等で原則禁止(二次情報・公式要確認)",
+    "fill": "#8e24aa",
+    "line": "#6a1b9a",
+    "fillOpacity": 0.42
+   },
+   "restricted": {
+    "label": "許可・届出制/施設ごとに要相談",
+    "fill": "#00838f",
+    "line": "#006064",
+    "fillOpacity": 0.4
+   },
+   "unknown": {
+    "label": "自治体独自の規制は確認されず(国の規制のみ)",
+    "fill": "#78909c",
+    "line": "#455a64",
+    "fillOpacity": 0.18
+   }
+  }
+ },
+ "municipalities": {
+  "横浜市": {
+   "category": "prohibited",
+   "summary": "市管理公園でのドローン(トイドローン含む)を使用した撮影は原則不可。公園内の撮影等は行為許可制で、大規模公園は各公園緑地事務所、小規模公園は各区の土木事務所が窓口(中区・西区の大規模公園等は都心部公園担当)。港湾緑地(赤レンガパーク等)は指定管理者ごとに手続き。新横浜公園は許可・承認があっても原則不可。",
+   "sources": [
+    {
+     "label": "横浜市 公園での撮影手続き(各区の窓口案内トップ)",
+     "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/satsuei/"
+    },
+    {
+     "label": "横浜市 都心部公園担当所管公園の撮影手続き(ドローン撮影は原則不可)",
+     "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/satsuei/toshinbu.html"
+    },
+    {
+     "label": "新横浜公園 ドローン等の飛行について(原則おことわり)",
+     "url": "https://www.nissan-stadium.jp/shinyoko-park/drone.php"
+    }
+   ]
+  },
+  "川崎市": {
+   "category": "prohibited",
+   "summary": "公園内の無人飛行機(ラジコン・ドローン等)の使用は原則禁止(川崎市都市公園条例第4条第1項第10号の運用)。港湾局管理施設(ちどり公園等)もドローン飛行禁止。",
+   "sources": [
+    {
+     "label": "川崎市FAQ 公園内で無人飛行機を飛ばしてもいいですか(原則禁止)",
+     "url": "https://www.city.kawasaki.jp/templates/faq/530/0000067887.html"
+    },
+    {
+     "label": "川崎市 ちどり公園(港湾局管理施設のドローン飛行禁止)",
+     "url": "https://www.city.kawasaki.jp/580/page/0000167054.html"
+    }
+   ]
+  },
+  "横須賀市": {
+   "category": "prohibited",
+   "summary": "市管理公園内ではドローン等の使用を原則認めていない。海浜地・海岸施設・漁港施設での撮影(ドローン含む)はe-kanagawa電子申請での事前届出制(7日前まで)。温浴施設付近は営業時間内飛行不可。基地周辺は小型無人機等飛行禁止法の対象区域が広い。",
+   "sources": [
+    {
+     "label": "横須賀市 公園利用案内(ドローン等の使用を原則認めない)",
+     "url": "https://www.city.yokosuka.kanagawa.jp/sangyo/koen/annai/index.html"
+    },
+    {
+     "label": "横須賀市 海浜地・海岸施設・漁港施設における撮影(届出制)",
+     "url": "https://www.city.yokosuka.kanagawa.jp/5820/minato/amenity_kouen/kouwan_kaigan_satuei.html"
+    }
+   ]
+  },
+  "相模原市": {
+   "category": "prohibited",
+   "summary": "市公式「公園を利用する際のお願い」で「ラジコン飛行機やドローン等の使用」を禁止と明記。確認先: 市公園課 042-769-8243(企画・管理班)。",
+   "sources": [
+    {
+     "label": "相模原市 公園を利用する際のお願い(ラジコン飛行機・ドローン等の使用は禁止)",
+     "url": "https://www.city.sagamihara.kanagawa.jp/kurashi/shisetsu/kouen_kankou/kouen_ryokuchi/1003110.html"
+    }
+   ]
+  },
+  "鎌倉市": {
+   "category": "unknown",
+   "summary": "市公式「公園ご利用にあたってのお願い」や都市公園条例にドローンの明文規定は確認できず(2026-07-13時点)。都市公園条例の一般規定(管理に支障がある行為の禁止)により管理者判断で個別に制限される場合はある。確認先: 都市整備部みどり公園課公園管理担当 0467-61-3491。由比ヶ浜・材木座等の海岸は県(藤沢土木事務所)管理で海岸一時使用届。",
+   "sources": [
+    {
+     "label": "鎌倉市 公園ご利用にあたってのお願い(公園管理担当)",
+     "url": "https://www.city.kamakura.kanagawa.jp/koen/kouen_chuui.html"
+    },
+    {
+     "label": "神奈川県 海岸の許認可(海岸一時使用届)",
+     "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+    }
+   ]
+  },
+  "藤沢市": {
+   "category": "unknown",
+   "summary": "市公式ページでは公園でのドローン可否の明文を確認できず(2026-07-13時点)。都市公園条例の一般規定(危険・迷惑行為の禁止)により管理者判断で制限され得るため、公園緑地課へ事前問い合わせを推奨。片瀬海岸等の県管理海岸は藤沢土木事務所へ海岸一時使用届(任意)、海水浴場開設期間は制限の可能性。",
+   "sources": [
+    {
+     "label": "藤沢市 公園の分類・都市公園の種類(公園緑地課)",
+     "url": "https://www.city.fujisawa.kanagawa.jp/kouen/kyoiku/leisure/koen/bunrui.html"
+    },
+    {
+     "label": "神奈川県 海岸でのドローン飛行について(PDF)",
+     "url": "https://www.pref.kanagawa.jp/documents/16439/kaigandenodronehikou.pdf"
+    }
+   ]
+  },
+  "平塚市": {
+   "category": "unknown",
+   "summary": "市公式「公園の利用ルール・禁止事項」にはドローンの明文規定はなく、一般規定として「他人に危害又は迷惑を及ぼすおそれのある遊戯その他の行為」を禁止(2026-07-13時点)。ドローン可否は管理者判断となる。確認先: みどり公園・水辺課 0463-21-9852。",
+   "sources": [
+    {
+     "label": "平塚市 公園の利用ルール・禁止事項",
+     "url": "https://www.city.hiratsuka.kanagawa.jp/koen/page49_00125.html"
+    }
+   ]
+  },
+  "座間市": {
+   "category": "prohibited",
+   "summary": "座間市都市公園条例第3条(行為の制限)の審査基準で、撮影に関し「無人航空機(ドローン、ラジコン機)の使用は不可とする」と明記。確認先: 市公園緑政課 046-252-7221。キャンプ座間周辺は小型無人機等飛行禁止法の対象区域。",
+   "sources": [
+    {
+     "label": "座間市 都市公園条例第3条(行為の制限)の審査基準(無人航空機の使用は不可)",
+     "url": "https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/003/337/1.pdf"
+    },
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    }
+   ]
+  },
+  "厚木市": {
+   "category": "restricted",
+   "summary": "公園で無人航空機(ドローン等)を飛行させる場合は公園内行為許可の申請が必要(市公式FAQ)。確認先: 公園緑地課 046-225-2410。",
+   "sources": [
+    {
+     "label": "厚木市FAQ 公園で無人航空機(ドローン等)は飛ばしていいですか",
+     "url": "https://www.city.atsugi.kanagawa.jp/soshiki/koenryokuchika/kouennikannsuruyokuarusituumon/kouenriyounoruru/20856.html"
+    }
+   ]
+  },
+  "小田原市": {
+   "category": "restricted",
+   "summary": "小田原市都市公園条例により公園内の一定の行為(撮影・興行等)は行為許可制で、公園管理者の許可と使用料が必要。小田原城址公園でのドローン飛行も管理事務所の許可が前提。",
+   "sources": [
+    {
+     "label": "小田原市 都市公園における行為許可について",
+     "url": "https://www.city.odawara.kanagawa.jp/public-i/park/kouikyoka.html"
+    }
+   ]
+  },
+  "逗子市": {
+   "category": "restricted",
+   "summary": "市管理公園での撮影は7営業日前までの公園使用届が必要(逗子フィルムコミッション)。海水浴場開設期間中は市公式が「遊泳区域内のドローン飛行(遊泳区域外のドローン飛行につきましても、ご来場様の安全確保のためご遠慮いただいております。)」として遊泳区域の内外を問わず飛行を遠慮するよう明記。確認先: 市民協働部経済観光課 046-872-8120。逗子海岸は県(横須賀土木事務所)管理で海岸一時使用届。",
+   "sources": [
+    {
+     "label": "逗子市 逗子フィルムコミッション よくある質問(公園使用届・海岸一時使用届)",
+     "url": "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1004412/1004416.html"
+    },
+    {
+     "label": "逗子市 逗子海水浴場開設期間中の撮影について(ドローン飛行は遊泳区域内外を問わず遠慮)",
+     "url": "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1004412/1013129.html"
+    }
+   ]
+  },
+  "箱根町": {
+   "category": "restricted",
+   "summary": "大涌谷は園地内外を問わずドローン撮影全面不可。仙石原すすき草原は申請書不要だが観光課への事前連絡と企画書提出・遊歩道外立入禁止等のルールあり。箱根園地・元箱根園地・湖尻園地(県自然環境保全センター所管)は園内飛行を遠慮。芦ノ湖は箱根町観光課・環境省・漁協等の複数関係先へ連絡。町域の多くは富士箱根伊豆国立公園(自然公園法)。確認先: 町観光課 0460-85-7410。",
+   "sources": [
+    {
+     "label": "箱根町 撮影についてQ&A(ドローン)",
+     "url": "https://www.town.hakone.kanagawa.jp/www/contents/1100000001192/index.html"
+    },
+    {
+     "label": "神奈川県 県西土木事務所 許認可指導課(芦ノ湖での撮影・ドローン連絡先)",
+     "url": "https://www.pref.kanagawa.jp/docs/b4w/cnt/f52/p2260.html"
+    }
+   ]
+  },
+  "葉山町": {
+   "category": "restricted",
+   "summary": "町内海岸の利用(撮影・ドローン)は町産業振興課(046-876-1111)へ連絡。一色海岸(小磯の鼻)は葉山警察署・葉山御用邸への連絡も必要(県公式案内)。御用邸周辺は特に注意。",
+   "sources": [
+    {
+     "label": "神奈川県 横須賀土木事務所 許認可の申請(葉山町海岸の連絡先明記)",
+     "url": "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
+    }
+   ]
+  },
+  "大和市": {
+   "category": "unknown",
+   "summary": "市管理公園のドローン規制について明文の公表情報は確認されず。ただし市域の広範囲が厚木基地の小型無人機等飛行禁止法対象区域(引地台公園・大和ゆとりの森等の大規模公園を含む)で、飛行には基地管理者の同意(30日前)と大和警察署への事前通報(48時間前)が必要。",
+   "sources": [
+    {
+     "label": "大和市FAQ 市内の航空法規制区域(厚木基地周辺の高さ制限)",
+     "url": "https://www.city.yamato.lg.jp/gyosei/soshik/20/yokuarushitsumon_kaitoshu/12609.html"
+    },
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    }
+   ]
+  },
+  "綾瀬市": {
+   "category": "unknown",
+   "summary": "市管理公園のドローン規制について明文の公表情報は確認されず。市公式が案内する通り、厚木基地及び周囲約300mの上空は小型無人機等飛行禁止法により原則飛行禁止(綾瀬スポーツ公園・光綾公園等が区域内とされる)。",
+   "sources": [
+    {
+     "label": "綾瀬市 厚木基地関連トピックス(小型無人機等飛行禁止法の適用)",
+     "url": "https://www.city.ayase.kanagawa.jp/soshiki/kichiseisakuka/atsugikichi/2/13603.html"
+    }
+   ]
+  },
+  "三浦市": {
+   "category": "unknown",
+   "summary": "市独自のドローン規制について明文の公表情報は確認されず。城ヶ島公園は県立公園でドローンは原則遠慮の扱い。海岸は県(横須賀土木事務所)管理で海岸一時使用届(任意)。",
+   "sources": [
+    {
+     "label": "神奈川県 県立都市公園の利用における制限",
+     "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+    },
+    {
+     "label": "神奈川県 横須賀土木事務所 許認可の申請",
+     "url": "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
+    }
+   ]
+  },
+  "茅ヶ崎市": {
+   "category": "prohibited",
+   "summary": "市管理公園でのドローン(無人飛行機)は、他の利用者にけがをさせる恐れがあるため原則禁止(市公式「公園の使い方」)。確認先: 公園緑地課 0467-81-7194。海岸(サザンビーチ等)は県(藤沢土木事務所)管理で海岸一時使用届(任意)。",
+   "sources": [
+    {
+     "label": "茅ヶ崎市 公園の使い方(ドローンは原則禁止)",
+     "url": "https://www.city.chigasaki.kanagawa.jp/kouen/1006492.html"
+    },
+    {
+     "label": "神奈川県 海岸の許認可(海岸一時使用届)",
+     "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+    }
+   ]
+  },
+  "愛川町": {
+   "category": "unknown",
+   "summary": "町独自のドローン規制について公式の公表情報は確認されず。公園は公園条例の一般規定により管理者判断で制限され得るため町担当課へ事前問い合わせを推奨。丹沢大山国定公園・宮ヶ瀬湖周辺は自然公園法や施設管理者の対応に留意。",
+   "sources": [
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法(県内対象施設一覧)",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    },
+    {
+     "label": "神奈川県 県立都市公園の利用における制限",
+     "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+    }
+   ]
+  },
+  "清川村": {
+   "category": "unknown",
+   "summary": "村独自のドローン規制について公式の公表情報は確認されず。公園は公園条例の一般規定により管理者判断で制限され得るため村担当課へ事前問い合わせを推奨。宮ヶ瀬湖周辺・丹沢大山国定公園区域は自然公園法や施設管理者の対応に留意。",
+   "sources": [
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法(県内対象施設一覧)",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    },
+    {
+     "label": "神奈川県 県立都市公園の利用における制限",
+     "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+    }
+   ]
+  },
+  "秦野市": {
+   "category": "unknown",
+   "summary": "自治体独自のドローン規制について明文の公表情報は確認できず(2026-07-03時点の調査)。公園は各自治体の公園条例の一般規定(危険行為・迷惑行為・管理支障行為の禁止)により管理者判断で制限され得るため、公園緑地担当課へ事前問い合わせを推奨。海岸は県土木事務所(平塚・県西等)管理で海岸一時使用届(任意)。",
+   "sources": [
+    {
+     "label": "秦野市 公園課の管理する公園・緑地(問い合わせ先)",
+     "url": "https://www.city.hadano.kanagawa.jp/www/contents/1001000000438/index.html"
+    },
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法(県内対象施設一覧)",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    },
+    {
+     "label": "神奈川県 県立都市公園の利用における制限",
+     "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+    }
+   ]
+  },
+  "海老名市": {
+   "category": "unknown",
+   "summary": "自治体独自のドローン規制について明文の公表情報は確認できず(2026-07-03時点の調査)。公園は各自治体の公園条例の一般規定(危険行為・迷惑行為・管理支障行為の禁止)により管理者判断で制限され得るため、公園緑地担当課へ事前問い合わせを推奨。海岸は県土木事務所(平塚・県西等)管理で海岸一時使用届(任意)。",
+   "sources": [
+    {
+     "label": "海老名市 公園(都市施設公園課)",
+     "url": "https://www.city.ebina.kanagawa.jp/guide/sumai/kouen/index.html"
+    },
+    {
+     "label": "神奈川県警 小型無人機等飛行禁止法(県内対象施設一覧)",
+     "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+    },
+    {
+     "label": "神奈川県 県立都市公園の利用における制限",
+     "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+    }
+   ]
+  }
+ },
+ "unknown_simple": [
+  "伊勢原市",
+  "南足柄市",
+  "寒川町",
+  "大磯町",
+  "二宮町",
+  "中井町",
+  "大井町",
+  "松田町",
+  "山北町",
+  "開成町",
+  "真鶴町",
+  "湯河原町"
+ ],
+ "unknown_simple_summary": "公式ページでドローンに関する記載は確認されず(2026-07-03時点)。自治体独自の規制は確認されていないため、国の規制(航空法・小型無人機等飛行禁止法・空域)が適用される。公園条例の一般規定(危険・迷惑・管理支障行為の禁止)により管理者判断で個別に制限される場合はある。海岸は県土木事務所(平塚・県西等)管理で海岸一時使用届(任意)。",
+ "default_sources": [
+  {
+   "label": "神奈川県警 小型無人機等飛行禁止法(県内対象施設一覧)",
+   "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+  },
+  {
+   "label": "神奈川県 県立都市公園の利用における制限",
+   "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+  },
+  {
+   "label": "神奈川県 海岸の許認可(海岸一時使用届)",
+   "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+  }
+ ],
+ "official_hp": {
+  "横浜市": "https://www.city.yokohama.lg.jp/",
+  "川崎市": "https://www.city.kawasaki.jp/",
+  "相模原市": "https://www.city.sagamihara.kanagawa.jp/",
+  "横須賀市": "https://www.city.yokosuka.kanagawa.jp/",
+  "平塚市": "https://www.city.hiratsuka.kanagawa.jp/",
+  "鎌倉市": "https://www.city.kamakura.kanagawa.jp/",
+  "藤沢市": "https://www.city.fujisawa.kanagawa.jp/",
+  "小田原市": "https://www.city.odawara.kanagawa.jp/",
+  "茅ヶ崎市": "https://www.city.chigasaki.kanagawa.jp/",
+  "逗子市": "https://www.city.zushi.kanagawa.jp/",
+  "三浦市": "https://www.city.miura.kanagawa.jp/",
+  "秦野市": "https://www.city.hadano.kanagawa.jp/",
+  "厚木市": "https://www.city.atsugi.kanagawa.jp/",
+  "大和市": "https://www.city.yamato.lg.jp/",
+  "伊勢原市": "https://www.city.isehara.kanagawa.jp/",
+  "海老名市": "https://www.city.ebina.kanagawa.jp",
+  "座間市": "https://www.city.zama.kanagawa.jp/",
+  "南足柄市": "https://www.city.minamiashigara.kanagawa.jp/",
+  "綾瀬市": "https://www.city.ayase.kanagawa.jp/",
+  "葉山町": "https://www.town.hayama.lg.jp/",
+  "寒川町": "https://www.town.samukawa.kanagawa.jp/",
+  "大磯町": "https://www.town.oiso.kanagawa.jp/",
+  "二宮町": "https://www.town.ninomiya.kanagawa.jp/",
+  "中井町": "https://www.town.nakai.kanagawa.jp/",
+  "大井町": "https://www.town.oi.kanagawa.jp/",
+  "松田町": "https://town.matsuda.kanagawa.jp/",
+  "山北町": "https://www.town.yamakita.kanagawa.jp/",
+  "開成町": "https://www.town.kaisei.kanagawa.jp/",
+  "箱根町": "https://www.town.hakone.kanagawa.jp/",
+  "真鶴町": "https://www.town.manazuru.kanagawa.jp/",
+  "湯河原町": "https://www.town.yugawara.kanagawa.jp/",
+  "愛川町": "https://www.town.aikawa.kanagawa.jp/",
+  "清川村": "https://www.town.kiyokawa.kanagawa.jp/"
+ },
+ "official_hp_source": {
+  "label": "神奈川県 県内市町村一覧(公式リンク集)",
+  "url": "https://www.pref.kanagawa.jp/docs/ie2/cnt/f530001/p780102.html"
+ }
+}

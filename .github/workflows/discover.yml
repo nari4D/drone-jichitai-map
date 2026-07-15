@@ -1,0 +1,73 @@
+# 発見層: 自治体サイトから「新しく出たドローン関連ページ」を自動発見する。
+# 1回の実行量を --budget で固定し、最終チェックが古い自治体から順に処理する
+# （ローリング方式）。1回で全部やらないので実行時間が一定に保たれ、
+# 自治体数が増えても（全国に広げても）破綻しない。public リポジトリなので Actions は無料。
+name: discover-drone-pages
+
+on:
+  schedule:
+    - cron: '0 18 * * *'    # 毎日 03:00 JST (UTC 18:00)
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: '1回で処理する自治体数'
+        required: false
+        default: '30'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: discover
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install requests beautifulsoup4
+
+      - name: Run discovery (rolling)
+        id: run
+        run: |
+          set +e
+          python scripts/discover.py --budget "${{ github.event.inputs.budget || 30 }}"
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Commit state & report
+        run: |
+          git config user.name  "drone-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/discovery reports 2>/dev/null || true
+          git commit -m "chore(discover): update discovery state ($(date +%F))" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "nothing to push"
+
+      # exit_code=1 は「新規発見あり」の合図（discover.py の仕様）
+      - name: Open issue if new pages discovered
+        if: steps.run.outputs.exit_code == '1'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const date = new Date(Date.now() + 9*3600*1000).toISOString().slice(0,10);
+            const path = `reports/discover_${date}.md`;
+            let body = '発見レポートが見つかりませんでした。';
+            try { body = fs.readFileSync(path, 'utf8'); } catch (e) {}
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `新しいドローン関連ページを発見 ${date}`,
+              body: body + '\n\n---\n公式ページを**逐語確認**のうえ `data/regulations*.json` に反映してください。' +
+                    '\n（自動化は検出まで。分類の確定は人の承認を経ること／出典は公式一次情報のみ）'
+            });

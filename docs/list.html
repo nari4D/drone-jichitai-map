@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自治体ドローン規制 リスト版（確認先・出典一覧）</title>
+<style>
+  :root{--ink:#1a2733;--line:#e3e8ee;--muted:#667;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:#1c2530;background:#f4f6f9;line-height:1.7;}
+  header{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;padding:12px 18px;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 1px 8px rgba(0,0,0,.25);}
+  header h1{font-size:16px;margin:0;font-weight:600;}
+  header .day{font-size:11px;color:#ffd54f;font-weight:600;}
+  header .spacer{flex:1;}
+  header .navbtn{font-size:12px;color:#cfe0ee;background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.25);border-radius:5px;padding:5px 11px;cursor:pointer;
+    text-decoration:none;white-space:nowrap;}
+  header .navbtn:hover{background:rgba(255,255,255,.20);color:#fff;}
+  .tabs{background:#22303d;display:flex;gap:0;padding:0 12px;position:sticky;top:0;z-index:9;
+    box-shadow:0 1px 6px rgba(0,0,0,.2);}
+  .tab{color:#9fb3c8;background:none;border:none;border-bottom:3px solid transparent;
+    padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;}
+  .tab.active{color:#fff;border-bottom-color:#ffd54f;}
+  .tab:hover{color:#fff;}
+  main{max-width:920px;margin:0 auto;padding:18px 16px 60px;}
+  .note{background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:12px 14px;
+    font-size:13px;margin:0 0 20px;}
+  .common{background:#eef4fa;border:1px solid #d5e3f0;border-radius:8px;padding:12px 14px;margin:0 0 22px;}
+  .common h2{font-size:14px;margin:0 0 8px;}
+  .common ul{margin:0;padding-left:18px;font-size:13px;}
+  .catblock{margin:0 0 26px;}
+  .catbar{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;
+    padding:8px 12px;border-radius:7px;color:#fff;margin:0 0 12px;}
+  .catbar .count{margin-left:auto;font-size:12px;font-weight:600;background:rgba(255,255,255,.22);
+    padding:2px 9px;border-radius:11px;}
+  .card{background:#fff;border:1px solid var(--line);border-left-width:5px;border-radius:8px;
+    padding:13px 15px;margin:0 0 11px;}
+  .card h3{margin:0 0 3px;font-size:15px;}
+  .card .hp{font-size:12px;margin:0 0 7px;}
+  .card .summary{font-size:13px;margin:0 0 8px;color:#233;}
+  .card .sources{list-style:none;margin:0;padding:0;font-size:12px;}
+  .card .sources li{padding:2px 0 2px 16px;position:relative;}
+  .card .sources li::before{content:"›";position:absolute;left:2px;color:#889;}
+  .card .memo{font-size:12px;color:#a05a00;margin-top:5px;}
+  a{color:#0b62c4;word-break:break-all;}
+  footer{max-width:920px;margin:0 auto;padding:22px 16px;font-size:12px;color:var(--muted);
+    border-top:1px solid var(--line);}
+  /* 免責モーダル */
+  .modal-back{position:fixed;inset:0;background:rgba(10,16,22,.72);z-index:3000;display:flex;
+    align-items:center;justify-content:center;padding:16px;}
+  .modal-back[hidden]{display:none;}
+  .modal{background:#fff;max-width:560px;width:100%;max-height:85vh;overflow:auto;border-radius:10px;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);padding:22px 24px;}
+  .modal h2{margin:0 0 10px;font-size:18px;color:#b71c1c;}
+  .modal p{font-size:13px;line-height:1.75;margin:8px 0;}
+  .modal ul{font-size:13px;line-height:1.7;margin:8px 0;padding-left:20px;}
+  .modal .primary{margin-top:16px;background:#1a2733;color:#fff;border:none;border-radius:6px;
+    padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;width:100%;}
+  .modal .dips{display:inline-block;padding:2px 6px;background:#eef4fa;border-radius:4px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>自治体別ドローン規制 リスト版</h1>
+  <span class="day" id="dayLabel">情報確認日 —</span>
+  <span class="spacer"></span>
+  <a class="navbtn" href="index.html">🗺 地図版（神奈川）</a>
+  <button class="navbtn" id="showDisclaimer">免責事項</button>
+</header>
+<div class="tabs" id="tabs">
+  <button class="tab active" data-pref="kanagawa">神奈川県</button>
+  <button class="tab" data-pref="tokyo">東京都</button>
+</div>
+<main>
+  <div class="note" id="topNote">読み込み中…</div>
+  <div class="common" id="common"></div>
+  <div id="cats"></div>
+</main>
+<footer id="foot"></footer>
+
+<div class="modal-back" id="disclaimerModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-title">
+    <h2 id="dlg-title">ご利用にあたって（重要）</h2>
+    <p>本サイトは、航空法・小型無人機等飛行禁止法とは<b>別に</b>、各自治体・施設管理者が公園・海岸・施設等に定める独自ルールを整理した<b>参考情報</b>です。飛行の可否を断定するものではありません。</p>
+    <ul>
+      <li>情報は自動収集・手動確認が混在し、<b>正確性・最新性を保証しません</b>。</li>
+      <li>飛行可否の最終判断は、必ず<b>各管理者</b>および国土交通省の<b class="dips">DIPS</b>で確認してください。</li>
+      <li>グレーは<b>「自治体独自の規制は確認されず（国の航空法等のみ）」</b>の意味です。飛行可否は国の規制とDIPSで確認してください。</li>
+    </ul>
+    <button class="primary" id="agreeDisclaimer">内容を理解しました</button>
+  </div>
+</div>
+
+<script>
+const CAT_ORDER = ['prohibited','prohibited_secondary','restricted','unknown'];
+const FILES = { kanagawa: 'regulations.json', tokyo: 'regulations_tokyo.json' };
+const cache = {};
+let current = 'kanagawa';
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function a(url,label){return '<a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(label)+'</a>';}
+
+function load(pref){
+  current = pref;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.pref===pref));
+  if (cache[pref]) { render(cache[pref]); return; }
+  document.getElementById('topNote').textContent = '読み込み中…';
+  document.getElementById('common').innerHTML = '';
+  document.getElementById('cats').innerHTML = '';
+  fetch(FILES[pref]).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(d=>{ cache[pref]=d; if(current===pref) render(d); })
+    .catch(err=>{
+      document.getElementById('topNote').innerHTML =
+        '<b>データを読み込めませんでした。</b> このページは Web サーバー経由（GitHub Pages 等）で開いてください。<br><small>'+esc(err)+'</small>';
+    });
+}
+
+function render(data){
+  const meta = data._meta, cats = meta.categories, day = meta['確認日'] || '';
+  const common = meta['全県共通'] || meta['全都共通'] || [];
+  document.getElementById('dayLabel').textContent = '情報確認日 ' + day;
+  document.getElementById('topNote').innerHTML =
+    '⚠ '+esc(meta['注記'])+'<br><b>グレー＝自治体独自の規制は確認されず（国の航空法等のみ）</b>。飛行判断は必ず DIPS・各管理者の最新情報で。';
+
+  let ch = '<h2>全域共通（全自治体に適用）</h2><ul>';
+  common.forEach(s=> ch += '<li>'+a(s.url,s.label)+'</li>');
+  ch += '</ul>';
+  document.getElementById('common').innerHTML = ch;
+
+  const munis = Object.assign({}, data.municipalities);
+  (data.unknown_simple||[]).forEach(name=>{
+    munis[name] = { category:'unknown', summary:data.unknown_simple_summary, sources:data.default_sources };
+  });
+
+  const byCat = {}; CAT_ORDER.forEach(c=>byCat[c]=[]);
+  Object.keys(munis).forEach(name=>{
+    const m = munis[name]; (byCat[m.category]||(byCat[m.category]=[])).push([name,m]);
+  });
+
+  const wrap = document.getElementById('cats'); wrap.innerHTML = ''; let total = 0;
+  CAT_ORDER.forEach(cat=>{
+    const list = byCat[cat]||[]; if(!list.length) return; total += list.length;
+    const c = cats[cat];
+    let html = '<div class="catblock"><div class="catbar" style="background:'+c.fill+'">'+
+      esc(c.label)+'<span class="count">'+list.length+' 件</span></div>';
+    list.forEach(([name,m])=>{
+      const hp = data.official_hp && data.official_hp[name];
+      html += '<div class="card" style="border-left-color:'+c.fill+'">'+
+        '<h3>'+esc(name)+'</h3>'+
+        (hp?'<div class="hp">🏠 '+a(hp,'公式ホームページ')+'</div>':'')+
+        '<div class="summary">'+esc(m.summary)+'</div>';
+      if(m.sources && m.sources.length){
+        html += '<ul class="sources">';
+        m.sources.forEach(s=> html += '<li>'+(s.url?a(s.url,s.label):esc(s.label))+'</li>');
+        html += '</ul>';
+      }
+      if(m.note) html += '<div class="memo">※ '+esc(m.note)+'</div>';
+      html += '</div>';
+    });
+    html += '</div>'; wrap.insertAdjacentHTML('beforeend', html);
+  });
+
+  const src = data.official_hp_source;
+  document.getElementById('foot').innerHTML =
+    '掲載 '+total+' 自治体 / 情報確認日 '+esc(day)+'。公式HP出典: '+(src?a(src.url,src.label):'')+
+    '<br>本リストは参考情報です。飛行可否は必ず各管理者・DIPS で確認してください。出典は各自治体の公式ページを一次情報として確認しています。';
+}
+
+document.getElementById('tabs').addEventListener('click', e=>{
+  const t = e.target.closest('.tab'); if(t) load(t.dataset.pref);
+});
+
+// 免責モーダル
+(function(){
+  const KEY='drone_map_disclaimer_ack_list';
+  const modal=document.getElementById('disclaimerModal');
+  const open=()=>modal.hidden=false, close=()=>modal.hidden=true;
+  try{ if(!localStorage.getItem(KEY)) open(); }catch(e){ open(); }
+  document.getElementById('agreeDisclaimer').onclick=()=>{ try{localStorage.setItem(KEY,'1');}catch(e){} close(); };
+  document.getElementById('showDisclaimer').onclick=open;
+  modal.addEventListener('click',e=>{ if(e.target===modal) close(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+})();
+
+load('kanagawa');
+</script>
+</body>
+</html>

@@ -1,0 +1,772 @@
+{
+  "_description": "自動巡回の監視対象（複数県対応 v2）。各URLを定期取得し、ドローン関連キーワード周辺の文の差分・新規出現・リンク切れを検出する。",
+  "_generator": "scripts/build_watchlist.py",
+  "_keywords_positive": [
+    "ドローン",
+    "無人航空機",
+    "無人飛行機",
+    "マルチコプター",
+    "ラジコン",
+    "UAV",
+    "小型無人機",
+    "飛行禁止",
+    "撮影許可",
+    "行為許可"
+  ],
+  "_keywords_category_hint": {
+    "prohibited": [
+      "禁止",
+      "認められません",
+      "許可できません",
+      "おことわり",
+      "不可"
+    ],
+    "restricted": [
+      "許可が必要",
+      "申請",
+      "届出",
+      "事前連絡",
+      "承認",
+      "相談"
+    ]
+  },
+  "prefectures": {
+    "神奈川県": {
+      "common_urls": [
+        "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+        "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html",
+        "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+      ],
+      "municipalities": {
+        "横浜市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.yokohama.lg.jp/",
+          "watch_urls": [
+            "https://www.city.yokohama.lg.jp/",
+            "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/satsuei/",
+            "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/satsuei/toshinbu.html",
+            "https://www.nissan-stadium.jp/shinyoko-park/drone.php"
+          ]
+        },
+        "川崎市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.kawasaki.jp/",
+          "watch_urls": [
+            "https://www.city.kawasaki.jp/",
+            "https://www.city.kawasaki.jp/templates/faq/530/0000067887.html",
+            "https://www.city.kawasaki.jp/580/page/0000167054.html"
+          ]
+        },
+        "相模原市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.sagamihara.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.sagamihara.kanagawa.jp/",
+            "https://www.city.sagamihara.kanagawa.jp/kurashi/shisetsu/kouen_kankou/kouen_ryokuchi/1003110.html"
+          ]
+        },
+        "横須賀市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.yokosuka.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.yokosuka.kanagawa.jp/",
+            "https://www.city.yokosuka.kanagawa.jp/sangyo/koen/annai/index.html",
+            "https://www.city.yokosuka.kanagawa.jp/5820/minato/amenity_kouen/kouwan_kaigan_satuei.html"
+          ]
+        },
+        "平塚市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.hiratsuka.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.hiratsuka.kanagawa.jp/",
+            "https://www.city.hiratsuka.kanagawa.jp/koen/page49_00125.html"
+          ]
+        },
+        "鎌倉市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kamakura.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.kamakura.kanagawa.jp/",
+            "https://www.city.kamakura.kanagawa.jp/koen/kouen_chuui.html",
+            "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+          ]
+        },
+        "藤沢市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fujisawa.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.fujisawa.kanagawa.jp/",
+            "https://www.city.fujisawa.kanagawa.jp/kouen/kyoiku/leisure/koen/bunrui.html",
+            "https://www.pref.kanagawa.jp/documents/16439/kaigandenodronehikou.pdf"
+          ]
+        },
+        "小田原市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.odawara.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.odawara.kanagawa.jp/",
+            "https://www.city.odawara.kanagawa.jp/public-i/park/kouikyoka.html"
+          ]
+        },
+        "茅ヶ崎市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.chigasaki.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.chigasaki.kanagawa.jp/",
+            "https://www.city.chigasaki.kanagawa.jp/kouen/1006492.html",
+            "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
+          ]
+        },
+        "逗子市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.zushi.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.zushi.kanagawa.jp/",
+            "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1004412/1004416.html",
+            "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1004412/1013129.html"
+          ]
+        },
+        "三浦市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.miura.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.miura.kanagawa.jp/",
+            "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html",
+            "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
+          ]
+        },
+        "秦野市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.hadano.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.hadano.kanagawa.jp/",
+            "https://www.city.hadano.kanagawa.jp/www/contents/1001000000438/index.html",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+            "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+          ]
+        },
+        "厚木市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.atsugi.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.atsugi.kanagawa.jp/",
+            "https://www.city.atsugi.kanagawa.jp/soshiki/koenryokuchika/kouennikannsuruyokuarusituumon/kouenriyounoruru/20856.html"
+          ]
+        },
+        "大和市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.yamato.lg.jp/",
+          "watch_urls": [
+            "https://www.city.yamato.lg.jp/",
+            "https://www.city.yamato.lg.jp/gyosei/soshik/20/yokuarushitsumon_kaitoshu/12609.html",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+          ]
+        },
+        "伊勢原市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.isehara.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.isehara.kanagawa.jp/"
+          ]
+        },
+        "海老名市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.ebina.kanagawa.jp",
+          "watch_urls": [
+            "https://www.city.ebina.kanagawa.jp",
+            "https://www.city.ebina.kanagawa.jp/guide/sumai/kouen/index.html",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+            "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+          ]
+        },
+        "座間市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.zama.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.zama.kanagawa.jp/",
+            "https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/003/337/1.pdf",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+          ]
+        },
+        "南足柄市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.minamiashigara.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.minamiashigara.kanagawa.jp/"
+          ]
+        },
+        "綾瀬市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.ayase.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.city.ayase.kanagawa.jp/",
+            "https://www.city.ayase.kanagawa.jp/soshiki/kichiseisakuka/atsugikichi/2/13603.html"
+          ]
+        },
+        "葉山町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.hayama.lg.jp/",
+          "watch_urls": [
+            "https://www.town.hayama.lg.jp/",
+            "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
+          ]
+        },
+        "寒川町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.samukawa.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.samukawa.kanagawa.jp/"
+          ]
+        },
+        "大磯町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.oiso.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.oiso.kanagawa.jp/"
+          ]
+        },
+        "二宮町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ninomiya.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.ninomiya.kanagawa.jp/"
+          ]
+        },
+        "中井町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.nakai.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.nakai.kanagawa.jp/"
+          ]
+        },
+        "大井町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.oi.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.oi.kanagawa.jp/"
+          ]
+        },
+        "松田町": {
+          "category_current": "unknown",
+          "official_hp": "https://town.matsuda.kanagawa.jp/",
+          "watch_urls": [
+            "https://town.matsuda.kanagawa.jp/"
+          ]
+        },
+        "山北町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yamakita.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.yamakita.kanagawa.jp/"
+          ]
+        },
+        "開成町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kaisei.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.kaisei.kanagawa.jp/"
+          ]
+        },
+        "箱根町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.hakone.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.hakone.kanagawa.jp/",
+            "https://www.town.hakone.kanagawa.jp/www/contents/1100000001192/index.html",
+            "https://www.pref.kanagawa.jp/docs/b4w/cnt/f52/p2260.html"
+          ]
+        },
+        "真鶴町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.manazuru.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.manazuru.kanagawa.jp/"
+          ]
+        },
+        "湯河原町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yugawara.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.yugawara.kanagawa.jp/"
+          ]
+        },
+        "愛川町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.aikawa.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.aikawa.kanagawa.jp/",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+            "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+          ]
+        },
+        "清川村": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kiyokawa.kanagawa.jp/",
+          "watch_urls": [
+            "https://www.town.kiyokawa.kanagawa.jp/",
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+            "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
+          ]
+        }
+      }
+    },
+    "東京都": {
+      "common_urls": [
+        "https://www.kensetsu.metro.tokyo.lg.jp/jigyo/park/kouenannai/qanda.html",
+        "https://www.keishicho.metro.tokyo.lg.jp/kurashi/heion/drone.html"
+      ],
+      "municipalities": {
+        "千代田区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.chiyoda.lg.jp/",
+          "watch_urls": [
+            "https://www.city.chiyoda.lg.jp/",
+            "https://www.city.chiyoda.lg.jp/koho/bunka/sports/shisetsu/sotoborikoen-sogoground.html"
+          ]
+        },
+        "中央区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.chuo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.chuo.lg.jp/"
+          ]
+        },
+        "港区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.minato.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.minato.tokyo.jp/"
+          ]
+        },
+        "新宿区": {
+          "category_current": "prohibited",
+          "official_hp": "http://www.city.shinjuku.lg.jp/",
+          "watch_urls": [
+            "http://www.city.shinjuku.lg.jp/",
+            "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
+          ]
+        },
+        "文京区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.bunkyo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.bunkyo.lg.jp/",
+            "https://www.city.bunkyo.lg.jp/b036/p004915.html"
+          ]
+        },
+        "台東区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.taito.lg.jp/",
+          "watch_urls": [
+            "https://www.city.taito.lg.jp/",
+            "https://www.city.taito.lg.jp/kenchiku/hanamidori/koen/riyo.html"
+          ]
+        },
+        "墨田区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.sumida.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sumida.lg.jp/",
+            "https://www.city.sumida.lg.jp/sisetu_info/kouen/kouensenyou/satuei.html"
+          ]
+        },
+        "江東区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.koto.lg.jp/",
+          "watch_urls": [
+            "https://www.city.koto.lg.jp/",
+            "https://www.city.koto.lg.jp/470705/machizukuri/kasenkoen/riyo/20240207kouenriyou_backup.html"
+          ]
+        },
+        "品川区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.shinagawa.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.shinagawa.tokyo.jp/"
+          ]
+        },
+        "目黒区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.meguro.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.meguro.tokyo.jp/"
+          ]
+        },
+        "大田区": {
+          "category_current": "prohibited",
+          "official_hp": "http://www.city.ota.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.ota.tokyo.jp/",
+            "https://www.city.ota.tokyo.jp/shisetsu/park/rule_park.html"
+          ]
+        },
+        "世田谷区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.setagaya.lg.jp/index.html",
+          "watch_urls": [
+            "https://www.city.setagaya.lg.jp/index.html"
+          ]
+        },
+        "渋谷区": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.shibuya.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.shibuya.tokyo.jp/"
+          ]
+        },
+        "中野区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.tokyo-nakano.lg.jp/",
+          "watch_urls": [
+            "https://www.city.tokyo-nakano.lg.jp/",
+            "https://www.city.tokyo-nakano.lg.jp/machizukuri/kouen/kouensiyou/riyorule.html"
+          ]
+        },
+        "杉並区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.suginami.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.suginami.tokyo.jp/"
+          ]
+        },
+        "豊島区": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.toshima.lg.jp/",
+          "watch_urls": [
+            "http://www.city.toshima.lg.jp/"
+          ]
+        },
+        "北区": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.kita.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.kita.tokyo.jp/"
+          ]
+        },
+        "荒川区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.arakawa.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.arakawa.tokyo.jp/"
+          ]
+        },
+        "板橋区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.itabashi.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.itabashi.tokyo.jp/",
+            "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html"
+          ]
+        },
+        "練馬区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.nerima.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.nerima.tokyo.jp/",
+            "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/oshirase/drone2.html"
+          ]
+        },
+        "足立区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.adachi.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.adachi.tokyo.jp/"
+          ]
+        },
+        "葛飾区": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.katsushika.lg.jp/",
+          "watch_urls": [
+            "https://www.city.katsushika.lg.jp/"
+          ]
+        },
+        "江戸川区": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.edogawa.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.edogawa.tokyo.jp/",
+            "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/riyou.html"
+          ]
+        },
+        "八王子市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.hachioji.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.hachioji.tokyo.jp/",
+            "https://www.city.hachioji.tokyo.jp/shisetsu/109/p011993.html"
+          ]
+        },
+        "立川市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.tachikawa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.tachikawa.lg.jp/",
+            "https://www.city.tachikawa.lg.jp/kanko/sports/1002924/1002999.html"
+          ]
+        },
+        "武蔵野市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.musashino.lg.jp/",
+          "watch_urls": [
+            "http://www.city.musashino.lg.jp/"
+          ]
+        },
+        "三鷹市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.mitaka.lg.jp/",
+          "watch_urls": [
+            "https://www.city.mitaka.lg.jp/",
+            "https://www.city.mitaka.lg.jp/c_service/000/000747.html"
+          ]
+        },
+        "府中市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.fuchu.tokyo.jp/index.html",
+          "watch_urls": [
+            "http://www.city.fuchu.tokyo.jp/index.html"
+          ]
+        },
+        "昭島市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.akishima.lg.jp/",
+          "watch_urls": [
+            "https://www.city.akishima.lg.jp/"
+          ]
+        },
+        "調布市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.chofu.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.chofu.tokyo.jp/"
+          ]
+        },
+        "町田市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.machida.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.machida.tokyo.jp/"
+          ]
+        },
+        "小金井市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.koganei.lg.jp/",
+          "watch_urls": [
+            "http://www.city.koganei.lg.jp/"
+          ]
+        },
+        "日野市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.hino.lg.jp/",
+          "watch_urls": [
+            "http://www.city.hino.lg.jp/"
+          ]
+        },
+        "国分寺市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.kokubunji.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.kokubunji.tokyo.jp/",
+            "https://www.city.kokubunji.tokyo.jp/faq/kurashi/1005237/1005280/1005945.html"
+          ]
+        },
+        "国立市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kunitachi.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.kunitachi.tokyo.jp/"
+          ]
+        },
+        "狛江市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.komae.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.komae.tokyo.jp/"
+          ]
+        },
+        "東大和市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.higashiyamato.lg.jp/",
+          "watch_urls": [
+            "https://www.city.higashiyamato.lg.jp/"
+          ]
+        },
+        "武蔵村山市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.musashimurayama.lg.jp/",
+          "watch_urls": [
+            "https://www.city.musashimurayama.lg.jp/"
+          ]
+        },
+        "多摩市": {
+          "category_current": "prohibited",
+          "official_hp": "http://www.city.tama.lg.jp/",
+          "watch_urls": [
+            "http://www.city.tama.lg.jp/",
+            "https://www.city.tama.lg.jp/kurashi/kouen/riyou/1002525.html"
+          ]
+        },
+        "稲城市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.inagi.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.inagi.tokyo.jp/"
+          ]
+        },
+        "小平市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.kodaira.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.kodaira.tokyo.jp/"
+          ]
+        },
+        "東村山市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.higashimurayama.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.higashimurayama.tokyo.jp/"
+          ]
+        },
+        "西東京市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.nishitokyo.lg.jp/",
+          "watch_urls": [
+            "http://www.city.nishitokyo.lg.jp/"
+          ]
+        },
+        "清瀬市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kiyose.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kiyose.lg.jp/"
+          ]
+        },
+        "東久留米市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.higashikurume.lg.jp/",
+          "watch_urls": [
+            "https://www.city.higashikurume.lg.jp/"
+          ]
+        },
+        "青梅市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.ome.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.ome.tokyo.jp/"
+          ]
+        },
+        "福生市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fussa.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.fussa.tokyo.jp/"
+          ]
+        },
+        "羽村市": {
+          "category_current": "unknown",
+          "official_hp": "http://www.city.hamura.tokyo.jp/",
+          "watch_urls": [
+            "http://www.city.hamura.tokyo.jp/"
+          ]
+        },
+        "あきる野市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.akiruno.tokyo.jp/",
+          "watch_urls": [
+            "https://www.city.akiruno.tokyo.jp/"
+          ]
+        },
+        "瑞穂町": {
+          "category_current": "unknown",
+          "official_hp": "http://www.town.mizuho.tokyo.jp/",
+          "watch_urls": [
+            "http://www.town.mizuho.tokyo.jp/"
+          ]
+        },
+        "日の出町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.hinode.tokyo.jp/",
+          "watch_urls": [
+            "https://www.town.hinode.tokyo.jp/"
+          ]
+        },
+        "檜原村": {
+          "category_current": "unknown",
+          "official_hp": "http://www.vill.hinohara.tokyo.jp/",
+          "watch_urls": [
+            "http://www.vill.hinohara.tokyo.jp/"
+          ]
+        },
+        "奥多摩町": {
+          "category_current": "unknown",
+          "official_hp": "http://www.town.okutama.tokyo.jp/",
+          "watch_urls": [
+            "http://www.town.okutama.tokyo.jp/"
+          ]
+        },
+        "大島町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.oshima.tokyo.jp/",
+          "watch_urls": [
+            "https://www.town.oshima.tokyo.jp/"
+          ]
+        },
+        "八丈町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.hachijo.tokyo.jp/",
+          "watch_urls": [
+            "https://www.town.hachijo.tokyo.jp/"
+          ]
+        },
+        "利島村": {
+          "category_current": "unknown",
+          "official_hp": "http://www.toshimamura.org/",
+          "watch_urls": [
+            "http://www.toshimamura.org/"
+          ]
+        },
+        "新島村": {
+          "category_current": "unknown",
+          "official_hp": "http://www.niijima.com/",
+          "watch_urls": [
+            "http://www.niijima.com/"
+          ]
+        },
+        "神津島村": {
+          "category_current": "unknown",
+          "official_hp": "https://vill.kouzushima.tokyo.jp/",
+          "watch_urls": [
+            "https://vill.kouzushima.tokyo.jp/"
+          ]
+        },
+        "三宅村": {
+          "category_current": "unknown",
+          "official_hp": "https://www.vill.miyake.tokyo.jp/",
+          "watch_urls": [
+            "https://www.vill.miyake.tokyo.jp/"
+          ]
+        },
+        "御蔵島村": {
+          "category_current": "unknown",
+          "official_hp": "http://www.mikurasima.jp/",
+          "watch_urls": [
+            "http://www.mikurasima.jp/"
+          ]
+        },
+        "青ヶ島村": {
+          "category_current": "unknown",
+          "official_hp": "http://www.vill.aogashima.tokyo.jp/top.html",
+          "watch_urls": [
+            "http://www.vill.aogashima.tokyo.jp/top.html"
+          ]
+        },
+        "小笠原村": {
+          "category_current": "unknown",
+          "official_hp": "https://www.vill.ogasawara.tokyo.jp/",
+          "watch_urls": [
+            "https://www.vill.ogasawara.tokyo.jp/"
+          ]
+        }
+      }
+    }
+  }
+}

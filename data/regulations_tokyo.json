@@ -1,0 +1,332 @@
+{
+ "_meta": {
+  "都道府県": "東京都",
+  "確認日": "2026-07-13",
+  "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。分類は各自治体の公式ページを一次情報として確認（ブログ等の二次情報は根拠に用いない）。まず23特別区を先行調査。",
+  "全都共通": [
+   {
+    "label": "東京都建設局 都立公園Q&A（都立公園でのドローン飛行は禁止・公式）",
+    "url": "https://www.kensetsu.metro.tokyo.lg.jp/jigyo/park/kouenannai/qanda.html"
+   },
+   {
+    "label": "警視庁 小型無人機等飛行禁止法について（国会議事堂・皇居・官邸等の対象施設周辺）",
+    "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/heion/drone.html"
+   }
+  ],
+  "categories": {
+   "prohibited": {
+    "label": "区市管理公園等で原則禁止（公式確認済）",
+    "fill": "#6a1b9a",
+    "line": "#4a148c",
+    "fillOpacity": 0.55
+   },
+   "prohibited_secondary": {
+    "label": "公園条例等で原則禁止（二次情報・公式要確認）",
+    "fill": "#8e24aa",
+    "line": "#6a1b9a",
+    "fillOpacity": 0.42
+   },
+   "restricted": {
+    "label": "許可・届出制/施設ごとに要相談",
+    "fill": "#00838f",
+    "line": "#006064",
+    "fillOpacity": 0.4
+   },
+   "unknown": {
+    "label": "自治体独自の規制は確認されず（国の規制のみ）",
+    "fill": "#78909c",
+    "line": "#455a64",
+    "fillOpacity": 0.18
+   }
+  }
+ },
+ "municipalities": {
+  "新宿区": {
+   "category": "prohibited",
+   "summary": "区立公園でドローンは使用不可。公式「公園等の利用ルール」に「エアガン、グライダー、フリスビー、ドローン、ラジコンなど、他の公園利用者の危険や迷惑となる玩具や道具等は使用できません」と明記。確認先: みどり土木部 みどり公園課 03-5273-3914。",
+   "sources": [
+    {
+     "label": "新宿区 公園等の利用ルール（ドローン使用不可を明記）",
+     "url": "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
+    }
+   ]
+  },
+  "文京区": {
+   "category": "prohibited",
+   "summary": "公式「公園（児童遊園）のルール」に「園内における無人機等（ドローンを含む）の操縦・飛行等は、管理上支障がありますので、禁止させていただきます」と明記。確認先: 土木部みどり公園課管理係 03-5803-1252。",
+   "sources": [
+    {
+     "label": "文京区 公園（児童遊園）のルール（無人機等の飛行禁止を明記）",
+     "url": "https://www.city.bunkyo.lg.jp/b036/p004915.html"
+    }
+   ]
+  },
+  "墨田区": {
+   "category": "prohibited",
+   "summary": "区立公園での撮影に関し公式に「ドローンを使用した撮影」は禁止と明記。堤通公園内交通公園等でもドローンは使用不可。確認先: 土木管理課占用・監察担当 03-5608-6282。",
+   "sources": [
+    {
+     "label": "墨田区 区立公園での撮影について（ドローン使用の撮影は禁止）",
+     "url": "https://www.city.sumida.lg.jp/sisetu_info/kouen/kouensenyou/satuei.html"
+    }
+   ]
+  },
+  "江東区": {
+   "category": "prohibited",
+   "summary": "公式「公園の利用について」に「ドローンやラジコン等の無人航空機は、落下したときの危険性や騒音問題等の懸念から、公園内での使用は一律に禁止としています」と明記。確認先: 土木部施設保全課 水辺と緑の事務所 03-5683-5581。",
+   "sources": [
+    {
+     "label": "江東区 公園の利用について（無人航空機は一律禁止）",
+     "url": "https://www.city.koto.lg.jp/470705/machizukuri/kasenkoen/riyo/20240207kouenriyou_backup.html"
+    }
+   ]
+  },
+  "大田区": {
+   "category": "prohibited",
+   "summary": "公式「公園のご利用に関して」の禁止行為として「ドローン（ラジコン飛行機等含む。）の使用」を明記。確認先: 公園課 03-6715-1824。",
+   "sources": [
+    {
+     "label": "大田区 公園のご利用に関して（ドローンの使用を禁止）",
+     "url": "https://www.city.ota.tokyo.jp/shisetsu/park/rule_park.html"
+    }
+   ]
+  },
+  "中野区": {
+   "category": "prohibited",
+   "summary": "公式「公園案内・利用ルール」で公園内の禁止行為として「ドローン、ラジコン等の使用」を明記。確認先: 都市基盤部 公園課 03-3389-1111。",
+   "sources": [
+    {
+     "label": "中野区 公園案内・利用ルール（ドローン・ラジコン等の使用を禁止）",
+     "url": "https://www.city.tokyo-nakano.lg.jp/machizukuri/kouen/kouensiyou/riyorule.html"
+    }
+   ]
+  },
+  "練馬区": {
+   "category": "prohibited",
+   "summary": "「区立公園、緑地、児童遊園など693か所および運動場や野球場などのスポーツ施設13か所でのドローンやラジコンヘリコプターの使用を禁止」（全面禁止）。事故多発で区民等に危険が及ぶ行為のため。確認先: 土木部道路公園課公園係 03-5984-1365。",
+   "sources": [
+    {
+     "label": "練馬区 区立公園・緑地・児童遊園・スポーツ施設でのドローン使用を全面禁止",
+     "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/oshirase/drone2.html"
+    }
+   ]
+  },
+  "板橋区": {
+   "category": "prohibited",
+   "summary": "公式に「公園においてもドローン・ラジコン機等の使用が原則禁止されました」と明記。許可・承認を得ずに使用すると罰金が科せられる場合あり。航空法対象外の軽量機も使用自粛を要請。確認先: 土木部管理課占用係 03-3579-2505。",
+   "sources": [
+    {
+     "label": "板橋区 公園内でのドローン・ラジコン機等の使用禁止について",
+     "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html"
+    }
+   ]
+  },
+  "江戸川区": {
+   "category": "prohibited",
+   "summary": "江戸川区立公園条例第七条に基づき、公式「公園の利用ルール」に「ドローン、ラジコン等を飛行させてはいけません」と明記。確認先: 環境部水とみどりの課 03-3652-1151。",
+   "sources": [
+    {
+     "label": "江戸川区 公園の利用ルール（ドローン・ラジコン等の飛行禁止・公園条例第七条）",
+     "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/riyou.html"
+    }
+   ]
+  },
+  "台東区": {
+   "category": "prohibited",
+   "summary": "公式「公園、児童遊園利用上のルール」に「園内におけるリモコン飛行機・ドローン等の飛行は、墜落した場合、他の公園利用者に危険が及ぶため禁止しています」と明記。確認先: 公園課公園管理担当 03-5246-1321。",
+   "sources": [
+    {
+     "label": "台東区 公園、児童遊園利用上のルール（リモコン飛行機・ドローン等の飛行を禁止）",
+     "url": "https://www.city.taito.lg.jp/kenchiku/hanamidori/koen/riyo.html"
+    }
+   ]
+  },
+  "千代田区": {
+   "category": "prohibited",
+   "summary": "区の公園施設で公式に「公園内でのドローン（小型無人機）の使用は禁止です」と明記（外濠公園総合グラウンド等）。区立の子ども広場（ふじみこどもひろば・くだんした等）でもドローン・ラジコン飛行機の使用は不可。公園の使用許可は環境まちづくり部（道路公園課）、外濠公園総合グラウンドは生涯学習・スポーツ課 03-5211-3627。",
+   "sources": [
+    {
+     "label": "千代田区 外濠公園総合グラウンド利用案内（公園内でのドローン使用は禁止）",
+     "url": "https://www.city.chiyoda.lg.jp/koho/bunka/sports/shisetsu/sotoborikoen-sogoground.html"
+    }
+   ]
+  },
+  "八王子市": {
+   "category": "prohibited",
+   "summary": "公式「公園でラジコン飛行機やドローン等を飛ばしたい」に「ラジコン飛行機やドローン等の使用（上空通過を含む）はできません」と明記（公園利用者の安全に配慮）。確認先: 建設部公園課 042-620-7271。",
+   "sources": [
+    {
+     "label": "八王子市 公園でラジコン飛行機やドローン等を飛ばしたい（使用不可・上空通過含む）",
+     "url": "https://www.city.hachioji.tokyo.jp/shisetsu/109/p011993.html"
+    }
+   ]
+  },
+  "立川市": {
+   "category": "prohibited",
+   "summary": "公式「公園に関するよくある質問と答え」に「ドローン、ラジコン飛行機をとばす行為は付近住民の方々への迷惑、落下による事故の危険性のある行為であるため、使用については禁止しております」と明記。確認先: 都市整備部公園緑地課公園係 042-528-4363。",
+   "sources": [
+    {
+     "label": "立川市 公園に関するよくある質問と答え（ドローン・ラジコンの使用は禁止）",
+     "url": "https://www.city.tachikawa.lg.jp/kanko/sports/1002924/1002999.html"
+    }
+   ]
+  },
+  "三鷹市": {
+   "category": "prohibited",
+   "summary": "公式「公園の使用について」に「公園におけるドローンやラジコンの飛行は禁止しております」と明記。確認先: 都市整備部緑と公園課 0422-29-9789。",
+   "sources": [
+    {
+     "label": "三鷹市 公園の使用について（ドローン・ラジコンの飛行は禁止）",
+     "url": "https://www.city.mitaka.lg.jp/c_service/000/000747.html"
+    }
+   ]
+  },
+  "国分寺市": {
+   "category": "prohibited",
+   "summary": "公式FAQ「市立公園で禁止されていること」に禁止事項として「小型無人飛行機（ドローン）の使用」を明記。確認先: 建設環境部公園緑地課 042-325-0129。",
+   "sources": [
+    {
+     "label": "国分寺市 市立公園で禁止されていることにはどんなことがありますか（ドローンの使用を禁止）",
+     "url": "https://www.city.kokubunji.tokyo.jp/faq/kurashi/1005237/1005280/1005945.html"
+    }
+   ]
+  },
+  "多摩市": {
+   "category": "prohibited",
+   "summary": "公式「無人航空機などの使用について」に「多摩市内の公園及び緑地では、他の公園利用者の安全確保のために、無人航空機等（ドローン・ラジコン飛行機・その他遠隔操作または自動操縦により飛行させることができるもの）の使用は原則禁止しています」と明記（200g未満の模型航空機も同様）。確認先: 公園緑地課みどり担当 042-338-6827。",
+   "sources": [
+    {
+     "label": "多摩市 無人航空機などの使用について（公園・緑地での使用は原則禁止）",
+     "url": "https://www.city.tama.lg.jp/kurashi/kouen/riyou/1002525.html"
+    }
+   ]
+  }
+ },
+ "unknown_simple": [
+  "中央区",
+  "港区",
+  "品川区",
+  "目黒区",
+  "世田谷区",
+  "渋谷区",
+  "杉並区",
+  "豊島区",
+  "北区",
+  "荒川区",
+  "足立区",
+  "葛飾区",
+  "武蔵野市",
+  "府中市",
+  "昭島市",
+  "調布市",
+  "町田市",
+  "小金井市",
+  "日野市",
+  "国立市",
+  "狛江市",
+  "東大和市",
+  "武蔵村山市",
+  "稲城市",
+  "小平市",
+  "東村山市",
+  "西東京市",
+  "清瀬市",
+  "東久留米市",
+  "青梅市",
+  "福生市",
+  "羽村市",
+  "あきる野市",
+  "瑞穂町",
+  "日の出町",
+  "檜原村",
+  "奥多摩町",
+  "大島町",
+  "八丈町",
+  "利島村",
+  "新島村",
+  "神津島村",
+  "三宅村",
+  "御蔵島村",
+  "青ヶ島村",
+  "小笠原村"
+ ],
+ "unknown_simple_summary": "自治体独自のドローン規制について、公式ページで明文を確認できていない（2026-07-13時点。23特別区・多摩・島しょを一通り公式調査したが、公園でのドローン可否を明記した公式ページを確認できず）。稲城市・あきる野市・足立区・北区・豊島区は規制の存在が示唆されるが公式ページを逐語確認できず保留。ただし都立公園はドローン飛行禁止（東京都建設局）で都内に広く分布。区市町村の公園も公園条例の一般規定（危険・迷惑・管理支障行為の禁止）で管理者判断で個別に制限される場合はある。重要施設周辺は小型無人機等飛行禁止法（警視庁）の対象。",
+ "default_sources": [
+  {
+   "label": "東京都建設局 都立公園Q&A（都立公園でのドローン飛行は禁止）",
+   "url": "https://www.kensetsu.metro.tokyo.lg.jp/jigyo/park/kouenannai/qanda.html"
+  },
+  {
+   "label": "警視庁 小型無人機等飛行禁止法について",
+   "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/heion/drone.html"
+  }
+ ],
+ "official_hp": {
+  "千代田区": "https://www.city.chiyoda.lg.jp/",
+  "中央区": "https://www.city.chuo.lg.jp/",
+  "港区": "https://www.city.minato.tokyo.jp/",
+  "新宿区": "http://www.city.shinjuku.lg.jp/",
+  "文京区": "https://www.city.bunkyo.lg.jp/",
+  "台東区": "https://www.city.taito.lg.jp/",
+  "墨田区": "https://www.city.sumida.lg.jp/",
+  "江東区": "https://www.city.koto.lg.jp/",
+  "品川区": "https://www.city.shinagawa.tokyo.jp/",
+  "目黒区": "https://www.city.meguro.tokyo.jp/",
+  "大田区": "http://www.city.ota.tokyo.jp/",
+  "世田谷区": "https://www.city.setagaya.lg.jp/index.html",
+  "渋谷区": "http://www.city.shibuya.tokyo.jp/",
+  "中野区": "https://www.city.tokyo-nakano.lg.jp/",
+  "杉並区": "https://www.city.suginami.tokyo.jp/",
+  "豊島区": "http://www.city.toshima.lg.jp/",
+  "北区": "http://www.city.kita.tokyo.jp/",
+  "荒川区": "https://www.city.arakawa.tokyo.jp/",
+  "板橋区": "https://www.city.itabashi.tokyo.jp/",
+  "練馬区": "https://www.city.nerima.tokyo.jp/",
+  "足立区": "https://www.city.adachi.tokyo.jp/",
+  "葛飾区": "https://www.city.katsushika.lg.jp/",
+  "江戸川区": "https://www.city.edogawa.tokyo.jp/",
+  "八王子市": "https://www.city.hachioji.tokyo.jp/",
+  "立川市": "https://www.city.tachikawa.lg.jp/",
+  "武蔵野市": "http://www.city.musashino.lg.jp/",
+  "三鷹市": "https://www.city.mitaka.lg.jp/",
+  "府中市": "http://www.city.fuchu.tokyo.jp/index.html",
+  "昭島市": "https://www.city.akishima.lg.jp/",
+  "調布市": "https://www.city.chofu.tokyo.jp/",
+  "町田市": "https://www.city.machida.tokyo.jp/",
+  "小金井市": "http://www.city.koganei.lg.jp/",
+  "日野市": "http://www.city.hino.lg.jp/",
+  "国分寺市": "https://www.city.kokubunji.tokyo.jp/",
+  "国立市": "https://www.city.kunitachi.tokyo.jp/",
+  "狛江市": "http://www.city.komae.tokyo.jp/",
+  "東大和市": "https://www.city.higashiyamato.lg.jp/",
+  "武蔵村山市": "https://www.city.musashimurayama.lg.jp/",
+  "多摩市": "http://www.city.tama.lg.jp/",
+  "稲城市": "http://www.city.inagi.tokyo.jp/",
+  "小平市": "http://www.city.kodaira.tokyo.jp/",
+  "東村山市": "https://www.city.higashimurayama.tokyo.jp/",
+  "西東京市": "http://www.city.nishitokyo.lg.jp/",
+  "清瀬市": "https://www.city.kiyose.lg.jp/",
+  "東久留米市": "https://www.city.higashikurume.lg.jp/",
+  "青梅市": "https://www.city.ome.tokyo.jp/",
+  "福生市": "https://www.city.fussa.tokyo.jp/",
+  "羽村市": "http://www.city.hamura.tokyo.jp/",
+  "あきる野市": "https://www.city.akiruno.tokyo.jp/",
+  "瑞穂町": "http://www.town.mizuho.tokyo.jp/",
+  "日の出町": "https://www.town.hinode.tokyo.jp/",
+  "檜原村": "http://www.vill.hinohara.tokyo.jp/",
+  "奥多摩町": "http://www.town.okutama.tokyo.jp/",
+  "大島町": "https://www.town.oshima.tokyo.jp/",
+  "八丈町": "https://www.town.hachijo.tokyo.jp/",
+  "利島村": "http://www.toshimamura.org/",
+  "新島村": "http://www.niijima.com/",
+  "神津島村": "https://vill.kouzushima.tokyo.jp/",
+  "三宅村": "https://www.vill.miyake.tokyo.jp/",
+  "御蔵島村": "http://www.mikurasima.jp/",
+  "青ヶ島村": "http://www.vill.aogashima.tokyo.jp/top.html",
+  "小笠原村": "https://www.vill.ogasawara.tokyo.jp/"
+ },
+ "official_hp_source": {
+  "label": "東京都 都庁総合HP リンク集／都内区市町村",
+  "url": "https://www.metro.tokyo.lg.jp/sitemap/link/link04"
+ }
+}

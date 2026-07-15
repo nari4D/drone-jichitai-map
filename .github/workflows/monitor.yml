@@ -1,0 +1,66 @@
+# 既知URLの監視: watchlist の全URLを巡回し、ドローン語周辺の「文の変化」・
+# 新規キーワード出現・リンク切れを検出して Issue 化する。
+# 検出までが自動。分類（色）の確定は人の承認を経る。
+name: drone-regulation-monitor
+
+on:
+  schedule:
+    - cron: '0 21 * * 1'   # 毎週月曜 06:00 JST (UTC 21:00 日曜)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install requests beautifulsoup4 pdfminer.six
+
+      - name: Run crawl & diff
+        id: crawl
+        run: |
+          set +e
+          python scripts/crawl_check.py
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Commit updated snapshots
+        run: |
+          git config user.name  "drone-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/snapshots reports 2>/dev/null || true
+          git commit -m "chore(monitor): update snapshots ($(date +%F))" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "nothing to push"
+
+      - name: Open issue if changes detected
+        if: steps.crawl.outputs.exit_code == '1'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const date = new Date(Date.now() + 9*3600*1000).toISOString().slice(0,10);
+            const path = `reports/diff_${date}.md`;
+            let body = '差分レポートが見つかりませんでした。';
+            try { body = fs.readFileSync(path, 'utf8'); } catch (e) {}
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `規制ページの変化を検出 ${date}`,
+              body: body + '\n\n---\n差分を確認し、必要なら `data/regulations*.json` を更新してください。' +
+                    '\n（分類の確定は人の承認を経ること／出典は公式一次情報のみ）'
+            });

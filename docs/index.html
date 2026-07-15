@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自治体ドローン規制マップ(+空域情報)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  html,body{margin:0;height:100%;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;}
+  #map{position:absolute;top:52px;bottom:0;left:0;right:0;}
+  header{position:absolute;top:0;left:0;right:0;height:52px;background:#1a2733;color:#fff;
+    display:flex;align-items:center;gap:12px;padding:0 16px;box-sizing:border-box;z-index:1000;}
+  header h1{font-size:15px;margin:0;font-weight:600;white-space:nowrap;}
+  header .sub{font-size:11px;color:#9fb3c8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  header .day{font-size:11px;color:#ffd54f;font-weight:600;white-space:nowrap;}
+  header .spacer{flex:1;}
+  header .navbtn{font-size:11px;color:#cfe0ee;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);
+    border-radius:5px;padding:4px 9px;cursor:pointer;text-decoration:none;white-space:nowrap;}
+  header .navbtn:hover{background:rgba(255,255,255,.20);color:#fff;}
+  header input#placeSearch{font-size:12px;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.95);color:#1a2733;width:190px;max-width:36vw;}
+  .legend{background:#fff;padding:10px 12px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.3);
+    font-size:12px;line-height:1.7;max-width:300px;}
+  .legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.15);}
+  .legend .note{font-size:10px;color:#666;margin-top:6px;border-top:1px solid #eee;padding-top:6px;}
+  .leaflet-control-layers{font-size:12px;line-height:1.5;}
+  .leaflet-popup-content{font-size:12px;line-height:1.6;max-width:330px;}
+  .leaflet-popup-content h3{margin:0 0 4px;font-size:13px;}
+  .leaflet-popup-content .cat{display:inline-block;padding:1px 6px;border-radius:3px;color:#fff;font-size:11px;margin-bottom:6px;}
+  .leaflet-popup-content .hp{margin:6px 0;padding:4px 6px;background:#eef4fa;border-radius:4px;}
+  .leaflet-popup-content a{word-break:break-all;}
+  /* 免責モーダル */
+  .modal-back{position:fixed;inset:0;background:rgba(10,16,22,.72);z-index:3000;display:flex;
+    align-items:center;justify-content:center;padding:16px;}
+  .modal-back[hidden]{display:none;}
+  .modal{background:#fff;max-width:560px;width:100%;max-height:85vh;overflow:auto;border-radius:10px;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);padding:22px 24px;box-sizing:border-box;}
+  .modal h2{margin:0 0 10px;font-size:18px;color:#b71c1c;}
+  .modal p{font-size:13px;line-height:1.75;margin:8px 0;color:#233;}
+  .modal ul{font-size:13px;line-height:1.7;margin:8px 0;padding-left:20px;color:#233;}
+  .modal .primary{margin-top:16px;background:#1a2733;color:#fff;border:none;border-radius:6px;
+    padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;width:100%;}
+  .modal .primary:hover{background:#243546;}
+  .modal .dips{display:inline-block;margin-top:4px;padding:2px 6px;background:#eef4fa;border-radius:4px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>自治体ドローン規制マップ</h1>
+  <span class="sub">自治体規制 + 航空局空域 + 飛行禁止法RZ/YZ + DID | 境界: 国土交通省 国土数値情報N03(2025)</span>
+  <span class="day">情報確認日 2026-07-13</span>
+  <span class="spacer"></span>
+  <input id="placeSearch" type="search" placeholder="地名で移動 (例: 横浜市中区)" autocomplete="off">
+  <a class="navbtn" href="list.html">リスト版</a>
+  <button class="navbtn" id="showDisclaimer">免責事項</button>
+</header>
+<div id="map"></div>
+
+<div class="modal-back" id="disclaimerModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-title">
+    <h2 id="dlg-title">ご利用にあたって（重要）</h2>
+    <p>本サイトは、航空法・小型無人機等飛行禁止法とは<b>別に</b>、各自治体・施設管理者が公園・海岸・施設等に定める独自ルールを地図上に整理した<b>参考情報</b>です。飛行の可否を断定するものではありません。</p>
+    <ul>
+      <li>情報は自動収集・手動確認が混在し、<b>正確性・最新性を保証しません</b>。</li>
+      <li>飛行可否の最終判断は、必ず<b>各管理者</b>および国土交通省の<b class="dips">DIPS</b>で確認してください。</li>
+      <li>グレーは<b>「自治体独自の規制は確認されず（国の航空法等のみ）」</b>の意味です。飛行可否は国の規制とDIPSで確認してください。</li>
+      <li>自治体規制の分類は各自治体の公式ページを一次情報として確認しています。国の空域・RZ/YZ等は地理院地図と同一データの参考表示です。</li>
+    </ul>
+    <p style="font-size:12px;color:#666;">情報確認日: 2026-07-13 ／ 境界: 国土交通省 国土数値情報N03(2025)</p>
+    <button class="primary" id="agreeDisclaimer">内容を理解しました</button>
+  </div>
+</div>
+<script>
+const map = L.map('map', { zoomControl: false }).setView([35.60, 139.45], 9);
+L.control.zoom({ position: 'topright' }).addTo(map);  // 地理院地図に合わせズームは右上
+
+const std = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+  {attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a> | 空域: 国土交通省航空局 | RZ/YZ: 警察庁 | 境界: 国土数値情報N03', maxZoom:18}).addTo(map);
+const pale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {attribution:'地理院タイル', maxZoom:18});
+const photo = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', {attribution:'地理院タイル', maxZoom:18});
+
+const did = L.tileLayer('https://maps.gsi.go.jp/xyz/did2020/{z}/{x}/{y}.png',
+  {opacity:0.55, minZoom:8, maxZoom:18, attribution:'人口集中地区 令和2年(総務省統計局)'});
+
+function lon2tile(lon,z){ return Math.floor((lon+180)/360*Math.pow(2,z)); }
+function lat2tile(lat,z){ return Math.floor((1-Math.log(Math.tan(lat*Math.PI/180)+1/Math.cos(lat*Math.PI/180))/Math.PI)/2*Math.pow(2,z)); }
+
+function geojsonTileLayer(urlTemplate, style, layerName){
+  const group = L.layerGroup();
+  const loaded = new Set();
+  function load(){
+    if (!map.hasLayer(group)) return;
+    const z = 8;
+    const b = map.getBounds();
+    const x0 = lon2tile(b.getWest(), z),  x1 = lon2tile(b.getEast(), z);
+    const y0 = lat2tile(b.getNorth(), z), y1 = lat2tile(b.getSouth(), z);
+    for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) {
+      const key = x + '/' + y;
+      if (loaded.has(key)) continue;
+      loaded.add(key);
+      const url = urlTemplate.replace('{z}', z).replace('{x}', x).replace('{y}', y);
+      fetch(url).then(r => { if (!r.ok) throw 0; return r.json(); }).then(gj => {
+        group.addLayer(L.geoJSON(gj, {
+          style: () => style,
+          onEachFeature: (f, l) => {
+            const props = f.properties || {};
+            const name = props.name || props.Name || props.title || '';
+            l.bindPopup('<b>' + layerName + '</b>' + (name ? '<br>' + name : ''));
+          }
+        }));
+      }).catch(() => {});
+    }
+  }
+  group.on('add', load);
+  map.on('moveend', load);
+  return group;
+}
+
+const kokuarea    = geojsonTileLayer('https://maps.gsi.go.jp/xyz/kokuarea/{z}/{x}/{y}.geojson',
+  {color:'#558b2f', weight:1.5, opacity:0.9, fillColor:'#9ccc65', fillOpacity:0.30}, '空港等の周辺空域');
+const kanseiken   = geojsonTileLayer('https://maps.gsi.go.jp/xyz/kokuarea_kanseikentou/{z}/{x}/{y}.geojson',
+  {color:'#1565c0', weight:1.5, opacity:0.9, fillColor:'#64b5f6', fillOpacity:0.20}, '管制圏・情報圏');
+const tokubetsu   = geojsonTileLayer('https://maps.gsi.go.jp/xyz/kokuarea_tokubetsukanseiku/{z}/{x}/{y}.geojson',
+  {color:'#4527a0', weight:1.5, opacity:0.9, fillColor:'#9575cd', fillOpacity:0.20}, '特別管制区');
+const shinnyuu    = geojsonTileLayer('https://maps.gsi.go.jp/xyz/kokuarea_shinnyuukanseiku/{z}/{x}/{y}.geojson',
+  {color:'#00695c', weight:1.5, opacity:0.9, fillColor:'#4db6ac', fillOpacity:0.18}, '進入管制区');
+const minkan      = geojsonTileLayer('https://maps.gsi.go.jp/xyz/kokuarea_minkankunren/{z}/{x}/{y}.geojson',
+  {color:'#37474f', weight:1.5, opacity:0.9, fillColor:'#90a4ae', fillOpacity:0.18}, '民間訓練試験空域');
+const droneRZ     = geojsonTileLayer('https://maps.gsi.go.jp/xyz/drone_rz/{z}/{x}/{y}.geojson',
+  {color:'#b71c1c', weight:1.5, opacity:1.0, fillColor:'#e53935', fillOpacity:0.55}, '対象施設・指定敷地等(レッドゾーン)');
+const droneYZ     = geojsonTileLayer('https://maps.gsi.go.jp/xyz/drone_yz/{z}/{x}/{y}.geojson',
+  {color:'#f9a825', weight:1.5, opacity:1.0, fillColor:'#fdd835', fillOpacity:0.40}, '対象施設周辺地域(イエローゾーン)');
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function link(url, label){return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) + '</a>';}
+
+// 自治体別ドローン規制(国交省N03境界 + regulations から build_overlay.py で生成した GeoJSON をfetch)
+function makeRegLayer(gj){
+  let gl;
+  gl = L.geoJSON(gj, {
+    // 塗らずに「区分色の太い輪郭線」だけ。中身は透明(fillOpacity:0)なので
+    // 下の空域レイヤーの色を汚さず、区の内側もクリックできる。
+    style: f => ({
+      color: f.properties._fillColor, weight: 1.8, opacity: 1,
+      fill: true, fillColor: f.properties._fillColor, fillOpacity: 0
+    }),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      let html = '<h3>' + esc(p.name) + '</h3>' +
+        '<span class="cat" style="background:' + p._color + '">' + esc(p['区分']) + '</span>';
+      if (p['公式HP']) html += '<div class="hp">&#127970; ' + link(p['公式HP'], p['自治体'] + ' 公式ホームページ') + '</div>';
+      html += '<div>' + esc(p['規制概要']) + '</div>';
+      for (let i = 1; i <= 5; i++) {
+        const label = p['出典' + i], url = p['出典' + i + '_URL'];
+        if (!label) break;
+        html += '<div>出典' + i + ': ' + (url ? link(url, label) : esc(label)) + '</div>';
+      }
+      if (p['備考']) html += '<div style="color:#a05a00">※ ' + esc(p['備考']) + '</div>';
+      html += '<div style="color:#888;font-size:10px">情報確認日: ' + esc(p['確認日']) + '</div>';
+      l.bindPopup(html, {maxWidth: 340});
+      l.on('mouseover', () => l.setStyle({weight: 4, fillOpacity: 0.18}));
+      l.on('mouseout',  () => gl.resetStyle(l));
+    }
+  });
+  return gl;
+}
+
+// 神奈川・東京を1つの「自治体規制」レイヤーに統合(デフォルトON)
+const jichitaiReg = L.layerGroup().addTo(map);
+function loadReg(url){
+  fetch(url).then(r => r.json()).then(gj => makeRegLayer(gj).addTo(jichitaiReg)).catch(()=>{});
+}
+loadReg('kanagawa_drone_jichitai.geojson');
+loadReg('tokyo_drone_jichitai.geojson');
+
+// デフォルトONにする国の情報レイヤー
+did.addTo(map);
+droneRZ.addTo(map);
+droneYZ.addTo(map);
+kokuarea.addTo(map);
+
+// 地理院地図に合わせてレイヤー選択パネルは左上・常時展開
+L.control.layers(
+  {'標準地図': std, '淡色地図': pale, '航空写真': photo},
+  {
+    '自治体規制': jichitaiReg,
+    '人口集中地区(DID 令和2年)': did,
+    'RZ: 対象施設等(飛行禁止法)': droneRZ,
+    'YZ: 周辺地域300m(飛行禁止法)': droneYZ,
+    '空港等の周辺空域': kokuarea,
+    '管制圏・情報圏': kanseiken,
+    '特別管制区': tokubetsu,
+    '進入管制区': shinnyuu,
+    '民間訓練試験空域': minkan
+  },
+  {collapsed:false, position:'topleft'}
+).addTo(map);
+
+// 凡例は左下
+const legend = L.control({position:'bottomleft'});
+legend.onAdd = () => {
+  const d = L.DomUtil.create('div', 'legend');
+  d.innerHTML =
+    '<b>自治体規制(公式確認日 2026-07-03/07-13)</b> <span style="font-size:10px;color:#666">※輪郭線</span><br>' +
+    '<span class="sw" style="background:transparent;border:3px solid #6a1b9a"></span>市区管理公園等で原則禁止(公式確認済)<br>' +
+    '<span class="sw" style="background:transparent;border:3px solid #8e24aa"></span>公園条例等で原則禁止(二次情報)<br>' +
+    '<span class="sw" style="background:transparent;border:3px solid #00838f"></span>許可・届出制/要相談<br>' +
+    '<span class="sw" style="background:transparent;border:3px solid #78909c"></span>自治体独自の規制は確認されず(国の規制のみ)<br>' +
+    '<b style="display:block;margin-top:6px">国の空域(参考オーバーレイ)</b>' +
+    '<span class="sw" style="background:#e53935"></span>RZ / <span class="sw" style="background:#fdd835"></span>YZ(飛行禁止法・警察庁)<br>' +
+    '<span class="sw" style="background:#9ccc65"></span>空港等周辺空域 <span class="sw" style="background:#64b5f6"></span>管制圏・情報圏<br>' +
+    '<span class="sw" style="background:#9575cd"></span>特別管制区 <span class="sw" style="background:#4db6ac"></span>進入管制区 <span class="sw" style="background:#90a4ae"></span>民間訓練試験空域<br>' +
+    '<div class="note">自治体規制は<b>区分色の輪郭線</b>で表示(中は塗らない)ため、下のDID/RZ/YZ/空域(赤・黄系)がそのまま見えます。区の内側をクリックすると詳細が出ます。境界は国交省 国土数値情報N03(2025)。公式で明文確認できた自治体を紫、記載が確認できない自治体はグレー(自治体独自の規制なし=国の規制のみ)。飛行判断は必ずDIPS・各管理者の最新情報で。</div>';
+  return d;
+};
+legend.addTo(map);
+
+// ---- 地名検索(OpenStreetMap/Nominatim・キー不要) → その地点へ移動 ----
+// 地名・施設名の検索精度が高い。地図移動専用で、規制データの出典とは無関係。
+map.attributionControl.addAttribution('地名検索: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>/Nominatim');
+(function(){
+  const input = document.getElementById('placeSearch');
+  if (!input) return;
+  const CACHE_KEY = 'geocode_cache_v1', MAX = 200;
+  let marker;
+  function loadCache(){ try { return JSON.parse(localStorage.getItem(CACHE_KEY)) || {}; } catch(e){ return {}; } }
+  function saveCache(c){ try { localStorage.setItem(CACHE_KEY, JSON.stringify(c)); } catch(e){} }
+  function getCached(q){ return loadCache()[q] || null; }
+  function putCached(q, v){
+    const c = loadCache();
+    c[q] = v;
+    const keys = Object.keys(c);
+    if (keys.length > MAX) for (const k of keys.slice(0, keys.length - MAX)) delete c[k];
+    saveCache(c);
+  }
+  function goTo(lat, lon, label){
+    map.setView([lat, lon], 15);
+    if (marker) map.removeLayer(marker);
+    marker = L.circleMarker([lat, lon], {radius:8, color:'#c62828', weight:3, fillColor:'#ef5350', fillOpacity:0.6})
+      .addTo(map).bindPopup('&#128205; ' + esc(label)).openPopup();
+  }
+  async function search(){
+    const q = input.value.trim();
+    if (!q) return;
+    const cached = getCached(q);        // ポリシー順守: 同じ地名は再取得せずキャッシュを使う
+    if (cached){ goTo(cached.lat, cached.lon, cached.label); return; }
+    try {
+      const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=jp'
+                + '&accept-language=ja&limit=1&q=' + encodeURIComponent(q);
+      const r = await fetch(url);
+      const arr = await r.json();
+      if (!arr || !arr.length){ alert('「' + q + '」は見つかりませんでした'); return; }
+      const hit = arr[0];
+      const lat = +hit.lat, lon = +hit.lon;
+      const label = hit.name || (hit.display_name || q).split(',').slice(0, 3).join('、');
+      putCached(q, {lat, lon, label});
+      goTo(lat, lon, label);
+    } catch(e){ alert('検索に失敗しました(通信エラー)'); }
+  }
+  input.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); search(); } });
+})();
+
+// ---- 免責モーダル(初回アクセス時に必ず表示。以降はヘッダーの「免責事項」から再表示可) ----
+(function(){
+  const KEY = 'drone_map_disclaimer_ack_2026-07-13';
+  const modal = document.getElementById('disclaimerModal');
+  const open  = () => { modal.hidden = false; };
+  const close = () => { modal.hidden = true;  };
+  try { if (!localStorage.getItem(KEY)) open(); } catch(e){ open(); }
+  document.getElementById('agreeDisclaimer').addEventListener('click', () => {
+    try { localStorage.setItem(KEY, '1'); } catch(e){}
+    close();
+  });
+  document.getElementById('showDisclaimer').addEventListener('click', open);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
