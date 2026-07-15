@@ -1,11 +1,17 @@
 # 既知URLの監視: watchlist の全URLを巡回し、ドローン語周辺の「文の変化」・
-# 新規キーワード出現・リンク切れを検出して Issue 化する。
-# 検出までが自動。分類（色）の確定は人の承認を経る。
+# 新規キーワード出現・リンク切れを検出して Issue 化する（規制の新設・改定・緩和を拾う）。
+# discover が「新しいページを探す」のに対し、こちらは「登録済みページの変化を見張る」。
+#
+# 毎回 watchlist を全件（現在155URL）見るが、ETag/Last-Modified による条件付きGETで
+# 未変更ページは本文を送らせないため軽い。全国展開でURLが増えたらローリングを検討する。
 name: drone-regulation-monitor
 
 on:
   schedule:
-    - cron: '0 21 * * 1'   # 毎週月曜 06:00 JST (UTC 21:00 日曜)
+    # 毎日 05:00 JST (UTC 20:00)。discover 03:00 → classify 04:00 の後ろに置く。
+    # cron の曜日欄は UTC 基準。JST の曜日を意図して指定すると1日ずれるので、
+    # 曜日を使うときは注意（以前 '0 21 * * 1' が「月曜のつもりで火曜」に発火していた）。
+    - cron: '0 20 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -61,6 +67,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `規制ページの変化を検出 ${date}`,
-              body: body + '\n\n---\n差分を確認し、必要なら `data/regulations*.json` を更新してください。' +
-                    '\n（分類の確定は人の承認を経ること／出典は公式一次情報のみ）'
+              body: body + '\n\n---\n既知ページの変化とリンク切れの記録です。' +
+                    '\n規制の内容が変わっていた場合、その公式ページを `data/discovery/queue.json` に' +
+                    ' 積めば classify が逐語確認のうえ再判定します（出典は公式一次情報のみ）。'
             });
