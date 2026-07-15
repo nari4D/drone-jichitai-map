@@ -5,8 +5,11 @@
 # 精度の担保は Claude へのお願いではなく apply の決定論的な検証にある。
 # 引用が保存済み本文に逐語で存在しなければ unknown に倒れる（詳細は classify_apply.py）。
 #
-# 認証: Pro/Max のサブスク認証（CLAUDE_CODE_OAUTH_TOKEN）。API課金は発生しない。
+# 認証: Pro/Max のサブスク認証（CLAUDE_CODE_OAUTH_TOKEN）。登録が要る Secret はこれ1つだけ
+#   （ANTHROPIC_API_KEY は従量課金なので使わない。GITHUB_TOKEN は Actions が自動で用意する）。
 #   トークン生成: ローカルで `claude setup-token` → Settings > Secrets and variables > Actions に登録
+#   ※課金・レート制限の扱いは公式ドキュメントに明記が無い。サブスクの利用上限を消費する
+#     前提でローリング(--budget)にしてある。
 name: classify-drone-pages
 
 on:
