@@ -263,15 +263,19 @@ map.attributionControl.addAttribution('地名検索: <a href="https://www.openst
   input.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); search(); } });
 })();
 
-// ---- 免責モーダル(初回アクセス時に必ず表示。以降はヘッダーの「免責事項」から再表示可) ----
+// ---- 免責モーダル ----
+// sessionStorage を使う。localStorage だと一度「理解しました」を押した人には
+// 二度と出ず、データが変わっても免責を見ないまま使い続けることになる。
+// セッション単位なら、ブラウザを開き直すたびに1回出て、地図↔リストの
+// 行き来では出ない（キーを両ページで共有しているため）。
 (function(){
-  const KEY = 'drone_map_disclaimer_ack_2026-07-13';
+  const KEY = 'drone_map_disclaimer_ack';
   const modal = document.getElementById('disclaimerModal');
   const open  = () => { modal.hidden = false; };
   const close = () => { modal.hidden = true;  };
-  try { if (!localStorage.getItem(KEY)) open(); } catch(e){ open(); }
+  try { if (!sessionStorage.getItem(KEY)) open(); } catch(e){ open(); }
   document.getElementById('agreeDisclaimer').addEventListener('click', () => {
-    try { localStorage.setItem(KEY, '1'); } catch(e){}
+    try { sessionStorage.setItem(KEY, '1'); } catch(e){}
     close();
   });
   document.getElementById('showDisclaimer').addEventListener('click', open);

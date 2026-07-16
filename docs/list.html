@@ -182,13 +182,14 @@ document.getElementById('tabs').addEventListener('click', e=>{
   const t = e.target.closest('.tab'); if(t) load(t.dataset.pref);
 });
 
-// 免責モーダル
+// 免責モーダル。キーと保存先は index.html と揃えること
+// （sessionStorage = セッション毎に1回。localStorage だと二度と出なくなる）
 (function(){
-  const KEY='drone_map_disclaimer_ack_list';
+  const KEY='drone_map_disclaimer_ack';
   const modal=document.getElementById('disclaimerModal');
   const open=()=>modal.hidden=false, close=()=>modal.hidden=true;
-  try{ if(!localStorage.getItem(KEY)) open(); }catch(e){ open(); }
-  document.getElementById('agreeDisclaimer').onclick=()=>{ try{localStorage.setItem(KEY,'1');}catch(e){} close(); };
+  try{ if(!sessionStorage.getItem(KEY)) open(); }catch(e){ open(); }
+  document.getElementById('agreeDisclaimer').onclick=()=>{ try{sessionStorage.setItem(KEY,'1');}catch(e){} close(); };
   document.getElementById('showDisclaimer').onclick=open;
   modal.addEventListener('click',e=>{ if(e.target===modal) close(); });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });

@@ -42,6 +42,9 @@ except ImportError:
     print("依存パッケージが必要です: pip install requests beautifulsoup4", file=sys.stderr)
     raise
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from discover import enqueue  # noqa: E402  変化したページを分類キューに積むのに使う
+
 # PDF は任意依存。無ければ PDF はスキップして続行する。
 try:
     from pdfminer.high_level import extract_text as _pdf_extract_text
@@ -184,6 +187,30 @@ def find_keywords(text, keywords):
     return sorted({k for k in keywords if k in text})
 
 
+def is_common(owner: str) -> bool:
+    """県共通の出典（警察庁・県警の飛行禁止法ページ、県立公園のルール等）か。
+    load_watchlist が「（〇〇県共通）」という owner を付けている。"""
+    return owner.startswith("（") and owner.endswith("共通）")
+
+
+def enqueue_changed(changes):
+    """変化した『自治体の』ページを分類キューに積む。classify が逐語確認して再判定する。
+
+    県共通のページは積まない。あれが指すのは _meta.全域共通 の散文ラベル
+    （例:「…周囲おおむね1,000m原則禁止」）で、分類層の「区分＋逐語引用」の形に
+    収まらず、機械検証(classify_apply)が効かない。検証できないものを自動で
+    サイトに出すのはこのプロジェクトの原則に反するので、レポートとIssueで人に渡す。
+    実例: 令和8年7月14日施行の改正（300m→おおむね1,000m）がこの型。
+    """
+    items = []
+    for pref, owner, url, added, removed, added_kw in changes:
+        if is_common(owner):
+            continue
+        snippet = (added or removed or [""])[0][:160]
+        items.append((pref, owner, url, added_kw or [], snippet, "monitor"))
+    return enqueue(items) if items else 0
+
+
 # ---------------------------------------------------------------- メイン
 def main():
     ap = argparse.ArgumentParser()
@@ -239,9 +266,12 @@ def main():
             open(snap_file, "w", encoding="utf-8"), ensure_ascii=False, indent=1,
         )
 
+    n_queued = enqueue_changed(changes)
+    n_common = sum(1 for c in changes if is_common(c[1]))
     write_report(targets, changes, new_mentions, dead_links, pdf_skipped, n_fetched, n_304)
     print(f"対象{len(targets)} / 取得{n_fetched} / 未変更304:{n_304} / "
-          f"変化{len(changes)} / 新規{len(new_mentions)} / 切れ{len(dead_links)}")
+          f"変化{len(changes)} / 新規{len(new_mentions)} / 切れ{len(dead_links)} / "
+          f"分類キュー投入{n_queued}（うち県共通{n_common}件は人が確認）")
     sys.exit(1 if (changes or dead_links) else 0)
 
 
@@ -263,9 +293,28 @@ def write_report(targets, changes, new_mentions, dead_links, pdf_skipped, n_fetc
                 f.write(f"- **[{pref}] {owner}**: {url}\n")
             f.write("\n")
 
-        if changes:
-            f.write("## 🔄 内容が変化したページ（要確認）\n\n")
-            for pref, owner, url, added, removed, added_kw in changes:
+        common_changes = [c for c in changes if is_common(c[1])]
+        if common_changes:
+            f.write("## 🚨 県共通の出典が変化（**人の対応が必要**）\n\n")
+            f.write("警察庁・県警の飛行禁止法ページ、県立公園のルール等です。ここが変わるのは\n"
+                    "法令改正の可能性があります。**分類層では直せません** — これらが指すのは\n"
+                    "`_meta.全域共通` の散文ラベルで、「区分＋逐語引用」の形にならず\n"
+                    "機械検証(classify_apply)が効かないためです。公式を逐語確認して手で直してください。\n\n"
+                    "前例: 令和8年7月14日施行の改正で対象施設周辺が 300m → おおむね1,000m に拡大。\n\n")
+            for pref, owner, url, added, removed, added_kw in common_changes:
+                f.write(f"### [{pref}] {owner}\n{url}\n\n")
+                if added_kw:
+                    f.write(f"- 新たに出現したキーワード: **{', '.join(added_kw)}**\n")
+                for s in added[:8]:
+                    f.write(f"  - 追加: {s}\n")
+                for s in removed[:8]:
+                    f.write(f"  - 削除: {s}\n")
+                f.write("\n")
+
+        muni_changes = [c for c in changes if not is_common(c[1])]
+        if muni_changes:
+            f.write("## 🔄 自治体のページが変化（分類キューに投入済み・自動で再判定）\n\n")
+            for pref, owner, url, added, removed, added_kw in muni_changes:
                 f.write(f"### [{pref}] {owner}\n{url}\n\n")
                 if added_kw:
                     f.write(f"- 新たに出現したキーワード: **{', '.join(added_kw)}**\n")
