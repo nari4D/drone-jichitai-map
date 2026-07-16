@@ -77,10 +77,20 @@
 const map = L.map('map', { zoomControl: false }).setView([35.60, 139.45], 9);
 L.control.zoom({ position: 'topright' }).addTo(map);  // 地理院地図に合わせズームは右上
 
+// クレジットは全ての背景地図に同じものを付ける。以前は標準地図にしか付いておらず、
+// 淡色地図や航空写真に切り替えると国土数値情報N03の帰属表示が消えていた（N03は
+// クレジット記載が利用条件）。背景を切り替えても表示が変わらないようにする。
+const CREDIT = '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>'
+             + ' | 空域: 国土交通省航空局 | RZ/YZ: 警察庁 | 境界: 国土数値情報N03';
+
+// 既定は淡色地図。この地図は自治体規制の輪郭線・RZ/YZ・DID を上に重ねるので、
+// 背景の色数が少ないほど重ねた情報が読める。
+const pale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+  {attribution: CREDIT, maxZoom:18}).addTo(map);
 const std = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
-  {attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a> | 空域: 国土交通省航空局 | RZ/YZ: 警察庁 | 境界: 国土数値情報N03', maxZoom:18}).addTo(map);
-const pale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {attribution:'地理院タイル', maxZoom:18});
-const photo = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', {attribution:'地理院タイル', maxZoom:18});
+  {attribution: CREDIT, maxZoom:18});
+const photo = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg',
+  {attribution: CREDIT, maxZoom:18});
 
 const did = L.tileLayer('https://maps.gsi.go.jp/xyz/did2020/{z}/{x}/{y}.png',
   {opacity:0.55, minZoom:8, maxZoom:18, attribution:'人口集中地区 令和2年(総務省統計局)'});
@@ -185,7 +195,7 @@ kokuarea.addTo(map);
 
 // 地理院地図に合わせてレイヤー選択パネルは左上・常時展開
 L.control.layers(
-  {'標準地図': std, '淡色地図': pale, '航空写真': photo},
+  {'淡色地図': pale, '標準地図': std, '航空写真': photo},
   {
     '自治体規制': jichitaiReg,
     '人口集中地区(DID 令和2年)': did,
