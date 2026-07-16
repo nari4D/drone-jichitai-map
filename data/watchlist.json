@@ -185,7 +185,8 @@
           "watch_urls": [
             "https://www.city.zama.kanagawa.jp/",
             "https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/003/337/1.pdf",
-            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
+            "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html",
+            "https://www.city.zama.kanagawa.jp/bunkasports/kouen/riyou/1009762.html"
           ]
         },
         "南足柄市": {
@@ -226,10 +227,11 @@
           ]
         },
         "二宮町": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "https://www.town.ninomiya.kanagawa.jp/",
           "watch_urls": [
-            "https://www.town.ninomiya.kanagawa.jp/"
+            "https://www.town.ninomiya.kanagawa.jp/",
+            "https://www.town.ninomiya.kanagawa.jp/0000001277.html"
           ]
         },
         "中井町": {

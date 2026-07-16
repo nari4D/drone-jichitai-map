@@ -1,0 +1,26 @@
+[
+ {
+  "date": "2026-07-16",
+  "muni": "座間市",
+  "pref": "神奈川県",
+  "url": "https://www.city.zama.kanagawa.jp/bunkasports/kouen/riyou/1009762.html",
+  "result": "prohibited",
+  "quote": "ドローンなど無人航空機を公園内で飛行させることは認めていません。"
+ },
+ {
+  "date": "2026-07-16",
+  "muni": "二宮町",
+  "pref": "神奈川県",
+  "url": "https://www.town.ninomiya.kanagawa.jp/0000001277.html",
+  "result": "prohibited",
+  "quote": "無人航空機（ドローン・ラジコン機等）は飛行させないでください。"
+ },
+ {
+  "date": "2026-07-16",
+  "muni": "二宮町",
+  "pref": "神奈川県",
+  "url": "https://www.town.ninomiya.kanagawa.jp/0000001286.html",
+  "result": "unknown",
+  "reason": "引用にドローン語が無い"
+ }
+]
