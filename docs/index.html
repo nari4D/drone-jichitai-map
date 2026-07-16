@@ -81,12 +81,15 @@
     /* 下端に降ろしたズーム・レイヤー選択がクレジット行に重ならないよう逃がす */
     .leaflet-bottom .leaflet-control-layers,
     .leaflet-bottom .leaflet-control-zoom{margin-bottom:22px;}
-    /* 自治体ポップアップが画面を覆いすぎるので一回り小さく */
-    .leaflet-popup-content{font-size:11px;line-height:1.55;max-height:44vh;overflow:auto;}
-    .leaflet-popup-content h3{font-size:12px;}
-    .leaflet-popup-content .cat{font-size:10px;}
-    .leaflet-popup-content .quote{font-size:10px;padding:3px 6px;}
-    .leaflet-popup-content .hp{font-size:10px;}
+    /* 自治体ポップアップが画面を覆いすぎるので一回り小さく(幅はJSのmaxWidthで
+       絞る)。フォントは読みやすさ優先でPCと同じまま。背が高いときはスクロール */
+    .leaflet-popup-content{max-height:44vh;overflow:auto;}
+    /* レイヤー選択はスマホでは左下。開いたときトグルボタンが消えて閉じられ
+       なくなるので、リストをボタンの上に積み、ボタンを下に残す(再タップで閉じる) */
+    .leaflet-control-layers-expanded{display:flex;flex-direction:column-reverse;max-height:none;overflow:visible;}
+    .leaflet-control-layers-expanded .leaflet-control-layers-list{max-height:52vh;overflow:auto;}
+    .leaflet-control-layers-expanded .leaflet-control-layers-toggle{
+      display:block;width:36px;height:36px;margin:4px auto 0;border-top:1px solid #e0e0e0;}
   }
 </style>
 </head>
@@ -243,7 +246,7 @@ kokuarea.addTo(map);
 // スマホでは画面の大半をパネルが覆ってしまい地図がほとんど見えないので、
 // 狭い画面ではレイヤー選択も凡例も畳んだ状態から始める(タップで開く)。
 // 広い画面は地理院地図に合わせて左上・常時展開。スマホは左下。
-L.control.layers(
+const layersCtrl = L.control.layers(
   {'淡色地図': pale, '標準地図': std, '航空写真': photo},
   {
     '自治体規制': jichitaiReg,
@@ -258,6 +261,23 @@ L.control.layers(
   },
   {collapsed:isNarrow, position: isNarrow ? 'bottomleft' : 'topleft'}
 ).addTo(map);
+
+// スマホではトグルボタンをリストの下に残す(CSS)。ただし Leaflet のタッチ実装は
+// トグルのタップで開くだけで閉じないので、開いている間の再タップで畳めるようにする。
+// 注意: タッチ環境では Leaflet 自身も click で expand する。同じ click で
+// 「Leaflet が開く → 自分が"開いてるから閉じる"と誤判定して即閉じる」と開けなく
+// なるため、タップ前の状態をキャプチャ相で記録し、元々開いていた時だけ畳む。
+if (isNarrow) {
+  const c = layersCtrl.getContainer();
+  const toggle = c.querySelector('.leaflet-control-layers-toggle');
+  let wasExpanded = false;
+  toggle.addEventListener('click', () => {
+    wasExpanded = c.classList.contains('leaflet-control-layers-expanded');
+  }, true);  // キャプチャ相: Leaflet の展開より前にタップ前の状態を控える
+  toggle.addEventListener('click', (e) => {
+    if (wasExpanded) { e.preventDefault(); e.stopPropagation(); layersCtrl.collapse(); }
+  }, false); // バブル相: Leaflet の展開ハンドラより後に走る
+}
 
 // 凡例は左下。スマホでは左下をレイヤー選択に譲り、読むだけの凡例を左上へ
 const legend = L.control({position: isNarrow ? 'topleft' : 'bottomleft'});
