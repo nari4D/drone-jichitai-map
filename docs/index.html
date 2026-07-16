@@ -73,14 +73,13 @@
     header .navbtn{padding:5px 7px;flex-shrink:0;}
     #map{top:0;bottom:46px;}
     .legend{font-size:11px;line-height:1.6;max-width:calc(100vw - 24px);padding:8px 10px;}
+    /* 上端に移した出典クレジット(フル幅・約16px)の下に凡例を逃がす */
+    .leaflet-top .legend{margin-top:22px;}
     .modal{padding:18px 16px;max-height:88vh;}
     .modal h2{font-size:16px;}
     /* 出典クレジットは常時表示で縦幅を食っていた。半分程度に縮める
        (クレジット自体は N03 等の利用条件なので消さない) */
     .leaflet-control-attribution{font-size:6px;line-height:1.35;padding:0 4px;}
-    /* 下端に降ろしたズーム・レイヤー選択がクレジット行に重ならないよう逃がす */
-    .leaflet-bottom .leaflet-control-layers,
-    .leaflet-bottom .leaflet-control-zoom{margin-bottom:22px;}
     /* 自治体ポップアップが画面を覆いすぎるので一回り小さく(幅はJSのmaxWidthで
        絞る)。フォントは読みやすさ優先でPCと同じまま。背が高いときはスクロール */
     .leaflet-popup-content{max-height:44vh;overflow:auto;}
@@ -89,7 +88,7 @@
     .leaflet-control-layers-expanded{display:flex;flex-direction:column-reverse;max-height:none;overflow:visible;}
     .leaflet-control-layers-expanded .leaflet-control-layers-list{max-height:52vh;overflow:auto;}
     .leaflet-control-layers-expanded .leaflet-control-layers-toggle{
-      display:block;width:36px;height:36px;margin:4px auto 0;border-top:1px solid #e0e0e0;}
+      display:block;width:36px;height:36px;margin:4px 0 0;align-self:flex-start;border-top:1px solid #e0e0e0;}
   }
 </style>
 </head>
@@ -126,6 +125,8 @@ const isNarrow = window.matchMedia('(max-width: 700px)').matches;
 const map = L.map('map', { zoomControl: false }).setView([35.60, 139.45], 9);
 // 広い画面は地理院地図に合わせて右上。スマホは右下。
 L.control.zoom({ position: isNarrow ? 'bottomright' : 'topright' }).addTo(map);
+// スマホでは出典クレジットを左下のレイヤーパネルから離すため上端へ(誤タップ防止)。
+if (isNarrow) map.attributionControl.setPosition('topright');
 
 // クレジットは全ての背景地図に同じものを付ける。以前は標準地図にしか付いておらず、
 // 淡色地図や航空写真に切り替えると国土数値情報N03の帰属表示が消えていた（N03は
