@@ -107,7 +107,15 @@ def url_key(url: str) -> str:
 # ---------------------------------------------------------------- 取得
 def fetch(url, prev):
     """条件付きGETで取得。戻り値 dict:
-       {status:'ok'|'304'|'dead', text, etag, last_modified, is_pdf}"""
+       {status:'ok'|'304'|'dead'|'blocked', code, text, etag, last_modified, is_pdf}
+
+    dead と blocked を分ける理由:
+      以前は 200 以外を全て dead（リンク切れ）扱いにしていたが、実際には
+      「ページが消えた(404)」と「サイトは生きているがこちらを拒否している(403)」は
+      対応が全く違う。前者は出典URLの差し替えが要り、後者は URL を直しても意味がない。
+      実例: 東村山市の公式トップは UA によって 403 を返す（ブラウザのUAなら200）。
+      これを「リンク切れ」と報告すると、毎週直しようのない誤検知が出続ける。
+    """
     headers = {"User-Agent": UA}
     if prev:
         if prev.get("etag"):
@@ -118,13 +126,19 @@ def fetch(url, prev):
         r = requests.get(url, headers=headers, timeout=TIMEOUT)
     except Exception as e:
         print(f"  ! fetch error {url}: {e}", file=sys.stderr)
-        return {"status": "dead", "text": None, "etag": None, "last_modified": None, "is_pdf": False}
+        return {"status": "dead", "code": None, "text": None,
+                "etag": None, "last_modified": None, "is_pdf": False}
 
     if r.status_code == 304:
-        return {"status": "304", "text": None,
+        return {"status": "304", "code": 304, "text": None,
                 "etag": prev.get("etag"), "last_modified": prev.get("last_modified"), "is_pdf": False}
+    if r.status_code in (401, 403, 429) or r.status_code >= 500:
+        # 拒否・過負荷・サーバ障害。URLは正しい可能性が高いので「切れ」とは別に扱う
+        return {"status": "blocked", "code": r.status_code, "text": None,
+                "etag": None, "last_modified": None, "is_pdf": False}
     if r.status_code != 200:
-        return {"status": "dead", "text": None, "etag": None, "last_modified": None, "is_pdf": False}
+        return {"status": "dead", "code": r.status_code, "text": None,
+                "etag": None, "last_modified": None, "is_pdf": False}
 
     ctype = (r.headers.get("Content-Type") or "").lower()
     is_pdf = "pdf" in ctype or url.lower().split("?")[0].endswith(".pdf")
@@ -133,7 +147,7 @@ def fetch(url, prev):
     else:
         r.encoding = r.apparent_encoding or r.encoding
         text = r.text
-    return {"status": "ok", "text": text,
+    return {"status": "ok", "code": 200, "text": text,
             "etag": r.headers.get("ETag"), "last_modified": r.headers.get("Last-Modified"),
             "is_pdf": is_pdf}
 
@@ -224,7 +238,7 @@ def main():
     if args.limit:
         targets = targets[: args.limit]
 
-    changes, new_mentions, dead_links, pdf_skipped = [], [], [], []
+    changes, new_mentions, dead_links, blocked, pdf_skipped = [], [], [], [], []
     n_fetched = n_304 = 0
 
     for pref, owner, url in targets:
@@ -232,6 +246,9 @@ def main():
         prev = json.load(open(snap_file, encoding="utf-8")) if snap_file.exists() else None
 
         res = fetch(url, prev)
+        if res["status"] == "blocked":
+            blocked.append((pref, owner, url, res["code"]))
+            continue
         if res["status"] == "dead":
             dead_links.append((pref, owner, url))
             continue
@@ -268,29 +285,41 @@ def main():
 
     n_queued = enqueue_changed(changes)
     n_common = sum(1 for c in changes if is_common(c[1]))
-    write_report(targets, changes, new_mentions, dead_links, pdf_skipped, n_fetched, n_304)
+    write_report(targets, changes, new_mentions, dead_links, blocked, pdf_skipped, n_fetched, n_304)
     print(f"対象{len(targets)} / 取得{n_fetched} / 未変更304:{n_304} / "
           f"変化{len(changes)} / 新規{len(new_mentions)} / 切れ{len(dead_links)} / "
-          f"分類キュー投入{n_queued}（うち県共通{n_common}件は人が確認）")
+          f"拒否{len(blocked)} / 分類キュー投入{n_queued}（うち県共通{n_common}件は人が確認）")
+    # blocked では Issue を立てない。URLを直しても解決せず、毎週同じ通知が出続けるため。
+    # レポートには記録するので、増え続けるようなら気づける。
     sys.exit(1 if (changes or dead_links) else 0)
 
 
-def write_report(targets, changes, new_mentions, dead_links, pdf_skipped, n_fetched, n_304):
+def write_report(targets, changes, new_mentions, dead_links, blocked, pdf_skipped, n_fetched, n_304):
     report = REPORTS / f"diff_{TODAY}.md"
     with open(report, "w", encoding="utf-8") as f:
         f.write(f"# ドローン規制ページ 巡回差分レポート {TODAY}\n\n")
         f.write(f"- 監視URL数: {len(targets)}（取得 {n_fetched} / 未変更304 {n_304}）\n")
         f.write(f"- 内容変化: {len(changes)} / 新規登録: {len(new_mentions)} / "
-                f"到達不可: {len(dead_links)}\n")
+                f"リンク切れ: {len(dead_links)} / アクセス拒否: {len(blocked)}\n")
         if pdf_skipped and not HAVE_PDF:
             f.write(f"- ⚠ PDF未対応環境のため {len(pdf_skipped)} 件のPDFは本文未取得"
                     f"（`pip install pdfminer.six` で解消）\n")
         f.write("\n")
 
         if dead_links:
-            f.write("## ⚠ リンク切れ / 到達不可（要URL修正）\n\n")
+            f.write("## ⚠ リンク切れ（要URL修正・404等）\n\n")
+            f.write("ページが消えたか移転しています。公式サイトで新しいURLを探して差し替えてください。\n\n")
             for pref, owner, url in dead_links:
                 f.write(f"- **[{pref}] {owner}**: {url}\n")
+            f.write("\n")
+
+        if blocked:
+            f.write("## ℹ アクセス拒否（対応不要なことが多い）\n\n")
+            f.write("サイトは生きているが、こちらのUser-Agentやアクセス頻度を弾いています。\n"
+                    "**URLを直しても解決しません。** 403 はWAFがボットを一律に弾いている場合が多く、\n"
+                    "429/5xx は一時的な過負荷・障害です。件数が増え続けるようなら見てください。\n\n")
+            for pref, owner, url, code in blocked:
+                f.write(f"- **[{pref}] {owner}**: `{code}` {url}\n")
             f.write("\n")
 
         common_changes = [c for c in changes if is_common(c[1])]
