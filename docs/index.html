@@ -16,6 +16,11 @@
   header h1{font-size:15px;margin:0;font-weight:600;white-space:nowrap;}
   header .sub{font-size:11px;color:#9fb3c8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   header .day{font-size:11px;color:#ffd54f;font-weight:600;white-space:nowrap;}
+  header .ghlink{font-size:11px;color:#9fb3c8;text-decoration:none;white-space:nowrap;
+    border-bottom:1px dotted rgba(159,179,200,.6);}
+  header .ghlink:hover{color:#fff;border-bottom-color:#fff;}
+  /* スマホでは上端に別のタイトルバーを出す。デスクトップでは非表示 */
+  .mtitle{display:none;}
   header .spacer{flex:1;}
   header .navbtn{font-size:11px;color:#cfe0ee;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);
     border-radius:5px;padding:4px 9px;cursor:pointer;text-decoration:none;white-space:nowrap;}
@@ -67,15 +72,21 @@
      レイヤー選択は左下・ズームは右下(JS側で位置を切り替え)。
      指の届かない上端に残すのは、開きっぱなしにしない凡例だけ。 */
   @media (max-width: 700px){
+    /* タイトルは上端の専用バーへ(見切れ防止)。その下に出典、さらに下に凡例。
+       検索・ボタン等の操作系は片手で届く下端に残す。 */
+    .mtitle{display:flex;align-items:center;position:absolute;top:0;left:0;right:0;height:34px;
+      background:#1a2733;color:#fff;font-size:15px;font-weight:600;padding:0 12px;
+      box-sizing:border-box;z-index:1000;}
     header{top:auto;bottom:0;height:46px;padding:0 8px;gap:6px;}
-    header h1{font-size:13px;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1;}
-    header .sub{display:none;}
+    header h1{display:none;}
+    header .sub, header .ghlink{display:none;}
     header .spacer{display:none;}
-    header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;margin-left:auto;}
+    header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;}
     header .navbtn{padding:5px 7px;flex-shrink:0;}
-    #map{top:0;bottom:46px;}
+    /* タイトルバー(34px)の下から地図。地図の上端に出典→その下に凡例が並ぶ */
+    #map{top:34px;bottom:46px;}
     .legend{font-size:11px;line-height:1.6;max-width:calc(100vw - 24px);padding:8px 10px;}
-    /* 上端に移した出典クレジット(フル幅・約16px)の下に凡例を逃がす */
+    /* 出典クレジット(フル幅・約16px)の下に凡例を逃がす */
     .leaflet-top .legend{margin-top:22px;}
     .modal{padding:18px 16px;max-height:88vh;}
     .modal h2{font-size:16px;}
@@ -95,9 +106,11 @@
 </style>
 </head>
 <body>
+<div class="mtitle">自治体ドローン規制マップ</div>
 <header>
   <h1>自治体ドローン規制マップ</h1>
   <span class="sub">自治体規制 + 航空局空域 + 飛行禁止法RZ/YZ + DID | 境界: 国土交通省 国土数値情報N03(2025)</span>
+  <a class="ghlink" href="https://github.com/nari4D/drone-jichitai-map" target="_blank" rel="noopener">GitHub</a>
   <span class="spacer"></span>
   <input id="placeSearch" type="search" placeholder="地名で移動" autocomplete="off">
   <a class="navbtn" href="list.html">リスト版</a>
