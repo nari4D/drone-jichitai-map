@@ -77,14 +77,27 @@
     .mtitle{display:flex;align-items:center;position:absolute;top:0;left:0;right:0;height:34px;
       background:#1a2733;color:#fff;font-size:15px;font-weight:600;padding:0 12px;
       box-sizing:border-box;z-index:1000;}
-    header{top:auto;bottom:0;height:46px;padding:0 8px;gap:6px;}
+    .mtitle-gh{margin-left:auto;padding-left:10px;font-size:12px;font-weight:normal;color:#cfe0ee;
+      text-decoration:none;border-bottom:1px dotted rgba(207,224,238,.6);}
+    /* 下端の操作系は帯を敷かず、検索ボックス・ボタンだけを地図の上に浮かせる。
+       透明ヘッダーが地図タップを食わないよう、隙間はpointer-eventsを抜く。 */
+    header{top:auto;bottom:0;height:46px;padding:0 8px;gap:6px;background:transparent;
+      box-shadow:none;pointer-events:none;}
+    header > *{pointer-events:auto;}
     header h1{display:none;}
     header .sub, header .ghlink{display:none;}
     header .spacer{display:none;}
-    header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;}
-    header .navbtn{padding:5px 7px;flex-shrink:0;}
+    header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;
+      box-shadow:0 1px 4px rgba(0,0,0,.35);}
+    /* 帯が無いので、ボタンは地図の上でも読めるよう単体で完結する濃色チップに */
+    header .navbtn{padding:6px 9px;flex-shrink:0;background:#1a2733;color:#fff;
+      border-color:transparent;box-shadow:0 1px 4px rgba(0,0,0,.35);}
     /* タイトルバー(34px)の下から地図。地図の上端に出典→その下に凡例が並ぶ */
-    #map{top:34px;bottom:46px;}
+    #map{top:34px;bottom:0;}
+    /* 下端に浮かせた操作系(検索・ボタン)と、左下レイヤー・右下ズームが
+       重ならないよう、地図側コントロールを帯のぶん上へ逃がす */
+    .leaflet-bottom .leaflet-control-layers,
+    .leaflet-bottom .leaflet-control-zoom{margin-bottom:52px;}
     .legend{font-size:11px;line-height:1.6;max-width:calc(100vw - 24px);padding:8px 10px;}
     /* 出典クレジット(フル幅・約16px)の下に凡例を逃がす */
     .leaflet-top .legend{margin-top:22px;}
@@ -106,7 +119,7 @@
 </style>
 </head>
 <body>
-<div class="mtitle">自治体ドローン規制マップ</div>
+<div class="mtitle"><span>自治体ドローン規制マップ</span><a class="mtitle-gh" href="https://github.com/nari4D/drone-jichitai-map" target="_blank" rel="noopener">GitHub</a></div>
 <header>
   <h1>自治体ドローン規制マップ</h1>
   <span class="sub">自治体規制 + 航空局空域 + 飛行禁止法RZ/YZ + DID | 境界: 国土交通省 国土数値情報N03(2025)</span>
