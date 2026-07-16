@@ -69,9 +69,11 @@ jobs:
           # このリポジトリでは安全: トークンは GitHub が自動マスクし(ログの *** が実証)、
           # Claude が触れるのは公開中の自治体ページと判定ファイルだけ。Bash も無い。
           show_full_output: true
+          # --model は指定しない（既定に任せる）。claude-sonnet-5 を指定していたが、
+          # SDK options のダンプに model も max-turns も現れず、指定が効いているか不明。
+          # 原因が確定したら必要に応じて戻す。
           claude_args: |
             --max-turns 40
-            --model claude-sonnet-5
             --allowedTools "Read,Write"
           prompt: |
             あなたは自治体のドローン規制を分類するバッチ処理です。人間との対話ではありません。
