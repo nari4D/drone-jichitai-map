@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 自治体ドローン規制マップ ファビコン: クアッドコプターの上面図(白ベース) -->
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="#ffffff" stroke="#cfd8dc" stroke-width="2"/>
+  <!-- X字のアーム(中心↔各ローターハブ) -->
+  <g stroke="#546e7a" stroke-width="5" stroke-linecap="round">
+    <line x1="17" y1="17" x2="47" y2="47"/>
+    <line x1="47" y1="17" x2="17" y2="47"/>
+  </g>
+  <!-- 4つのローター -->
+  <g fill="none" stroke="#1565c0" stroke-width="4.5">
+    <circle cx="17" cy="17" r="9"/>
+    <circle cx="47" cy="17" r="9"/>
+    <circle cx="17" cy="47" r="9"/>
+    <circle cx="47" cy="47" r="9"/>
+  </g>
+  <!-- 機体本体 -->
+  <rect x="24" y="24" width="16" height="16" rx="4" fill="#e53935"/>
+</svg>
