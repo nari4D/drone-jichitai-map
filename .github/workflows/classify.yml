@@ -65,11 +65,14 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 【一時的】原因調査のため Claude の出力を表示する。判明したら必ず false に戻す。
+          # このリポジトリでは安全: トークンは GitHub が自動マスクし(ログの *** が実証)、
+          # Claude が触れるのは公開中の自治体ページと判定ファイルだけ。Bash も無い。
+          show_full_output: true
           claude_args: |
             --max-turns 40
             --model claude-sonnet-5
             --allowedTools "Read,Write"
-            --debug
           prompt: |
             あなたは自治体のドローン規制を分類するバッチ処理です。人間との対話ではありません。
 
