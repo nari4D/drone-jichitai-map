@@ -69,6 +69,7 @@ jobs:
             --max-turns 40
             --model claude-sonnet-5
             --allowedTools "Read,Write"
+            --debug
           prompt: |
             あなたは自治体のドローン規制を分類するバッチ処理です。人間との対話ではありません。
 
