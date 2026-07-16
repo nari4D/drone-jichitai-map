@@ -58,19 +58,35 @@
      ヘッダーの中身(長い副題+検索+ボタン2つ)が nowrap で横にはみ出し、
      ページ全体が横スクロールしていた。position:fixed の免責モーダルまで
      右にずれて見切れる原因がこれ。副題を隠して各要素を縮める。
-     地図が主役なので、レイヤーパネルと凡例は畳んだ状態から始める。 */
+     地図が主役なので、レイヤーパネルと凡例は畳んだ状態から始める。
+
+     片手で操作できることを優先し、触るものは全部下端に寄せる:
+     ヘッダー(検索・リスト版・免責)を下、地図を上に入れ替え、
+     レイヤー選択は左下・ズームは右下(JS側で位置を切り替え)。
+     指の届かない上端に残すのは、開きっぱなしにしない凡例だけ。 */
   @media (max-width: 700px){
-    header{height:46px;padding:0 8px;gap:6px;}
+    header{top:auto;bottom:0;height:46px;padding:0 8px;gap:6px;}
     header h1{font-size:13px;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1;}
     header .sub{display:none;}
     header .spacer{display:none;}
     header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;margin-left:auto;}
     header .navbtn{padding:5px 7px;flex-shrink:0;}
-    #map{top:46px;}
+    #map{top:0;bottom:46px;}
     .legend{font-size:11px;line-height:1.6;max-width:calc(100vw - 24px);padding:8px 10px;}
-    .leaflet-popup-content{font-size:12px;}
     .modal{padding:18px 16px;max-height:88vh;}
     .modal h2{font-size:16px;}
+    /* 出典クレジットは常時表示で縦幅を食っていた。半分程度に縮める
+       (クレジット自体は N03 等の利用条件なので消さない) */
+    .leaflet-control-attribution{font-size:6px;line-height:1.35;padding:0 4px;}
+    /* 下端に降ろしたズーム・レイヤー選択がクレジット行に重ならないよう逃がす */
+    .leaflet-bottom .leaflet-control-layers,
+    .leaflet-bottom .leaflet-control-zoom{margin-bottom:22px;}
+    /* 自治体ポップアップが画面を覆いすぎるので一回り小さく */
+    .leaflet-popup-content{font-size:11px;line-height:1.55;max-height:44vh;overflow:auto;}
+    .leaflet-popup-content h3{font-size:12px;}
+    .leaflet-popup-content .cat{font-size:10px;}
+    .leaflet-popup-content .quote{font-size:10px;padding:3px 6px;}
+    .leaflet-popup-content .hp{font-size:10px;}
   }
 </style>
 </head>
@@ -100,8 +116,13 @@
   </div>
 </div>
 <script>
+// スマホは片手操作が前提。触るもの(ズーム・レイヤー選択・ヘッダー)は
+// 全部、親指の届く下端に寄せる。ヘッダーの上下入れ替えはCSS側。
+const isNarrow = window.matchMedia('(max-width: 700px)').matches;
+
 const map = L.map('map', { zoomControl: false }).setView([35.60, 139.45], 9);
-L.control.zoom({ position: 'topright' }).addTo(map);  // 地理院地図に合わせズームは右上
+// 広い画面は地理院地図に合わせて右上。スマホは右下。
+L.control.zoom({ position: isNarrow ? 'bottomright' : 'topright' }).addTo(map);
 
 // クレジットは全ての背景地図に同じものを付ける。以前は標準地図にしか付いておらず、
 // 淡色地図や航空写真に切り替えると国土数値情報N03の帰属表示が消えていた（N03は
@@ -197,7 +218,7 @@ function makeRegLayer(gj){
       }
       if (p['備考']) html += '<div style="color:#a05a00">※ ' + esc(p['備考']) + '</div>';
       html += '<div style="color:#888;font-size:10px">情報確認日: ' + esc(p['確認日']) + '</div>';
-      l.bindPopup(html, {maxWidth: 340});
+      l.bindPopup(html, {maxWidth: isNarrow ? 250 : 340});
       l.on('mouseover', () => l.setStyle({weight: 4, fillOpacity: 0.18}));
       l.on('mouseout',  () => gl.resetStyle(l));
     }
@@ -221,9 +242,7 @@ kokuarea.addTo(map);
 
 // スマホでは画面の大半をパネルが覆ってしまい地図がほとんど見えないので、
 // 狭い画面ではレイヤー選択も凡例も畳んだ状態から始める(タップで開く)。
-const isNarrow = window.matchMedia('(max-width: 700px)').matches;
-
-// 地理院地図に合わせてレイヤー選択パネルは左上。広い画面では常時展開
+// 広い画面は地理院地図に合わせて左上・常時展開。スマホは左下。
 L.control.layers(
   {'淡色地図': pale, '標準地図': std, '航空写真': photo},
   {
@@ -237,11 +256,11 @@ L.control.layers(
     '進入管制区': shinnyuu,
     '民間訓練試験空域': minkan
   },
-  {collapsed:isNarrow, position:'topleft'}
+  {collapsed:isNarrow, position: isNarrow ? 'bottomleft' : 'topleft'}
 ).addTo(map);
 
-// 凡例は左下
-const legend = L.control({position:'bottomleft'});
+// 凡例は左下。スマホでは左下をレイヤー選択に譲り、読むだけの凡例を左上へ
+const legend = L.control({position: isNarrow ? 'topleft' : 'bottomleft'});
 legend.onAdd = () => {
   const d = L.DomUtil.create('details', 'legend');
   d.open = !isNarrow;
