@@ -91,7 +91,7 @@ def apply_one(reg, item, cat, quote, summary):
     src = {"label": f"{name} 公式（自動分類 {TODAY} 確認）", "url": item["url"], "quote": quote}
 
     if cur is None:
-        munis[name] = {"category": cat, "summary": summary, "sources": [src]}
+        munis[name] = {"category": cat, "summary": summary, "確認日": TODAY, "sources": [src]}
         # 詳細が付いた自治体は unknown_simple から外す
         us = reg.get("unknown_simple")
         if isinstance(us, list) and name in us:
@@ -110,6 +110,11 @@ def apply_one(reg, item, cat, quote, summary):
     if item["url"] not in urls:
         cur["sources"].append(src)
         changed = True
+    if changed:
+        # 確認日は「触った自治体だけ」に付ける。_meta.確認日(県の一括調査日)は書き換えない。
+        # 以前は _meta 側を今日に更新しており、1件しか確認していなくても全自治体が
+        # 今日確認済みに見えてしまっていた。
+        cur["確認日"] = TODAY
     return changed
 
 
@@ -177,7 +182,6 @@ def main():
 
     if not args.dry_run:
         for pref, reg in regs.items():
-            reg["_meta"]["確認日"] = TODAY
             json.dump(reg, open(DATA / PREF_FILES[pref], "w", encoding="utf-8"),
                       ensure_ascii=False, indent=1)
         dequeue(done_urls, log_rows)

@@ -1,7 +1,7 @@
 {
  "_meta": {
   "都道府県": "東京都",
-  "確認日": "2026-07-16",
+  "確認日": "2026-07-13",
   "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。分類は各自治体の公式ページを一次情報として確認（ブログ等の二次情報は根拠に用いない）。まず23特別区を先行調査。",
   "全域共通": [
    {
@@ -38,7 +38,8 @@
     "line": "#455a64",
     "fillOpacity": 0.18
    }
-  }
+  },
+  "_確認日の意味": "この県を一括で調査した日。個々の自治体を最後に確認した日は municipalities[].確認日 を見ること（無い場合はこの一括調査日）。"
  },
  "municipalities": {
   "新宿区": {
@@ -49,7 +50,8 @@
      "label": "新宿区 公園等の利用ルール（ドローン使用不可を明記）",
      "url": "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "文京区": {
    "category": "prohibited",
@@ -59,7 +61,8 @@
      "label": "文京区 公園（児童遊園）のルール（無人機等の飛行禁止を明記）",
      "url": "https://www.city.bunkyo.lg.jp/b036/p004915.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "墨田区": {
    "category": "prohibited",
@@ -69,7 +72,8 @@
      "label": "墨田区 区立公園での撮影について（ドローン使用の撮影は禁止）",
      "url": "https://www.city.sumida.lg.jp/sisetu_info/kouen/kouensenyou/satuei.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "江東区": {
    "category": "prohibited",
@@ -79,7 +83,8 @@
      "label": "江東区 公園の利用について（無人航空機は一律禁止）",
      "url": "https://www.city.koto.lg.jp/470705/machizukuri/kasenkoen/riyo/20240207kouenriyou_backup.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "大田区": {
    "category": "prohibited",
@@ -89,7 +94,8 @@
      "label": "大田区 公園のご利用に関して（ドローンの使用を禁止）",
      "url": "https://www.city.ota.tokyo.jp/shisetsu/park/rule_park.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "中野区": {
    "category": "prohibited",
@@ -99,7 +105,8 @@
      "label": "中野区 公園案内・利用ルール（ドローン・ラジコン等の使用を禁止）",
      "url": "https://www.city.tokyo-nakano.lg.jp/machizukuri/kouen/kouensiyou/riyorule.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "練馬区": {
    "category": "prohibited",
@@ -109,7 +116,8 @@
      "label": "練馬区 区立公園・緑地・児童遊園・スポーツ施設でのドローン使用を全面禁止",
      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/oshirase/drone2.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "板橋区": {
    "category": "prohibited",
@@ -119,7 +127,8 @@
      "label": "板橋区 公園内でのドローン・ラジコン機等の使用禁止について",
      "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "江戸川区": {
    "category": "prohibited",
@@ -129,7 +138,8 @@
      "label": "江戸川区 公園の利用ルール（ドローン・ラジコン等の飛行禁止・公園条例第七条）",
      "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/riyou.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "台東区": {
    "category": "prohibited",
@@ -139,7 +149,8 @@
      "label": "台東区 公園、児童遊園利用上のルール（リモコン飛行機・ドローン等の飛行を禁止）",
      "url": "https://www.city.taito.lg.jp/kenchiku/hanamidori/koen/riyo.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "千代田区": {
    "category": "prohibited",
@@ -149,7 +160,8 @@
      "label": "千代田区 外濠公園総合グラウンド利用案内（公園内でのドローン使用は禁止）",
      "url": "https://www.city.chiyoda.lg.jp/koho/bunka/sports/shisetsu/sotoborikoen-sogoground.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "八王子市": {
    "category": "prohibited",
@@ -159,7 +171,8 @@
      "label": "八王子市 公園でラジコン飛行機やドローン等を飛ばしたい（使用不可・上空通過含む）",
      "url": "https://www.city.hachioji.tokyo.jp/shisetsu/109/p011993.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "立川市": {
    "category": "prohibited",
@@ -169,7 +182,8 @@
      "label": "立川市 公園に関するよくある質問と答え（ドローン・ラジコンの使用は禁止）",
      "url": "https://www.city.tachikawa.lg.jp/kanko/sports/1002924/1002999.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "三鷹市": {
    "category": "prohibited",
@@ -179,7 +193,8 @@
      "label": "三鷹市 公園の使用について（ドローン・ラジコンの飛行は禁止）",
      "url": "https://www.city.mitaka.lg.jp/c_service/000/000747.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "国分寺市": {
    "category": "prohibited",
@@ -189,7 +204,8 @@
      "label": "国分寺市 市立公園で禁止されていることにはどんなことがありますか（ドローンの使用を禁止）",
      "url": "https://www.city.kokubunji.tokyo.jp/faq/kurashi/1005237/1005280/1005945.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   },
   "多摩市": {
    "category": "prohibited",
@@ -199,7 +215,8 @@
      "label": "多摩市 無人航空機などの使用について（公園・緑地での使用は原則禁止）",
      "url": "https://www.city.tama.lg.jp/kurashi/kouen/riyou/1002525.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-13"
   }
  },
  "unknown_simple": [

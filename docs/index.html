@@ -28,6 +28,9 @@
   .leaflet-popup-content{font-size:12px;line-height:1.6;max-width:330px;}
   .leaflet-popup-content h3{margin:0 0 4px;font-size:13px;}
   .leaflet-popup-content .cat{display:inline-block;padding:1px 6px;border-radius:3px;color:#fff;font-size:11px;margin-bottom:6px;}
+  /* 公式ページからの逐語引用。これが根拠そのもの */
+  .leaflet-popup-content .quote{margin:2px 0 6px;padding:4px 8px;border-left:3px solid #b0bec5;
+    background:#f5f7f8;color:#334;font-size:11px;line-height:1.5;}
   .leaflet-popup-content .hp{margin:6px 0;padding:4px 6px;background:#eef4fa;border-radius:4px;}
   .leaflet-popup-content a{word-break:break-all;}
   /* 免責モーダル */
@@ -49,9 +52,8 @@
 <header>
   <h1>自治体ドローン規制マップ</h1>
   <span class="sub">自治体規制 + 航空局空域 + 飛行禁止法RZ/YZ + DID | 境界: 国土交通省 国土数値情報N03(2025)</span>
-  <span class="day">情報確認日 2026-07-13</span>
   <span class="spacer"></span>
-  <input id="placeSearch" type="search" placeholder="地名で移動 (例: 横浜市中区)" autocomplete="off">
+  <input id="placeSearch" type="search" placeholder="地名で移動" autocomplete="off">
   <a class="navbtn" href="list.html">リスト版</a>
   <button class="navbtn" id="showDisclaimer">免責事項</button>
 </header>
@@ -67,7 +69,7 @@
       <li>グレーは<b>「自治体独自の規制は確認されず（国の航空法等のみ）」</b>の意味です。飛行可否は国の規制とDIPSで確認してください。</li>
       <li>自治体規制の分類は各自治体の公式ページを一次情報として確認しています。国の空域・RZ/YZ等は地理院地図と同一データの参考表示です。</li>
     </ul>
-    <p style="font-size:12px;color:#666;">情報確認日: 2026-07-13 ／ 境界: 国土交通省 国土数値情報N03(2025)</p>
+    <p style="font-size:12px;color:#666;">情報を確認した日は自治体ごとに異なります。各自治体をクリックすると、その自治体の確認日が表示されます。／ 境界: 国土交通省 国土数値情報N03(2025)</p>
     <button class="primary" id="agreeDisclaimer">内容を理解しました</button>
   </div>
 </div>
@@ -152,9 +154,10 @@ function makeRegLayer(gj){
       if (p['公式HP']) html += '<div class="hp">&#127970; ' + link(p['公式HP'], p['自治体'] + ' 公式ホームページ') + '</div>';
       html += '<div>' + esc(p['規制概要']) + '</div>';
       for (let i = 1; i <= 5; i++) {
-        const label = p['出典' + i], url = p['出典' + i + '_URL'];
+        const label = p['出典' + i], url = p['出典' + i + '_URL'], quote = p['出典' + i + '_引用'];
         if (!label) break;
         html += '<div>出典' + i + ': ' + (url ? link(url, label) : esc(label)) + '</div>';
+        if (quote) html += '<blockquote class="quote">' + esc(quote) + '</blockquote>';
       }
       if (p['備考']) html += '<div style="color:#a05a00">※ ' + esc(p['備考']) + '</div>';
       html += '<div style="color:#888;font-size:10px">情報確認日: ' + esc(p['確認日']) + '</div>';
@@ -202,9 +205,8 @@ const legend = L.control({position:'bottomleft'});
 legend.onAdd = () => {
   const d = L.DomUtil.create('div', 'legend');
   d.innerHTML =
-    '<b>自治体規制(公式確認日 2026-07-03/07-13)</b> <span style="font-size:10px;color:#666">※輪郭線</span><br>' +
+    '<b>自治体規制</b> <span style="font-size:10px;color:#666">※輪郭線・確認日は各自治体をクリック</span><br>' +
     '<span class="sw" style="background:transparent;border:3px solid #6a1b9a"></span>市区管理公園等で原則禁止(公式確認済)<br>' +
-    '<span class="sw" style="background:transparent;border:3px solid #8e24aa"></span>公園条例等で原則禁止(二次情報)<br>' +
     '<span class="sw" style="background:transparent;border:3px solid #00838f"></span>許可・届出制/要相談<br>' +
     '<span class="sw" style="background:transparent;border:3px solid #78909c"></span>自治体独自の規制は確認されず(国の規制のみ)<br>' +
     '<b style="display:block;margin-top:6px">国の空域(参考オーバーレイ)</b>' +

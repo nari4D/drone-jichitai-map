@@ -1,7 +1,7 @@
 {
  "_meta": {
   "都道府県": "神奈川県",
-  "確認日": "2026-07-16",
+  "確認日": "2026-07-03",
   "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。",
   "全域共通": [
    {
@@ -42,7 +42,8 @@
     "line": "#455a64",
     "fillOpacity": 0.18
    }
-  }
+  },
+  "_確認日の意味": "この県を一括で調査した日。個々の自治体を最後に確認した日は municipalities[].確認日 を見ること（無い場合はこの一括調査日）。"
  },
  "municipalities": {
   "横浜市": {
@@ -61,7 +62,8 @@
      "label": "新横浜公園 ドローン等の飛行について(原則おことわり)",
      "url": "https://www.nissan-stadium.jp/shinyoko-park/drone.php"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "川崎市": {
    "category": "prohibited",
@@ -75,7 +77,8 @@
      "label": "川崎市 ちどり公園(港湾局管理施設のドローン飛行禁止)",
      "url": "https://www.city.kawasaki.jp/580/page/0000167054.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "横須賀市": {
    "category": "prohibited",
@@ -89,7 +92,8 @@
      "label": "横須賀市 海浜地・海岸施設・漁港施設における撮影(届出制)",
      "url": "https://www.city.yokosuka.kanagawa.jp/5820/minato/amenity_kouen/kouwan_kaigan_satuei.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "相模原市": {
    "category": "prohibited",
@@ -99,7 +103,8 @@
      "label": "相模原市 公園を利用する際のお願い(ラジコン飛行機・ドローン等の使用は禁止)",
      "url": "https://www.city.sagamihara.kanagawa.jp/kurashi/shisetsu/kouen_kankou/kouen_ryokuchi/1003110.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "鎌倉市": {
    "category": "unknown",
@@ -113,7 +118,8 @@
      "label": "神奈川県 海岸の許認可(海岸一時使用届)",
      "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "藤沢市": {
    "category": "unknown",
@@ -127,7 +133,8 @@
      "label": "神奈川県 海岸でのドローン飛行について(PDF)",
      "url": "https://www.pref.kanagawa.jp/documents/16439/kaigandenodronehikou.pdf"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "平塚市": {
    "category": "unknown",
@@ -137,7 +144,8 @@
      "label": "平塚市 公園の利用ルール・禁止事項",
      "url": "https://www.city.hiratsuka.kanagawa.jp/koen/page49_00125.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "座間市": {
    "category": "prohibited",
@@ -156,7 +164,8 @@
      "url": "https://www.city.zama.kanagawa.jp/bunkasports/kouen/riyou/1009762.html",
      "quote": "ドローンなど無人航空機を公園内で飛行させることは認めていません。"
     }
-   ]
+   ],
+   "確認日": "2026-07-16"
   },
   "厚木市": {
    "category": "restricted",
@@ -166,7 +175,8 @@
      "label": "厚木市FAQ 公園で無人航空機(ドローン等)は飛ばしていいですか",
      "url": "https://www.city.atsugi.kanagawa.jp/soshiki/koenryokuchika/kouennikannsuruyokuarusituumon/kouenriyounoruru/20856.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "小田原市": {
    "category": "restricted",
@@ -176,7 +186,8 @@
      "label": "小田原市 都市公園における行為許可について",
      "url": "https://www.city.odawara.kanagawa.jp/public-i/park/kouikyoka.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "逗子市": {
    "category": "restricted",
@@ -190,7 +201,8 @@
      "label": "逗子市 逗子海水浴場開設期間中の撮影について(ドローン飛行は遊泳区域内外を問わず遠慮)",
      "url": "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1004412/1013129.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "箱根町": {
    "category": "restricted",
@@ -204,7 +216,8 @@
      "label": "神奈川県 県西土木事務所 許認可指導課(芦ノ湖での撮影・ドローン連絡先)",
      "url": "https://www.pref.kanagawa.jp/docs/b4w/cnt/f52/p2260.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "葉山町": {
    "category": "restricted",
@@ -214,7 +227,8 @@
      "label": "神奈川県 横須賀土木事務所 許認可の申請(葉山町海岸の連絡先明記)",
      "url": "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "大和市": {
    "category": "unknown",
@@ -228,7 +242,8 @@
      "label": "神奈川県警 小型無人機等飛行禁止法",
      "url": "https://www.police.pref.kanagawa.jp/kurashi/anzen_machi/mese3013.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "綾瀬市": {
    "category": "unknown",
@@ -238,7 +253,8 @@
      "label": "綾瀬市 厚木基地関連トピックス(小型無人機等飛行禁止法の適用)",
      "url": "https://www.city.ayase.kanagawa.jp/soshiki/kichiseisakuka/atsugikichi/2/13603.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "三浦市": {
    "category": "unknown",
@@ -252,7 +268,8 @@
      "label": "神奈川県 横須賀土木事務所 許認可の申請",
      "url": "https://www.pref.kanagawa.jp/docs/wk7/cnt/f12379/index.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "茅ヶ崎市": {
    "category": "prohibited",
@@ -266,7 +283,8 @@
      "label": "神奈川県 海岸の許認可(海岸一時使用届)",
      "url": "https://www.pref.kanagawa.jp/docs/ex5/kaigan/kyoka.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "愛川町": {
    "category": "unknown",
@@ -280,7 +298,8 @@
      "label": "神奈川県 県立都市公園の利用における制限",
      "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "清川村": {
    "category": "unknown",
@@ -294,7 +313,8 @@
      "label": "神奈川県 県立都市公園の利用における制限",
      "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "秦野市": {
    "category": "unknown",
@@ -312,7 +332,8 @@
      "label": "神奈川県 県立都市公園の利用における制限",
      "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "海老名市": {
    "category": "unknown",
@@ -330,7 +351,8 @@
      "label": "神奈川県 県立都市公園の利用における制限",
      "url": "https://www.pref.kanagawa.jp/docs/tu5/cnt/f6599/p19729.html"
     }
-   ]
+   ],
+   "確認日": "2026-07-03"
   },
   "二宮町": {
    "category": "prohibited",
@@ -341,7 +363,8 @@
      "url": "https://www.town.ninomiya.kanagawa.jp/0000001277.html",
      "quote": "無人航空機（ドローン・ラジコン機等）は飛行させないでください。"
     }
-   ]
+   ],
+   "確認日": "2026-07-16"
   }
  },
  "unknown_simple": [

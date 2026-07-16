@@ -43,6 +43,10 @@
   .card .sources{list-style:none;margin:0;padding:0;font-size:12px;}
   .card .sources li{padding:2px 0 2px 16px;position:relative;}
   .card .sources li::before{content:"›";position:absolute;left:2px;color:#889;}
+  .card h3 .cardday{font-weight:normal;font-size:11px;color:#889;margin-left:8px;}
+  /* 公式ページからの逐語引用。これが根拠そのもの */
+  .card .quote{margin:3px 0 5px;padding:5px 9px;border-left:3px solid #b0bec5;
+    background:#f5f7f8;color:#334;font-size:12px;line-height:1.5;}
   .card .memo{font-size:12px;color:#a05a00;margin-top:5px;}
   a{color:#0b62c4;word-break:break-all;}
   footer{max-width:920px;margin:0 auto;padding:22px 16px;font-size:12px;color:var(--muted);
@@ -64,9 +68,8 @@
 <body>
 <header>
   <h1>自治体別ドローン規制 リスト版</h1>
-  <span class="day" id="dayLabel">情報確認日 —</span>
   <span class="spacer"></span>
-  <a class="navbtn" href="index.html">🗺 地図版（神奈川）</a>
+  <a class="navbtn" href="index.html">🗺 地図版</a>
   <button class="navbtn" id="showDisclaimer">免責事項</button>
 </header>
 <div class="tabs" id="tabs">
@@ -118,9 +121,9 @@ function load(pref){
 }
 
 function render(data){
-  const meta = data._meta, cats = meta.categories, day = meta['確認日'] || '';
+  // batchDay は「県を一括調査した日」。個別に再確認した自治体は自分の確認日を持つ。
+  const meta = data._meta, cats = meta.categories, batchDay = meta['確認日'] || '';
   const common = meta['全域共通'] || [];
-  document.getElementById('dayLabel').textContent = '情報確認日 ' + day;
   document.getElementById('topNote').innerHTML =
     '⚠ '+esc(meta['注記'])+'<br><b>グレー＝自治体独自の規制は確認されず（国の航空法等のみ）</b>。飛行判断は必ず DIPS・各管理者の最新情報で。';
 
@@ -147,13 +150,20 @@ function render(data){
       esc(c.label)+'<span class="count">'+list.length+' 件</span></div>';
     list.forEach(([name,m])=>{
       const hp = data.official_hp && data.official_hp[name];
+      const day = m['確認日'] || batchDay;
       html += '<div class="card" style="border-left-color:'+c.fill+'">'+
-        '<h3>'+esc(name)+'</h3>'+
+        '<h3>'+esc(name)+'<span class="cardday">確認日 '+esc(day)+'</span></h3>'+
         (hp?'<div class="hp">🏠 '+a(hp,'公式ホームページ')+'</div>':'')+
         '<div class="summary">'+esc(m.summary)+'</div>';
       if(m.sources && m.sources.length){
         html += '<ul class="sources">';
-        m.sources.forEach(s=> html += '<li>'+(s.url?a(s.url,s.label):esc(s.label))+'</li>');
+        m.sources.forEach(s=>{
+          html += '<li>'+(s.url?a(s.url,s.label):esc(s.label));
+          // 逐語引用があれば現物を出す。これが無いと「出典がある」で終わってしまい、
+          // 利用者が根拠そのものを確かめられない。
+          if(s.quote) html += '<blockquote class="quote">'+esc(s.quote)+'</blockquote>';
+          html += '</li>';
+        });
         html += '</ul>';
       }
       if(m.note) html += '<div class="memo">※ '+esc(m.note)+'</div>';
@@ -164,7 +174,7 @@ function render(data){
 
   const src = data.official_hp_source;
   document.getElementById('foot').innerHTML =
-    '掲載 '+total+' 自治体 / 情報確認日 '+esc(day)+'。公式HP出典: '+(src?a(src.url,src.label):'')+
+    '掲載 '+total+' 自治体（確認日は自治体ごとに表示）。公式HP出典: '+(src?a(src.url,src.label):'')+
     '<br>本リストは参考情報です。飛行可否は必ず各管理者・DIPS で確認してください。出典は各自治体の公式ページを一次情報として確認しています。';
 }
 

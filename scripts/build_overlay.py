@@ -33,10 +33,13 @@ def build(pref):
     cats = reg["_meta"]["categories"]
     official = reg["official_hp"]
 
+    # 個別に確認していない自治体は、県の一括調査日を確認日とする。
+    batch_day = reg["_meta"]["確認日"]
     munis = dict(reg["municipalities"])
     for name in reg.get("unknown_simple", []):
         munis[name] = {"category": "unknown",
                        "summary": reg["unknown_simple_summary"],
+                       "確認日": batch_day,
                        "sources": reg.get("default_sources", [])}
 
     out_features, skipped = [], []
@@ -58,7 +61,9 @@ def build(pref):
         props = {
             "name": disp, "自治体": city, "区分": c["label"],
             "規制概要": r["summary"], "公式HP": official.get(city, ""),
-            "確認日": reg["_meta"]["確認日"], "_pref": pref["name"],
+            # その自治体を最後に確認した日。県全体の一括調査日ではない
+            # （1件だけ再確認しても全県が最新に見えてしまうため）。
+            "確認日": r.get("確認日", batch_day), "_pref": pref["name"],
             "_cat": r["category"],
             "_color": c["line"], "_opacity": 0.9, "_weight": 1.5,
             "_fillColor": c["fill"], "_fillOpacity": c["fillOpacity"],
@@ -66,6 +71,9 @@ def build(pref):
         for i, s in enumerate(r.get("sources", []), 1):
             props[f"出典{i}"] = s["label"]
             props[f"出典{i}_URL"] = s["url"]
+            # 逐語引用があれば地図にも渡す。出典URLだけでは根拠そのものを確認できない。
+            if s.get("quote"):
+                props[f"出典{i}_引用"] = s["quote"]
         if r.get("note"):
             props["備考"] = r["note"]
         out_features.append({"type": "Feature", "properties": props, "geometry": f["geometry"]})
