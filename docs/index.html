@@ -24,7 +24,14 @@
     font-size:12px;line-height:1.7;max-width:300px;}
   .legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.15);}
   .legend .note{font-size:10px;color:#666;margin-top:6px;border-top:1px solid #eee;padding-top:6px;}
+  /* 狭い画面では凡例を畳む。開いたときも地図の高さを食い切らないようスクロールさせる */
+  .legend summary{cursor:pointer;font-weight:600;list-style:none;}
+  .legend summary::-webkit-details-marker{display:none;}
+  .legend summary::after{content:"▾";float:right;margin-left:10px;color:#78909c;}
+  .legend[open] summary::after{content:"▴";}
+  .legend .body{margin-top:6px;max-height:44vh;overflow:auto;}
   .leaflet-control-layers{font-size:12px;line-height:1.5;}
+  .leaflet-control-layers-expanded{max-height:60vh;overflow:auto;}
   .leaflet-popup-content{font-size:12px;line-height:1.6;max-width:330px;}
   .leaflet-popup-content h3{margin:0 0 4px;font-size:13px;}
   .leaflet-popup-content .cat{display:inline-block;padding:1px 6px;border-radius:3px;color:#fff;font-size:11px;margin-bottom:6px;}
@@ -46,6 +53,25 @@
     padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;width:100%;}
   .modal .primary:hover{background:#243546;}
   .modal .dips{display:inline-block;margin-top:4px;padding:2px 6px;background:#eef4fa;border-radius:4px;}
+
+  /* ---- スマホ ----
+     ヘッダーの中身(長い副題+検索+ボタン2つ)が nowrap で横にはみ出し、
+     ページ全体が横スクロールしていた。position:fixed の免責モーダルまで
+     右にずれて見切れる原因がこれ。副題を隠して各要素を縮める。
+     地図が主役なので、レイヤーパネルと凡例は畳んだ状態から始める。 */
+  @media (max-width: 700px){
+    header{height:46px;padding:0 8px;gap:6px;}
+    header h1{font-size:13px;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1;}
+    header .sub{display:none;}
+    header .spacer{display:none;}
+    header input#placeSearch{flex:1 1 auto;width:auto;min-width:0;max-width:none;margin-left:auto;}
+    header .navbtn{padding:5px 7px;flex-shrink:0;}
+    #map{top:46px;}
+    .legend{font-size:11px;line-height:1.6;max-width:calc(100vw - 24px);padding:8px 10px;}
+    .leaflet-popup-content{font-size:12px;}
+    .modal{padding:18px 16px;max-height:88vh;}
+    .modal h2{font-size:16px;}
+  }
 </style>
 </head>
 <body>
@@ -193,7 +219,11 @@ droneRZ.addTo(map);
 droneYZ.addTo(map);
 kokuarea.addTo(map);
 
-// 地理院地図に合わせてレイヤー選択パネルは左上・常時展開
+// スマホでは画面の大半をパネルが覆ってしまい地図がほとんど見えないので、
+// 狭い画面ではレイヤー選択も凡例も畳んだ状態から始める(タップで開く)。
+const isNarrow = window.matchMedia('(max-width: 700px)').matches;
+
+// 地理院地図に合わせてレイヤー選択パネルは左上。広い画面では常時展開
 L.control.layers(
   {'淡色地図': pale, '標準地図': std, '航空写真': photo},
   {
@@ -207,14 +237,16 @@ L.control.layers(
     '進入管制区': shinnyuu,
     '民間訓練試験空域': minkan
   },
-  {collapsed:false, position:'topleft'}
+  {collapsed:isNarrow, position:'topleft'}
 ).addTo(map);
 
 // 凡例は左下
 const legend = L.control({position:'bottomleft'});
 legend.onAdd = () => {
-  const d = L.DomUtil.create('div', 'legend');
+  const d = L.DomUtil.create('details', 'legend');
+  d.open = !isNarrow;
   d.innerHTML =
+    '<summary>凡例</summary><div class="body">' +
     '<b>自治体規制</b> <span style="font-size:10px;color:#666">※輪郭線・確認日は各自治体をクリック</span><br>' +
     '<span class="sw" style="background:transparent;border:3px solid #6a1b9a"></span>市区管理公園等で原則禁止(公式確認済)<br>' +
     '<span class="sw" style="background:transparent;border:3px solid #00838f"></span>許可・届出制/要相談<br>' +
@@ -223,7 +255,10 @@ legend.onAdd = () => {
     '<span class="sw" style="background:#e53935"></span>RZ / <span class="sw" style="background:#fdd835"></span>YZ(飛行禁止法・警察庁)<br>' +
     '<span class="sw" style="background:#9ccc65"></span>空港等周辺空域 <span class="sw" style="background:#64b5f6"></span>管制圏・情報圏<br>' +
     '<span class="sw" style="background:#9575cd"></span>特別管制区 <span class="sw" style="background:#4db6ac"></span>進入管制区 <span class="sw" style="background:#90a4ae"></span>民間訓練試験空域<br>' +
-    '<div class="note">自治体規制は<b>区分色の輪郭線</b>で表示(中は塗らない)ため、下のDID/RZ/YZ/空域(赤・黄系)がそのまま見えます。区の内側をクリックすると詳細が出ます。境界は国交省 国土数値情報N03(2025)。公式で明文確認できた自治体を紫、記載が確認できない自治体はグレー(自治体独自の規制なし=国の規制のみ)。飛行判断は必ずDIPS・各管理者の最新情報で。</div>';
+    '<div class="note">自治体規制は<b>区分色の輪郭線</b>で表示(中は塗らない)ため、下のDID/RZ/YZ/空域(赤・黄系)がそのまま見えます。区の内側をクリックすると詳細が出ます。境界は国交省 国土数値情報N03(2025)。公式で明文確認できた自治体を紫、記載が確認できない自治体はグレー(自治体独自の規制なし=国の規制のみ)。飛行判断は必ずDIPS・各管理者の最新情報で。</div></div>';
+  // 凡例の開閉・スクロールが地図のドラッグやズームにならないようにする
+  L.DomEvent.disableClickPropagation(d);
+  L.DomEvent.disableScrollPropagation(d);
   return d;
 };
 legend.addTo(map);
