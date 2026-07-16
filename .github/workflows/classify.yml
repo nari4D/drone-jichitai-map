@@ -65,13 +65,12 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 【一時的】原因調査のため Claude の出力を表示する。判明したら必ず false に戻す。
-          # このリポジトリでは安全: トークンは GitHub が自動マスクし(ログの *** が実証)、
-          # Claude が触れるのは公開中の自治体ページと判定ファイルだけ。Bash も無い。
-          show_full_output: true
-          # --model は指定しない（既定に任せる）。claude-sonnet-5 を指定していたが、
-          # SDK options のダンプに model も max-turns も現れず、指定が効いているか不明。
-          # 原因が確定したら必要に応じて戻す。
+          # show_full_output は既定(false)のまま。ただし注意: false だとアクションは
+          # result JSON を間引き、api_error_status や result(エラー本文) を落とす。
+          # 401 で落ちた時に「is_error:true」しか出ず原因が全く分からなくなるので、
+          # 認証やAPI起因を疑うときは一時的に true にしてログを読むこと。
+          #
+          # --model は指定しない。既定で claude-sonnet-5 になる（init のダンプで確認済み）。
           claude_args: |
             --max-turns 40
             --allowedTools "Read,Write"
