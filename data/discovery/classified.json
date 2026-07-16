@@ -22,5 +22,93 @@
   "url": "https://www.town.ninomiya.kanagawa.jp/0000001286.html",
   "result": "unknown",
   "reason": "引用にドローン語が無い"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "二宮町",
+  "pref": "神奈川県",
+  "url": "https://www.town.ninomiya.kanagawa.jp/0000002135.html",
+  "result": "prohibited",
+  "quote": "無人航空機（ドローン・ラジコン機等）は飛行させないでください。"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "二宮町",
+  "pref": "神奈川県",
+  "url": "https://www.town.ninomiya.kanagawa.jp/0000001268.html",
+  "result": "prohibited",
+  "quote": "無人航空機（ドローン・ラジコン機等）は飛行させないでください。"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "山北町",
+  "pref": "神奈川県",
+  "url": "https://www.town.yamakita.kanagawa.jp/0000001056.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "山北町",
+  "pref": "神奈川県",
+  "url": "https://www.town.yamakita.kanagawa.jp/0000005274.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "新宿区",
+  "pref": "東京都",
+  "url": "http://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html",
+  "result": "prohibited",
+  "quote": "エアガン、グライダー、フリスビー、ドローン、ラジコンなど、他の公園利用者の危険や迷惑となる玩具や道具等は使用できません。"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "品川区",
+  "pref": "東京都",
+  "url": "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-park/20200428164449.html",
+  "result": "prohibited",
+  "quote": "16．ドローン・ラジコンの使用\n 落下したときの危険性や騒音などの問題があるため、公園内では禁止しております。"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "板橋区",
+  "pref": "東京都",
+  "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/index.html",
+  "result": "prohibited",
+  "quote": "公園内でのドローン・ラジコン機等の使用禁止について"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "板橋区",
+  "pref": "東京都",
+  "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1019935/index.html",
+  "result": "prohibited",
+  "quote": "撮影機材についてはご相談ください。（ドローンの使用は禁止されています。）"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "葛飾区",
+  "pref": "東京都",
+  "url": "https://www.city.katsushika.lg.jp/planning/1003408/1029037.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "葛飾区",
+  "pref": "東京都",
+  "url": "https://www.city.katsushika.lg.jp/planning/1003408/1003558.html",
+  "result": "prohibited",
+  "quote": "100グラム以上の無人飛行機の使用は出来ません。"
+ },
+ {
+  "date": "2026-07-17",
+  "muni": "小金井市",
+  "pref": "東京都",
+  "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/sakuraayumi/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]

@@ -49,9 +49,14 @@
     {
      "label": "新宿区 公園等の利用ルール（ドローン使用不可を明記）",
      "url": "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
+    },
+    {
+     "label": "新宿区 公式（自動分類 2026-07-17 確認）",
+     "url": "http://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html",
+     "quote": "エアガン、グライダー、フリスビー、ドローン、ラジコンなど、他の公園利用者の危険や迷惑となる玩具や道具等は使用できません。"
     }
    ],
-   "確認日": "2026-07-13"
+   "確認日": "2026-07-17"
   },
   "文京区": {
    "category": "prohibited",
@@ -126,9 +131,19 @@
     {
      "label": "板橋区 公園内でのドローン・ラジコン機等の使用禁止について",
      "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html"
+    },
+    {
+     "label": "板橋区 公式（自動分類 2026-07-17 確認）",
+     "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/index.html",
+     "quote": "公園内でのドローン・ラジコン機等の使用禁止について"
+    },
+    {
+     "label": "板橋区 公式（自動分類 2026-07-17 確認）",
+     "url": "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1019935/index.html",
+     "quote": "撮影機材についてはご相談ください。（ドローンの使用は禁止されています。）"
     }
    ],
-   "確認日": "2026-07-13"
+   "確認日": "2026-07-17"
   },
   "江戸川区": {
    "category": "prohibited",
@@ -217,12 +232,35 @@
     }
    ],
    "確認日": "2026-07-13"
+  },
+  "品川区": {
+   "category": "prohibited",
+   "summary": "落下時の危険性や騒音などを理由に、公園内でのドローン・ラジコンの使用を禁止している。",
+   "確認日": "2026-07-17",
+   "sources": [
+    {
+     "label": "品川区 公式（自動分類 2026-07-17 確認）",
+     "url": "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-park/20200428164449.html",
+     "quote": "16．ドローン・ラジコンの使用\n 落下したときの危険性や騒音などの問題があるため、公園内では禁止しております。"
+    }
+   ]
+  },
+  "葛飾区": {
+   "category": "prohibited",
+   "summary": "公園での撮影許可申請において、100グラム以上の無人飛行機の使用を禁止している。",
+   "確認日": "2026-07-17",
+   "sources": [
+    {
+     "label": "葛飾区 公式（自動分類 2026-07-17 確認）",
+     "url": "https://www.city.katsushika.lg.jp/planning/1003408/1003558.html",
+     "quote": "100グラム以上の無人飛行機の使用は出来ません。"
+    }
+   ]
   }
  },
  "unknown_simple": [
   "中央区",
   "港区",
-  "品川区",
   "目黒区",
   "世田谷区",
   "渋谷区",
@@ -231,7 +269,6 @@
   "北区",
   "荒川区",
   "足立区",
-  "葛飾区",
   "武蔵野市",
   "府中市",
   "昭島市",

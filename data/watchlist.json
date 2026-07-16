@@ -231,7 +231,9 @@
           "official_hp": "https://www.town.ninomiya.kanagawa.jp/",
           "watch_urls": [
             "https://www.town.ninomiya.kanagawa.jp/",
-            "https://www.town.ninomiya.kanagawa.jp/0000001277.html"
+            "https://www.town.ninomiya.kanagawa.jp/0000001277.html",
+            "https://www.town.ninomiya.kanagawa.jp/0000002135.html",
+            "https://www.town.ninomiya.kanagawa.jp/0000001268.html"
           ]
         },
         "中井町": {
@@ -345,7 +347,8 @@
           "official_hp": "http://www.city.shinjuku.lg.jp/",
           "watch_urls": [
             "http://www.city.shinjuku.lg.jp/",
-            "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
+            "https://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html",
+            "http://www.city.shinjuku.lg.jp/seikatsu/midori01_000001_00022.html"
           ]
         },
         "文京区": {
@@ -381,10 +384,11 @@
           ]
         },
         "品川区": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.shinagawa.tokyo.jp/",
           "watch_urls": [
-            "https://www.city.shinagawa.tokyo.jp/"
+            "https://www.city.shinagawa.tokyo.jp/",
+            "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-park/20200428164449.html"
           ]
         },
         "目黒区": {
@@ -457,7 +461,9 @@
           "official_hp": "https://www.city.itabashi.tokyo.jp/",
           "watch_urls": [
             "https://www.city.itabashi.tokyo.jp/",
-            "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html"
+            "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1006651.html",
+            "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/index.html",
+            "https://www.city.itabashi.tokyo.jp/bousai/kouen/riyou/1019935/index.html"
           ]
         },
         "練馬区": {
@@ -476,10 +482,11 @@
           ]
         },
         "葛飾区": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.katsushika.lg.jp/",
           "watch_urls": [
-            "https://www.city.katsushika.lg.jp/"
+            "https://www.city.katsushika.lg.jp/",
+            "https://www.city.katsushika.lg.jp/planning/1003408/1003558.html"
           ]
         },
         "江戸川区": {
