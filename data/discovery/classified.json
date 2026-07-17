@@ -110,5 +110,117 @@
   "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/sakuraayumi/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "日野市",
+  "pref": "東京都",
+  "url": "http://www.city.hino.lg.jp/bunka/katsuyaku/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "日野市",
+  "pref": "東京都",
+  "url": "http://www.city.hino.lg.jp/bunka/katsuyaku/1029466.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "日野市",
+  "pref": "東京都",
+  "url": "http://www.city.hino.lg.jp/bunka/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "国分寺市",
+  "pref": "東京都",
+  "url": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/1011091/1002390.html",
+  "result": "prohibited",
+  "quote": "小型無人飛行機(ドローンなど)\n使用できません。(思わぬ事故でほかの利用者にけがをさせてしまう危険があります。)"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "武蔵村山市",
+  "pref": "東京都",
+  "url": "https://www.city.musashimurayama.lg.jp/kankou/1004434/1001617.html",
+  "result": "prohibited",
+  "quote": "会場及びその周辺でのドローン飛行は禁止となっています。"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "武蔵村山市",
+  "pref": "東京都",
+  "url": "https://www.city.musashimurayama.lg.jp/kankou/spots/1010232.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "多摩市",
+  "pref": "東京都",
+  "url": "http://www.city.tama.lg.jp/kurashi/kouen/riyou/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "稲城市",
+  "pref": "東京都",
+  "url": "http://www.city.inagi.tokyo.jp/kankyo/midori/1005312/1012557.html",
+  "result": "prohibited",
+  "quote": "ラジコン・小型無人機\n（ドローン等）\n他の公園利用者が危険であるため"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "http://www.vill.hinohara.tokyo.jp/category/4-1-0-0-0-0-0-0-0-0.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "https://www.vill.hinohara.tokyo.jp/0000001165.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "http://www.vill.hinohara.tokyo.jp/category/4-1-1-0-0-0-0-0-0-0.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "https://www.vill.hinohara.tokyo.jp/category/4-1-0-0-0-0-0-0-0-0.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "https://www.vill.hinohara.tokyo.jp/category/2-14-1-0-0-0-0-0-0-0.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-18",
+  "muni": "檜原村",
+  "pref": "東京都",
+  "url": "https://www.vill.hinohara.tokyo.jp/category/4-1-1-0-0-0-0-0-0-0.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]

@@ -575,7 +575,8 @@
           "official_hp": "https://www.city.kokubunji.tokyo.jp/",
           "watch_urls": [
             "https://www.city.kokubunji.tokyo.jp/",
-            "https://www.city.kokubunji.tokyo.jp/faq/kurashi/1005237/1005280/1005945.html"
+            "https://www.city.kokubunji.tokyo.jp/faq/kurashi/1005237/1005280/1005945.html",
+            "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/1011091/1002390.html"
           ]
         },
         "国立市": {
@@ -600,10 +601,11 @@
           ]
         },
         "武蔵村山市": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.musashimurayama.lg.jp/",
           "watch_urls": [
-            "https://www.city.musashimurayama.lg.jp/"
+            "https://www.city.musashimurayama.lg.jp/",
+            "https://www.city.musashimurayama.lg.jp/kankou/1004434/1001617.html"
           ]
         },
         "多摩市": {
@@ -615,10 +617,11 @@
           ]
         },
         "稲城市": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "http://www.city.inagi.tokyo.jp/",
           "watch_urls": [
-            "http://www.city.inagi.tokyo.jp/"
+            "http://www.city.inagi.tokyo.jp/",
+            "http://www.city.inagi.tokyo.jp/kankyo/midori/1005312/1012557.html"
           ]
         },
         "小平市": {
