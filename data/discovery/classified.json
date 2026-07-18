@@ -222,5 +222,21 @@
   "url": "https://www.vill.hinohara.tokyo.jp/category/4-1-1-0-0-0-0-0-0-0.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-19",
+  "muni": "小田原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.odawara.kanagawa.jp/field/industry/agricult/topics/p42098.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-19",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
