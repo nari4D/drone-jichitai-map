@@ -1,3 +1,26 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "神奈川県",
+   "muni": "小田原市",
+   "url": "https://www.city.odawara.kanagawa.jp/field/industry/agricult/topics/p42098.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "山岸 国府津12区 上千代 永塚 散布方法  ウメの樹木に対し、各農家が薬剤を地上から散布します。 \r ※ヘリコプターやドローンを使用した空中散布は行いません。 関連情報リンク 市内でのクビアカツヤカミキリの確認について なぞり検索OFF",
+   "via": "sitemap",
+   "found": "2026-07-19"
+  },
+  {
+   "pref": "神奈川県",
+   "muni": "伊勢原市",
+   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "自由研究相談室を開催します 2026年07月01日 はじめてのほしぞらさんぽ【8月11日開催】 2026年07月01日 ドローンプログラミング体験教室（8月4日開催） 2026年07月01日 飛ばせ！競技用紙飛行機（8月13日、16日開催）",
+   "via": "sitemap",
+   "found": "2026-07-19"
+  }
+ ]
 }
