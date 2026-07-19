@@ -238,5 +238,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-20",
+  "muni": "八王子市",
+  "pref": "東京都",
+  "url": "https://www.city.hachioji.tokyo.jp/life/010/002/003/004/p012068.html",
+  "result": "prohibited",
+  "quote": "一般開放及び地域開放時間は、以下の利用ができません\n投てき競技、棒高跳び、野球、ソフトボール、ゴルフ、クリケット、サッカー、ラグビー、アメリカンフットボール、スケートボード、ローラースケート、自転車競技、サーフキャスティング、ドローン、リモコン飛行機、ラジコンカー、花火、ペット同伴"
  }
 ]
