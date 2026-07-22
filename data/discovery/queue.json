@@ -1,3 +1,27 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "東京都",
+   "muni": "渋谷区",
+   "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "ださい。 メモリアルキャンパス 校舎建替えに伴い、当時の校舎の景色や空気を「メモリアルキャンパス」として残しました。 「ドローン動画」や「360°VRツアー」で、校内の様子をご覧いただけます。 広尾中学校 松濤中学校 ▲ドローン動画（広尾中",
+   "via": "sitemap",
+   "found": "2026-07-23"
+  },
+  {
+   "pref": "東京都",
+   "muni": "足立区",
+   "url": "https://www.city.adachi.tokyo.jp/jinji/ku/kuse/saiyo-yaritai.html",
+   "hits": [
+    "ドローン",
+    "無人航空機"
+   ],
+   "snippet": "当課が開催する生成AIの職員研修は職員に大人気 ⇒ 官民共創プラットフォーム「あだち協創フロント」     23区初！ ドローンパイロットチーム「A.F.S.」 「A.F.S.（Adachi Flying Squirrelの略）」は、発災時",
+   "via": "sitemap",
+   "found": "2026-07-23"
+  }
+ ]
 }
