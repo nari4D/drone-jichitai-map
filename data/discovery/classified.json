@@ -254,5 +254,21 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-24",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-07-24",
+  "muni": "足立区",
+  "pref": "東京都",
+  "url": "https://www.city.adachi.tokyo.jp/jinji/ku/kuse/saiyo-yaritai.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
