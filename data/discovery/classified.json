@@ -302,5 +302,85 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "逗子市",
+  "pref": "神奈川県",
+  "url": "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1007363/1004379/1014343.html",
+  "result": "restricted",
+  "quote": "危険行為\n(\n釣り、ドローンの使用、人が密集する所での球技\n等) ※事前許可は可"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/riyou/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/guide/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/planetarium/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/about/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/search.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/planetarium/tenmon.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/about/shien.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-03",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/language.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
