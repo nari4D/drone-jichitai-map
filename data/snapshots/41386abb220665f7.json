@@ -2,8 +2,8 @@
  "url": "https://www.city.yokosuka.kanagawa.jp/5820/minato/amenity_kouen/kouwan_kaigan_satuei.html",
  "owner": "横須賀市",
  "pref": "神奈川県",
- "etag": "W/\"80ed-6562325338eb9\"",
- "last_modified": "Thu, 09 Jul 2026 01:00:08 GMT",
+ "etag": "W/\"81b5-657d19fb5e901\"",
+ "last_modified": "Thu, 30 Jul 2026 10:34:59 GMT",
  "digest": "5630e9d7c2823fb8ddbfb6692f04a1144b0e26cebf4922cd31e2f6063db0da3e",
  "keywords": [
   "ドローン",
@@ -39,5 +39,5 @@
   "撮影実施箇所位置図 （撮影実施箇所、ドローン撮影の場合は、離発着場所、飛行範囲も図示してください。",
   "）"
  ],
- "checked": "2026-07-16"
+ "checked": "2026-08-03"
 }
