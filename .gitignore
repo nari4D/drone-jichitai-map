@@ -33,3 +33,10 @@ README_FOR_CLAUDE_CODE.md
 # 監査証跡として残すのは data/discovery/classified.json（区分＋逐語引用）と
 # regulations*.json の sources[].quote のほう。
 data/classify/
+
+# 環境変数（PUBLICリポなので、トークン等を置いた .env を誤コミットしない保険）。
+# 現状 .env を読むコードは無いが、ローカルで OAuth トークンを置いて git add -A する
+# 事故を防ぐ。.env.example だけは共有可なので除外の例外にする。
+.env
+.env.*
+!.env.example

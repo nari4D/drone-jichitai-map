@@ -38,9 +38,13 @@ jobs:
 
       - name: Run discovery (rolling)
         id: run
+        # workflow_dispatch の入力は run: に直接展開せず env: 経由で渡す
+        # （シェルへのスクリプトインジェクション定石対策。起動は write 権限者のみだが念のため）。
+        env:
+          BUDGET: ${{ github.event.inputs.budget || 30 }}
         run: |
           set +e
-          python scripts/discover.py --budget "${{ github.event.inputs.budget || 30 }}"
+          python scripts/discover.py --budget "$BUDGET"
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
         continue-on-error: true
 

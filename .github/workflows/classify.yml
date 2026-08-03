@@ -12,6 +12,12 @@
 #     前提でローリング(--budget)にしてある。
 name: classify-drone-pages
 
+# ⚠ セキュリティ: トリガーは schedule と workflow_dispatch だけにすること。
+#   このリポは PUBLIC で、下の CLAUDE_CODE_OAUTH_TOKEN は Pro/Max サブスクの認証トークン。
+#   pull_request_target / issue_comment / （fork からの）pull_request を足すと、
+#   第三者が fork 経由でこのトークンを抜ける経路ができる（＝サブスク乗っ取り）。
+#   現状の2トリガーは write 権限者しか起動できないので安全。追加する時は必ず
+#   トークンの分離・権限縮小を先に設計すること。
 on:
   schedule:
     - cron: '0 19 * * *'    # 毎日 04:00 JST（発見層 03:00 JST の1時間後）
@@ -47,9 +53,13 @@ jobs:
       # exit 3 = 判定対象ゼロ（このあとは何もしない）
       - name: Prepare classification packet
         id: prep
+        # workflow_dispatch の入力は run: に直接展開せず env: 経由で渡す
+        # （シェルへのスクリプトインジェクション定石対策。起動は write 権限者のみだが念のため）。
+        env:
+          BUDGET: ${{ github.event.inputs.budget || 20 }}
         run: |
           set +e
-          python scripts/classify_prepare.py --budget "${{ github.event.inputs.budget || 20 }}"
+          python scripts/classify_prepare.py --budget "$BUDGET"
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       # Claude は保存済みの本文だけを読む（ネットに出ない）。
