@@ -382,5 +382,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/language.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-04",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
