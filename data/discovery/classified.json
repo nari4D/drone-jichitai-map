@@ -390,5 +390,13 @@
   "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-06",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
