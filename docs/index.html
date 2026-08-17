@@ -263,8 +263,10 @@ const jichitaiReg = L.layerGroup().addTo(map);
 function loadReg(url){
   fetch(url).then(r => r.json()).then(gj => makeRegLayer(gj).addTo(jichitaiReg)).catch(()=>{});
 }
-loadReg('overlay_14_kanagawa.geojson');
-loadReg('overlay_13_tokyo.geojson');
+// 対象県のオーバーレイ。県を足すときはこの配列に1行足すだけ。
+['overlay_14_kanagawa.geojson',
+ 'overlay_13_tokyo.geojson',
+ 'overlay_26_kyoto.geojson'].forEach(loadReg);
 
 // デフォルトONにする国の情報レイヤー
 did.addTo(map);

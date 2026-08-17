@@ -18,6 +18,7 @@ JISコードを入れるのは、全国47都道府県に広げたときにファ
 PREFECTURES = [
     {"code": "14", "name": "神奈川県", "slug": "kanagawa"},
     {"code": "13", "name": "東京都", "slug": "tokyo"},
+    {"code": "26", "name": "京都府", "slug": "kyoto"},
 ]
 
 

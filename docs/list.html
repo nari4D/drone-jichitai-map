@@ -74,10 +74,7 @@
   <a class="navbtn" href="index.html">🗺 地図版</a>
   <button class="navbtn" id="showDisclaimer">免責事項</button>
 </header>
-<div class="tabs" id="tabs">
-  <button class="tab active" data-pref="kanagawa">神奈川県</button>
-  <button class="tab" data-pref="tokyo">東京都</button>
-</div>
+<div class="tabs" id="tabs"></div>
 <main>
   <div class="note" id="topNote">読み込み中…</div>
   <div class="common" id="common"></div>
@@ -100,9 +97,20 @@
 
 <script>
 const CAT_ORDER = ['prohibited','prohibited_secondary','restricted','unknown'];
-const FILES = { kanagawa: 'regulations_14_kanagawa.json', tokyo: 'regulations_13_tokyo.json' };
+// 対象県。県を足すときはこの配列に1行足すだけ（タブ・ファイル対応表を自動生成）。
+const PREFS = [
+  { slug:'kanagawa', name:'神奈川県', file:'regulations_14_kanagawa.json' },
+  { slug:'tokyo',    name:'東京都',   file:'regulations_13_tokyo.json' },
+  { slug:'kyoto',    name:'京都府',   file:'regulations_26_kyoto.json' },
+];
+const FILES = Object.fromEntries(PREFS.map(p => [p.slug, p.file]));
 const cache = {};
-let current = 'kanagawa';
+let current = PREFS[0].slug;
+
+// タブを PREFS から生成
+document.getElementById('tabs').innerHTML = PREFS.map((p,i) =>
+  '<button class="tab'+(i===0?' active':'')+'" data-pref="'+p.slug+'">'+p.name+'</button>'
+).join('');
 
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function a(url,label){return '<a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(label)+'</a>';}
@@ -197,7 +205,7 @@ document.getElementById('tabs').addEventListener('click', e=>{
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
 })();
 
-load('kanagawa');
+load(PREFS[0].slug);
 </script>
 </body>
 </html>

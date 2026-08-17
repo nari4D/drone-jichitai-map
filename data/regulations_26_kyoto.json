@@ -1,0 +1,163 @@
+{
+ "_meta": {
+  "都道府県": "京都府",
+  "確認日": "2026-08-17",
+  "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・河川・観光地・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。",
+  "全域共通": [
+   {
+    "label": "京都府警察 小型無人機等の飛行禁止区域の指定について(対象施設の周囲おおむね1,000m原則禁止・府内の自衛隊/米軍施設一覧)",
+    "url": "https://www.pref.kyoto.jp/fukei/anzen/keibi/nodorone.html"
+   },
+   {
+    "label": "京都府 府立都市公園(鴨川・嵐山・嵐山東・伏見港)での撮影等は都市公園条例の許可制(京都土木事務所)",
+    "url": "https://www.pref.kyoto.jp/kyotodoboku/i_kouen_info.html"
+   }
+  ],
+  "categories": {
+   "prohibited": {
+    "label": "市町管理公園等で原則禁止(公式確認済)",
+    "fill": "#6a1b9a",
+    "line": "#4a148c",
+    "fillOpacity": 0.55
+   },
+   "prohibited_secondary": {
+    "label": "公園条例等で原則禁止(二次情報・公式要確認)",
+    "fill": "#8e24aa",
+    "line": "#6a1b9a",
+    "fillOpacity": 0.42
+   },
+   "restricted": {
+    "label": "許可・届出制/施設ごとに要相談",
+    "fill": "#00838f",
+    "line": "#006064",
+    "fillOpacity": 0.4
+   },
+   "unknown": {
+    "label": "自治体独自の規制は確認されず(国の規制のみ)",
+    "fill": "#78909c",
+    "line": "#455a64",
+    "fillOpacity": 0.18
+   }
+  },
+  "_確認日の意味": "この県を一括で調査した日。個々の自治体を最後に確認した日は municipalities[].確認日 を見ること（無い場合はこの一括調査日）。"
+ },
+ "municipalities": {
+  "京都市": {
+   "category": "restricted",
+   "summary": "市建設局所管の都市公園でのドローン等の飛行は、都市公園条例第5条第10号の「公園の利用及び管理に支障がある行為」に該当しうる。ただし業として行う写真・映画撮影(学術・報道・CM等)や、行為許可対象の催しに付随するものは、航空法の許可・承認と安全対策等の要件を満たせば許可を受けて飛行できる(許可制)。元離宮二条城(世界遺産)は一般来城者のドローン撮影を禁止。",
+   "sources": [
+    {
+     "label": "京都市 建設局所管の都市公園におけるドローン等の飛行に関する許可基準",
+     "url": "https://www.city.kyoto.lg.jp/kensetu/cmsfiles/contents/0000101/101135/drone.pdf",
+     "quote": "公園内におけるドローン等の飛行は、通常の公園利用に大きな支障が生じない範囲で、以下のものに限り認めることができる。"
+    },
+    {
+     "label": "元離宮二条城(京都市・世界遺産) 空から見た二条城",
+     "url": "https://nijo-jocastle.city.kyoto.lg.jp/introduction/sky/",
+     "quote": "（一般来城者のドローンによる撮影は禁止されています）"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "大山崎町": {
+   "category": "prohibited",
+   "summary": "町全域の町管理公園において、ドローン・ラジコン飛行機等の無人航空機の飛行を、利用者の安全確保のため基本的に全面禁止(建設課都市計画係)。",
+   "sources": [
+    {
+     "label": "大山崎町 公園でのドローン等の飛行禁止について",
+     "url": "https://www.town.oyamazaki.kyoto.jp/annai/kensetsuka/toshikeikakukakari/kouen/4183.html",
+     "quote": "大山崎町全域の公園において、ドローン、ラジコン飛行機等の無人航空機の飛行は、利用者の安全確保のため、基本的に全面禁止しています。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "宇治田原町": {
+   "category": "restricted",
+   "summary": "ふれあい交流施設「西ノ山展望広場」の利用ルールで、ドローン(ラジコンヘリ含む)などの使用を禁止(まち未来創造課)。町全域ではなく当該施設での禁止。",
+   "sources": [
+    {
+     "label": "宇治田原町 西ノ山展望広場 利用ルール",
+     "url": "https://www.town.ujitawara.kyoto.jp/1586.html",
+     "quote": "ドローン（ラジコンヘリ含む）などの使用はできません。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "笠置町": {
+   "category": "restricted",
+   "summary": "笠置キャンプ場の利用注意事項(改定R6.10.25)で、ラジコンヘリ・ラジコン飛行機・ドローンの飛行を禁止(商工観光課)。町全域ではなく当該施設での禁止。",
+   "sources": [
+    {
+     "label": "笠置町 笠置キャンプ場 ご利用の注意事項(PDF)",
+     "url": "https://www.town.kasagi.lg.jp/cmsfiles/contents/0000001/1547/camprule_2024102509151338.pdf",
+     "quote": "ラジコンヘリ、ラジコン飛行機、ドローンの飛行は禁止しています"
+    }
+   ],
+   "確認日": "2026-08-17"
+  }
+ },
+ "unknown_simple": [
+  "福知山市",
+  "舞鶴市",
+  "綾部市",
+  "宇治市",
+  "宮津市",
+  "亀岡市",
+  "城陽市",
+  "向日市",
+  "長岡京市",
+  "八幡市",
+  "京田辺市",
+  "京丹後市",
+  "南丹市",
+  "木津川市",
+  "久御山町",
+  "井手町",
+  "和束町",
+  "精華町",
+  "南山城村",
+  "京丹波町",
+  "伊根町",
+  "与謝野町"
+ ],
+ "unknown_simple_summary": "公式ページでドローンに関する記載は確認されず(2026-08-17時点)。自治体独自の規制は確認されていないため、国の規制(航空法・小型無人機等飛行禁止法・空域)が適用される。公園条例の一般規定(危険・迷惑・管理支障行為の禁止)により管理者判断で個別に制限される場合はある。",
+ "default_sources": [
+  {
+   "label": "京都府警察 小型無人機等の飛行禁止区域の指定について(対象施設の周囲おおむね1,000m原則禁止・府内の自衛隊/米軍施設一覧)",
+   "url": "https://www.pref.kyoto.jp/fukei/anzen/keibi/nodorone.html"
+  },
+  {
+   "label": "京都府 府立都市公園(鴨川・嵐山・嵐山東・伏見港)での撮影等は都市公園条例の許可制(京都土木事務所)",
+   "url": "https://www.pref.kyoto.jp/kyotodoboku/i_kouen_info.html"
+  }
+ ],
+ "official_hp": {
+  "京都市": "https://www.city.kyoto.lg.jp/",
+  "福知山市": "https://www.city.fukuchiyama.lg.jp/",
+  "舞鶴市": "https://www.city.maizuru.kyoto.jp/",
+  "綾部市": "https://www.city.ayabe.lg.jp/",
+  "宇治市": "https://www.city.uji.kyoto.jp/",
+  "宮津市": "https://www.city.miyazu.kyoto.jp/",
+  "亀岡市": "https://www.city.kameoka.kyoto.jp/",
+  "城陽市": "https://www.city.joyo.kyoto.jp/",
+  "向日市": "https://www.city.muko.kyoto.jp/",
+  "長岡京市": "https://www.city.nagaokakyo.lg.jp/",
+  "八幡市": "https://www.city.yawata.kyoto.jp/",
+  "京田辺市": "https://www.city.kyotanabe.lg.jp/",
+  "京丹後市": "https://www.city.kyotango.lg.jp/",
+  "南丹市": "https://www.city.nantan.kyoto.jp/",
+  "木津川市": "https://www.city.kizugawa.lg.jp/",
+  "大山崎町": "https://www.town.oyamazaki.kyoto.jp/",
+  "久御山町": "https://www.town.kumiyama.lg.jp/",
+  "井手町": "https://www.town.ide.kyoto.jp/",
+  "宇治田原町": "https://www.town.ujitawara.kyoto.jp/",
+  "笠置町": "https://www.town.kasagi.lg.jp/",
+  "和束町": "https://www.town.wazuka.lg.jp/",
+  "精華町": "https://www.town.seika.kyoto.jp/",
+  "南山城村": "https://www.vill.minamiyamashiro.lg.jp/",
+  "京丹波町": "https://www.town.kyotamba.kyoto.jp/",
+  "伊根町": "https://www.town.ine.kyoto.jp/",
+  "与謝野町": "https://www.town.yosano.lg.jp/"
+ },
+ "official_hp_source": null
+}

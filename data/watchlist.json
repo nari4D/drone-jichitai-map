@@ -781,6 +781,201 @@
           ]
         }
       }
+    },
+    "京都府": {
+      "common_urls": [
+        "https://www.pref.kyoto.jp/fukei/anzen/keibi/nodorone.html",
+        "https://www.pref.kyoto.jp/kyotodoboku/i_kouen_info.html"
+      ],
+      "municipalities": {
+        "京都市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.kyoto.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kyoto.lg.jp/",
+            "https://www.city.kyoto.lg.jp/kensetu/cmsfiles/contents/0000101/101135/drone.pdf",
+            "https://nijo-jocastle.city.kyoto.lg.jp/introduction/sky/"
+          ]
+        },
+        "福知山市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fukuchiyama.lg.jp/",
+          "watch_urls": [
+            "https://www.city.fukuchiyama.lg.jp/"
+          ]
+        },
+        "舞鶴市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.maizuru.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.maizuru.kyoto.jp/"
+          ]
+        },
+        "綾部市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.ayabe.lg.jp/",
+          "watch_urls": [
+            "https://www.city.ayabe.lg.jp/"
+          ]
+        },
+        "宇治市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.uji.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.uji.kyoto.jp/"
+          ]
+        },
+        "宮津市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.miyazu.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.miyazu.kyoto.jp/"
+          ]
+        },
+        "亀岡市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kameoka.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.kameoka.kyoto.jp/"
+          ]
+        },
+        "城陽市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.joyo.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.joyo.kyoto.jp/"
+          ]
+        },
+        "向日市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.muko.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.muko.kyoto.jp/"
+          ]
+        },
+        "長岡京市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.nagaokakyo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.nagaokakyo.lg.jp/"
+          ]
+        },
+        "八幡市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.yawata.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.yawata.kyoto.jp/"
+          ]
+        },
+        "京田辺市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kyotanabe.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kyotanabe.lg.jp/"
+          ]
+        },
+        "京丹後市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kyotango.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kyotango.lg.jp/"
+          ]
+        },
+        "南丹市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.nantan.kyoto.jp/",
+          "watch_urls": [
+            "https://www.city.nantan.kyoto.jp/"
+          ]
+        },
+        "木津川市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kizugawa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kizugawa.lg.jp/"
+          ]
+        },
+        "大山崎町": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.town.oyamazaki.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.oyamazaki.kyoto.jp/",
+            "https://www.town.oyamazaki.kyoto.jp/annai/kensetsuka/toshikeikakukakari/kouen/4183.html"
+          ]
+        },
+        "久御山町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kumiyama.lg.jp/",
+          "watch_urls": [
+            "https://www.town.kumiyama.lg.jp/"
+          ]
+        },
+        "井手町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ide.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.ide.kyoto.jp/"
+          ]
+        },
+        "宇治田原町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.ujitawara.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.ujitawara.kyoto.jp/",
+            "https://www.town.ujitawara.kyoto.jp/1586.html"
+          ]
+        },
+        "笠置町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.kasagi.lg.jp/",
+          "watch_urls": [
+            "https://www.town.kasagi.lg.jp/",
+            "https://www.town.kasagi.lg.jp/cmsfiles/contents/0000001/1547/camprule_2024102509151338.pdf"
+          ]
+        },
+        "和束町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.wazuka.lg.jp/",
+          "watch_urls": [
+            "https://www.town.wazuka.lg.jp/"
+          ]
+        },
+        "精華町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.seika.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.seika.kyoto.jp/"
+          ]
+        },
+        "南山城村": {
+          "category_current": "unknown",
+          "official_hp": "https://www.vill.minamiyamashiro.lg.jp/",
+          "watch_urls": [
+            "https://www.vill.minamiyamashiro.lg.jp/"
+          ]
+        },
+        "京丹波町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kyotamba.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.kyotamba.kyoto.jp/"
+          ]
+        },
+        "伊根町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ine.kyoto.jp/",
+          "watch_urls": [
+            "https://www.town.ine.kyoto.jp/"
+          ]
+        },
+        "与謝野町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yosano.lg.jp/",
+          "watch_urls": [
+            "https://www.town.yosano.lg.jp/"
+          ]
+        }
+      }
     }
   }
 }
