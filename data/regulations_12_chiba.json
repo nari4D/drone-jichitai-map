@@ -1,0 +1,489 @@
+{
+ "_meta": {
+  "都道府県": "千葉県",
+  "確認日": "2026-08-17",
+  "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・河川・観光地・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。",
+  "全域共通": [
+   {
+    "label": "千葉県警察 小型無人機(ドローン)等の飛行に関するルール(航空法・小型無人機等飛行禁止法)",
+    "url": "https://www.police.pref.chiba.jp/keibika/safeLife_drone_rules.html"
+   },
+   {
+    "label": "千葉県 県管理海岸(港湾・漁港区域を除く)・河川におけるドローンの利用や撮影について",
+    "url": "https://www.pref.chiba.lg.jp/kakan/kaigan/drone.html"
+   }
+  ],
+  "categories": {
+   "prohibited": {
+    "label": "市管理公園等で原則禁止(公式確認済)",
+    "fill": "#6a1b9a",
+    "line": "#4a148c",
+    "fillOpacity": 0.55
+   },
+   "prohibited_secondary": {
+    "label": "公園条例等で原則禁止(二次情報・公式要確認)",
+    "fill": "#8e24aa",
+    "line": "#6a1b9a",
+    "fillOpacity": 0.42
+   },
+   "restricted": {
+    "label": "許可・届出制/施設ごとに要相談",
+    "fill": "#00838f",
+    "line": "#006064",
+    "fillOpacity": 0.4
+   },
+   "unknown": {
+    "label": "自治体独自の規制は確認されず(国の規制のみ)",
+    "fill": "#78909c",
+    "line": "#455a64",
+    "fillOpacity": 0.18
+   }
+  },
+  "_確認日の意味": "この県を一括で調査した日。個々の自治体を最後に確認した日は municipalities[].確認日 を見ること（無い場合はこの一括調査日）。"
+ },
+ "municipalities": {
+  "千葉市": {
+   "category": "restricted",
+   "summary": "市の都市公園でドローンを使う撮影(CM・映画・イベント等)は許可手続きが必要(許可制)。個人の趣味の飛行・撮影は原則許可対象外。",
+   "sources": [
+    {
+     "label": "千葉市 都市公園でのドローンを使った撮影許可手続き(公園管理課)",
+     "url": "https://www.city.chiba.jp/toshi/koenryokuchi/kanri/satuei-dorone-kyoka.html",
+     "quote": "千葉市内の都市公園ではCM撮影、映画撮影、イベント開催に伴いドローンを使用する場合の許可手続きについて以下の通り定めております。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "銚子市": {
+   "category": "unknown",
+   "summary": "市独自の上乗せ規制は確認されず(国の規制のみ)。市は撮影の問合せで国交省の無人航空機飛行ルール(私有地の同意・警察連絡等)を案内している。",
+   "sources": [
+    {
+     "label": "銚子市 フィルムコミッションQ&A(国交省の飛行ルールを案内)",
+     "url": "https://www.city.choshi.chiba.jp/kanko/page110018.html",
+     "quote": "以下の国土交通省ホームページの「無人航空機（ドローン・ラジコン機等）の飛行ルール」を参照してください。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "市川市": {
+   "category": "restricted",
+   "summary": "大柏川第一調節池緑地の「敷地内における禁止行為」にドローンの使用を明記。市域全体ではなく当該緑地での禁止。",
+   "sources": [
+    {
+     "label": "市川市 大柏川第一調節池緑地の禁止行為(自然環境課)",
+     "url": "https://www.city.ichikawa.lg.jp/gre05/1111000012.html",
+     "quote": "ドローンおよび火気の使用"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "船橋市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第8条8号に基づき、市の都市公園及び広場等でのドローン飛行を原則禁止。",
+   "sources": [
+    {
+     "label": "船橋市 公園等での小型無人飛行機(ドローン等)の使用禁止(公園緑地課)",
+     "url": "https://www.city.funabashi.lg.jp/machi/kouen/002/p037595.html",
+     "quote": "都市公園及び広場等で小型無人飛行機（ドローン等）を飛ばす行為は、操縦不能等により第三者への危険並びに公園施設や近隣住宅への破損も考えられるため、原則禁止とします。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "館山市": {
+   "category": "restricted",
+   "summary": "沖ノ島公園(砂州含む)でのドローン使用は、公園内行為許可に加え海上自衛隊館山航空基地・館山警察署との事前協議が必要(要相談)。",
+   "sources": [
+    {
+     "label": "館山市 沖ノ島公園(都市計画課)",
+     "url": "https://www.city.tateyama.chiba.jp/tosikeikaku/page000206.html",
+     "quote": "沖ノ島公園（砂州部分を含む）でのドローンの使用は、公園内行為許可申請とは別に、事前に海上自衛隊館山航空基地及び館山警察署と協議をしてください。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "木更津市": {
+   "category": "unknown",
+   "summary": "市独自規制ではなく、国の小型無人機等飛行禁止法(市内の自衛隊施設周辺は原則禁止)を市が案内している。",
+   "sources": [
+    {
+     "label": "木更津市 防衛施設周辺における小型無人機(ドローン等)の飛行の禁止(企画課)",
+     "url": "https://www.city.kisarazu.lg.jp/soshiki/kikaku/kikaku/1/3984.html",
+     "quote": "小型無人機等飛行禁止法に基づき、市内に所在する各自衛隊施設が対象防衛関係施設に指定され"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "松戸市": {
+   "category": "restricted",
+   "summary": "都市公園「21世紀の森と広場」の持込禁止品リストにドローンを明記(園内へ持ち込めない)。市域全体ではなく当該公園の運用。",
+   "sources": [
+    {
+     "label": "松戸市 21世紀の森と広場 持込禁止品(公園緑地課)",
+     "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/mochikomikinnshi.html",
+     "quote": "ドローン ラジコン(船・車)"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "野田市": {
+   "category": "unknown",
+   "summary": "市独自規制ではなく、航空法改正に伴う国の無人航空機飛行ルール(人口集中地区上空の飛行禁止等)を市が案内している。",
+   "sources": [
+    {
+     "label": "野田市 無人航空機(ドローン等)の安全な飛行について(国の航空法ルールを案内)",
+     "url": "https://www.city.noda.chiba.jp/kurashi/oshirase/seikatsukankyo/1008211.html",
+     "quote": "航空法の改正によりドローンやラジコン機等の無人航空機の飛行ルールが新たに導入され"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "成田市": {
+   "category": "restricted",
+   "summary": "市の都市公園でのドローン等飛行は都市公園条例の「行為の禁止」に該当し、飛行には市の許可が必要(許可制)。市内は成田空港周辺の国規制(飛行禁止法・航空法)も及ぶ。",
+   "sources": [
+    {
+     "label": "成田市 都市公園でのドローン等の飛行(市の許可制)",
+     "url": "https://www.city.narita.chiba.jp/content/000150795.pdf",
+     "quote": "公園内でのドローンやラジコンヘリ等の飛行は、成田市都市公園条例の「行為の禁止」に該当します。飛行させるには市の許可が必要となります。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "佐倉市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第5条8号に該当するとして、市の都市公園でのドローン飛行を原則禁止。佐倉城址公園も対象。",
+   "sources": [
+    {
+     "label": "佐倉市 公園内におけるドローンの取扱いについて(公園緑地課)",
+     "url": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/chuijoho/1923.html",
+     "quote": "佐倉市都市公園条例第5条8号「公園の公衆の利用を妨げる行為」に該当することから、原則禁止とします。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "旭市": {
+   "category": "prohibited",
+   "summary": "市立公園条例第8条を根拠に、市内公園でのドローン(ラジコンヘリ含む)使用を不可と明文。",
+   "sources": [
+    {
+     "label": "旭市 市内公園におけるドローンの飛行について(都市整備課)",
+     "url": "https://www.city.asahi.lg.jp/soshiki/17/12970.html",
+     "quote": "ドローン（ラジコンヘリ含む）は公園内で使用できません。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "柏市": {
+   "category": "restricted",
+   "summary": "公園の注意事項の「迷惑な行為はやめましょう」の列挙にドローン等の使用を明記(自粛の呼びかけ)。",
+   "sources": [
+    {
+     "label": "柏市 公園の利用に関する注意事項(迷惑行為はやめましょう)",
+     "url": "https://www.city.kashiwa.lg.jp/facilities/park/oshirase/riyouannai.html",
+     "quote": "ドローン（小型無人航空機）等の使用"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "流山市": {
+   "category": "prohibited",
+   "summary": "公園利用のルールとして、公園内でのドローン・ラジコンヘリ等の飛行を禁止。",
+   "sources": [
+    {
+     "label": "流山市 公園利用のルールとマナー(みどりの課)",
+     "url": "https://www.city.nagareyama.chiba.jp/life/1002263/1002342/1022855/1002350.html",
+     "quote": "ドローンやラジコンヘリ等を公園内で飛ばさないでください。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "八千代市": {
+   "category": "restricted",
+   "summary": "市内の公園等でドローン等の使用自粛を要請。イベント等で使用する際は公園緑地課へ要相談。",
+   "sources": [
+    {
+     "label": "八千代市 公園におけるドローンを含めた無人機等に関するお願い(公園緑地課)",
+     "url": "https://www.city.yachiyo.lg.jp/soshiki/46/4063.html",
+     "quote": "ドローンを含めた無人機等は、落下による公園利用者への危険性があることおよび公園施設を破損する恐れがあることから、使用について控えてくださるようお願いします。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "我孫子市": {
+   "category": "prohibited",
+   "summary": "公園FAQで、市内公園でのドローン・ラジコン機の飛行を禁止と明文。公共公益性のある調査測量・撮影等は要相談。",
+   "sources": [
+    {
+     "label": "我孫子市 公園のよくある質問(公園緑地課)",
+     "url": "https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/kouen_riyou.html",
+     "quote": "落下した場合大変危険であり、人や公園施設に被害を与える恐れがあるため禁止です。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "鴨川市": {
+   "category": "restricted",
+   "summary": "公園の撮影は許可制で、その主な禁止事項として公園内での無人航空機(ドローン)を用いた撮影を挙げている。",
+   "sources": [
+    {
+     "label": "鴨川市 道路や公園を撮影等で使用する場合(都市建設課)",
+     "url": "https://www.city.kamogawa.lg.jp/soshiki/26/6739.html",
+     "quote": "公園内で、無人航空機（ドローン）を用いた撮影をすること。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "富津市": {
+   "category": "restricted",
+   "summary": "磯根崎・磯根海岸(大貫漁港区域)の撮影について、市が「ドローン海上での撮影不可」と明記。当該海岸に限定。",
+   "sources": [
+    {
+     "label": "富津市 フィルムコミッション 撮影許可先一覧(商工観光課)",
+     "url": "https://www.city.futtsu.lg.jp/0000006735.html",
+     "quote": "ドローン海上での撮影不可"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "浦安市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第4条を根拠に、市営の公園・緑地・緑道でのドローン飛行を原則禁止(100g未満も含む)。映像作品等の空撮はみどり公園課へ申請で可。",
+   "sources": [
+    {
+     "label": "浦安市 公園・緑地でのドローン飛行(みどり公園課)",
+     "url": "https://www.city.urayasu.lg.jp/shisetsu/kouen/1024550/1043925.html",
+     "quote": "公園や緑地、緑道などで小型無人飛行機（ドローンなど）を飛ばす行為は"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "袖ケ浦市": {
+   "category": "restricted",
+   "summary": "コンビナート・プラント事業所でドローンを運用する場合、国のガイドラインに基づき市消防へ事前届出が必要(届出制)。対象はプラント事業者に限定。",
+   "sources": [
+    {
+     "label": "袖ケ浦市 コンビナート/プラントでのドローン運用は消防へ届出(消防本部予防課)",
+     "url": "https://www.city.sodegaura.lg.jp/soshiki/shobo-yobo/drone.html",
+     "quote": "プラントにおけるドローンの安全な運用方法に関するガイドライン"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "印西市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第4条第9号を根拠に、市の都市公園でのドローン使用を禁止と明文。",
+   "sources": [
+    {
+     "label": "印西市 都市公園内でのドローンの使用禁止について(公園緑地課)",
+     "url": "https://www.city.inzai.lg.jp/0000004130.html",
+     "quote": "ドローン（無人飛行機）は、他の公園利用者の迷惑となりケガをさせる恐れがありますので禁止となります。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "白井市": {
+   "category": "prohibited",
+   "summary": "市が管理する公園でのドローン使用を機体の重さ・大きさに関わらず原則禁止。あわせて国の航空法・飛行禁止法(下総航空基地周辺)も案内。",
+   "sources": [
+    {
+     "label": "白井市 ドローンなどの飛行制限・飛行ルールについて(総務課)",
+     "url": "https://www.city.shiroi.chiba.jp/soshiki/somu/s06/osirase/11279.html",
+     "quote": "市が管理する公園では、機体の重さや大きさに関わらず、ドローンなどの使用を原則として禁止しています。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "富里市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第5条第9号に基づき、市内公園でのドローン使用を禁止。イベント時は市の許可が必要。",
+   "sources": [
+    {
+     "label": "富里市 公園内でのドローン使用禁止",
+     "url": "https://www.city.tomisato.lg.jp/0000006709.html",
+     "quote": "市内の公園内での「ドローン」の使用は禁止です"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "南房総市": {
+   "category": "unknown",
+   "summary": "市独自規制ではなく、国の小型無人機等飛行禁止法(峯岡山分屯基地周辺は原則禁止)を市が案内している。",
+   "sources": [
+    {
+     "label": "南房総市 自衛隊施設(峯岡山分屯基地)周辺の飛行禁止法案内",
+     "url": "https://www.city.minamiboso.chiba.jp/0000015888.html",
+     "quote": "峯岡山分屯基地周辺地域では、ドローンを含む小型無人飛行機の飛行が原則禁止となります。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "匝瑳市": {
+   "category": "prohibited",
+   "summary": "都市公園条例第7条第9号等に基づき、市の公園でのドローン等飛行を禁止。イベント時は市の許可が必要。",
+   "sources": [
+    {
+     "label": "匝瑳市 公園内におけるドローンなどの使用規制",
+     "url": "https://www.city.sosa.lg.jp/page/page002485.html",
+     "quote": "ドローンやラジコンヘリなどを公園内で飛ばさないでください。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "香取市": {
+   "category": "restricted",
+   "summary": "公園利用のマナーとして、ドローンの操縦など他の利用者に迷惑・危険を及ぼす行為はやめるよう呼びかけ(自粛)。",
+   "sources": [
+    {
+     "label": "香取市 公園を利用される皆様へ(マナーの呼びかけ)",
+     "url": "https://www.city.katori.lg.jp/shisetsu/sport_koen/koenjoho/kouenriyou.html",
+     "quote": "ドローンやラジコンの操縦やゴルフの練習のような、他の公園利用者や近隣にお住まいの方々を危険にさらしたり迷惑をかける行為はやめましょう。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "大網白里市": {
+   "category": "restricted",
+   "summary": "白里海水浴場(九十九里浜)の禁止事項に無人航空機(ドローン等)の使用を明記。海水浴場エリアに限定。",
+   "sources": [
+    {
+     "label": "大網白里市 白里海水浴場の開設について 禁止事項",
+     "url": "https://www.city.oamishirasato.lg.jp/0000015315.html",
+     "quote": "無人航空機（ドローン・ラジコン機等）の使用"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "九十九里町": {
+   "category": "restricted",
+   "summary": "片貝・不動堂海水浴場の注意事項で、海水浴場内での無人航空機(ドローン等)使用を禁止。海水浴場エリアに限定。",
+   "sources": [
+    {
+     "label": "九十九里町 海水浴場利用時の注意事項",
+     "url": "https://www.town.kujukuri.chiba.jp/0000008988.html",
+     "quote": "海水浴場内で有人航空機（パラグライダー等）および無人航空機（ドローン、ラジコン機等）を使用しないこと。"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "芝山町": {
+   "category": "restricted",
+   "summary": "「ひこうきの丘の設置及び管理に関する条例」の禁止行為にドローン等の使用を明記。当該施設(展望施設)に限定。",
+   "sources": [
+    {
+     "label": "芝山町 ひこうきの丘の使用について 禁止行為",
+     "url": "https://www.town.shibayama.lg.jp/0000002575.html",
+     "quote": "（8）ドローン等の使用"
+    }
+   ],
+   "確認日": "2026-08-17"
+  },
+  "長生村": {
+   "category": "restricted",
+   "summary": "一松海水浴場の禁止事項に無人航空機(ドローン)使用を明記。海水浴場エリアに限定。",
+   "sources": [
+    {
+     "label": "長生村 一松海水浴場の開設について 禁止事項",
+     "url": "https://www.vill.chosei.chiba.jp/0000002766.html",
+     "quote": "無人航空機（ドローン・ラジコン等）の使用"
+    }
+   ],
+   "確認日": "2026-08-17"
+  }
+ },
+ "unknown_simple": [
+  "茂原市",
+  "東金市",
+  "習志野市",
+  "勝浦市",
+  "市原市",
+  "鎌ケ谷市",
+  "君津市",
+  "四街道市",
+  "八街市",
+  "山武市",
+  "いすみ市",
+  "酒々井町",
+  "栄町",
+  "神崎町",
+  "多古町",
+  "東庄町",
+  "横芝光町",
+  "一宮町",
+  "睦沢町",
+  "白子町",
+  "長柄町",
+  "長南町",
+  "大多喜町",
+  "御宿町",
+  "鋸南町"
+ ],
+ "unknown_simple_summary": "公式ページでドローンに関する記載は確認されず(2026-08-17時点)。自治体独自の規制は確認されていないため、国の規制(航空法・小型無人機等飛行禁止法・空域)が適用される。公園条例の一般規定(危険・迷惑・管理支障行為の禁止)により管理者判断で個別に制限される場合はある。",
+ "default_sources": [
+  {
+   "label": "千葉県警察 小型無人機(ドローン)等の飛行に関するルール(航空法・小型無人機等飛行禁止法)",
+   "url": "https://www.police.pref.chiba.jp/keibika/safeLife_drone_rules.html"
+  },
+  {
+   "label": "千葉県 県管理海岸(港湾・漁港区域を除く)・河川におけるドローンの利用や撮影について",
+   "url": "https://www.pref.chiba.lg.jp/kakan/kaigan/drone.html"
+  }
+ ],
+ "official_hp": {
+  "千葉市": "https://www.city.chiba.jp/",
+  "銚子市": "https://www.city.choshi.chiba.jp/",
+  "市川市": "https://www.city.ichikawa.lg.jp/",
+  "船橋市": "https://www.city.funabashi.lg.jp/",
+  "館山市": "https://www.city.tateyama.chiba.jp/",
+  "木更津市": "https://www.city.kisarazu.lg.jp/",
+  "松戸市": "https://www.city.matsudo.chiba.jp/",
+  "野田市": "https://www.city.noda.chiba.jp/",
+  "茂原市": "https://www.city.mobara.chiba.jp/",
+  "成田市": "https://www.city.narita.chiba.jp/",
+  "佐倉市": "https://www.city.sakura.lg.jp/",
+  "東金市": "https://www.city.togane.chiba.jp/",
+  "旭市": "https://www.city.asahi.lg.jp/",
+  "習志野市": "https://www.city.narashino.lg.jp/",
+  "柏市": "https://www.city.kashiwa.lg.jp/",
+  "勝浦市": "https://www.city.katsuura.lg.jp/",
+  "市原市": "https://www.city.ichihara.chiba.jp/",
+  "流山市": "https://www.city.nagareyama.chiba.jp/",
+  "八千代市": "https://www.city.yachiyo.lg.jp/",
+  "我孫子市": "https://www.city.abiko.chiba.jp/",
+  "鴨川市": "https://www.city.kamogawa.lg.jp/",
+  "鎌ケ谷市": "https://www.city.kamagaya.chiba.jp/",
+  "君津市": "https://www.city.kimitsu.lg.jp/",
+  "富津市": "https://www.city.futtsu.lg.jp/",
+  "浦安市": "https://www.city.urayasu.lg.jp/",
+  "四街道市": "https://www.city.yotsukaido.chiba.jp/",
+  "袖ケ浦市": "https://www.city.sodegaura.lg.jp/",
+  "八街市": "https://www.city.yachimata.lg.jp/",
+  "印西市": "https://www.city.inzai.lg.jp/",
+  "白井市": "https://www.city.shiroi.chiba.jp/",
+  "富里市": "https://www.city.tomisato.lg.jp/",
+  "南房総市": "https://www.city.minamiboso.chiba.jp/",
+  "匝瑳市": "https://www.city.sosa.lg.jp/",
+  "香取市": "https://www.city.katori.lg.jp/",
+  "山武市": "https://www.city.sammu.lg.jp/",
+  "いすみ市": "https://www.city.isumi.lg.jp/",
+  "大網白里市": "https://www.city.oamishirasato.lg.jp/",
+  "酒々井町": "https://www.town.shisui.chiba.jp/",
+  "栄町": "https://www.town.sakae.chiba.jp/",
+  "神崎町": "https://www.town.kozaki.chiba.jp/",
+  "多古町": "https://www.town.tako.chiba.jp/",
+  "東庄町": "https://www.town.tohnosho.chiba.jp/",
+  "九十九里町": "https://www.town.kujukuri.chiba.jp/",
+  "芝山町": "https://www.town.shibayama.lg.jp/",
+  "横芝光町": "https://www.town.yokoshibahikari.chiba.jp/",
+  "一宮町": "https://www.town.ichinomiya.chiba.jp/",
+  "睦沢町": "https://www.town.mutsuzawa.chiba.jp/",
+  "長生村": "https://www.vill.chosei.chiba.jp/",
+  "白子町": "https://www.town.shirako.lg.jp/",
+  "長柄町": "https://www.town.nagara.chiba.jp/",
+  "長南町": "https://www.town.chonan.chiba.jp/",
+  "大多喜町": "https://www.town.otaki.chiba.jp/",
+  "御宿町": "https://www.town.onjuku.chiba.jp/",
+  "鋸南町": "https://www.town.kyonan.chiba.jp/"
+ },
+ "official_hp_source": null
+}

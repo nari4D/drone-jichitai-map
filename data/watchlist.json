@@ -978,6 +978,421 @@
           ]
         }
       }
+    },
+    "千葉県": {
+      "common_urls": [
+        "https://www.police.pref.chiba.jp/keibika/safeLife_drone_rules.html",
+        "https://www.pref.chiba.lg.jp/kakan/kaigan/drone.html"
+      ],
+      "municipalities": {
+        "千葉市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.chiba.jp/",
+            "https://www.city.chiba.jp/toshi/koenryokuchi/kanri/satuei-dorone-kyoka.html"
+          ]
+        },
+        "銚子市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.choshi.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.choshi.chiba.jp/",
+            "https://www.city.choshi.chiba.jp/kanko/page110018.html"
+          ]
+        },
+        "市川市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.ichikawa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.ichikawa.lg.jp/",
+            "https://www.city.ichikawa.lg.jp/gre05/1111000012.html"
+          ]
+        },
+        "船橋市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.funabashi.lg.jp/",
+          "watch_urls": [
+            "https://www.city.funabashi.lg.jp/",
+            "https://www.city.funabashi.lg.jp/machi/kouen/002/p037595.html"
+          ]
+        },
+        "館山市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.tateyama.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.tateyama.chiba.jp/",
+            "https://www.city.tateyama.chiba.jp/tosikeikaku/page000206.html"
+          ]
+        },
+        "木更津市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kisarazu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kisarazu.lg.jp/",
+            "https://www.city.kisarazu.lg.jp/soshiki/kikaku/kikaku/1/3984.html"
+          ]
+        },
+        "松戸市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.matsudo.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.matsudo.chiba.jp/",
+            "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/mochikomikinnshi.html"
+          ]
+        },
+        "野田市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.noda.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.noda.chiba.jp/",
+            "https://www.city.noda.chiba.jp/kurashi/oshirase/seikatsukankyo/1008211.html"
+          ]
+        },
+        "茂原市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.mobara.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.mobara.chiba.jp/"
+          ]
+        },
+        "成田市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.narita.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.narita.chiba.jp/",
+            "https://www.city.narita.chiba.jp/content/000150795.pdf"
+          ]
+        },
+        "佐倉市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.sakura.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sakura.lg.jp/",
+            "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/chuijoho/1923.html"
+          ]
+        },
+        "東金市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.togane.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.togane.chiba.jp/"
+          ]
+        },
+        "旭市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.asahi.lg.jp/",
+          "watch_urls": [
+            "https://www.city.asahi.lg.jp/",
+            "https://www.city.asahi.lg.jp/soshiki/17/12970.html"
+          ]
+        },
+        "習志野市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.narashino.lg.jp/",
+          "watch_urls": [
+            "https://www.city.narashino.lg.jp/"
+          ]
+        },
+        "柏市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.kashiwa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kashiwa.lg.jp/",
+            "https://www.city.kashiwa.lg.jp/facilities/park/oshirase/riyouannai.html"
+          ]
+        },
+        "勝浦市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.katsuura.lg.jp/",
+          "watch_urls": [
+            "https://www.city.katsuura.lg.jp/"
+          ]
+        },
+        "市原市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.ichihara.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.ichihara.chiba.jp/"
+          ]
+        },
+        "流山市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.nagareyama.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.nagareyama.chiba.jp/",
+            "https://www.city.nagareyama.chiba.jp/life/1002263/1002342/1022855/1002350.html"
+          ]
+        },
+        "八千代市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.yachiyo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.yachiyo.lg.jp/",
+            "https://www.city.yachiyo.lg.jp/soshiki/46/4063.html"
+          ]
+        },
+        "我孫子市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.abiko.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.abiko.chiba.jp/",
+            "https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/kouen_riyou.html"
+          ]
+        },
+        "鴨川市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.kamogawa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kamogawa.lg.jp/",
+            "https://www.city.kamogawa.lg.jp/soshiki/26/6739.html"
+          ]
+        },
+        "鎌ケ谷市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kamagaya.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.kamagaya.chiba.jp/"
+          ]
+        },
+        "君津市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kimitsu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kimitsu.lg.jp/"
+          ]
+        },
+        "富津市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.futtsu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.futtsu.lg.jp/",
+            "https://www.city.futtsu.lg.jp/0000006735.html"
+          ]
+        },
+        "浦安市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.urayasu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.urayasu.lg.jp/",
+            "https://www.city.urayasu.lg.jp/shisetsu/kouen/1024550/1043925.html"
+          ]
+        },
+        "四街道市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.yotsukaido.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.yotsukaido.chiba.jp/"
+          ]
+        },
+        "袖ケ浦市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.sodegaura.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sodegaura.lg.jp/",
+            "https://www.city.sodegaura.lg.jp/soshiki/shobo-yobo/drone.html"
+          ]
+        },
+        "八街市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.yachimata.lg.jp/",
+          "watch_urls": [
+            "https://www.city.yachimata.lg.jp/"
+          ]
+        },
+        "印西市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.inzai.lg.jp/",
+          "watch_urls": [
+            "https://www.city.inzai.lg.jp/",
+            "https://www.city.inzai.lg.jp/0000004130.html"
+          ]
+        },
+        "白井市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.shiroi.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.shiroi.chiba.jp/",
+            "https://www.city.shiroi.chiba.jp/soshiki/somu/s06/osirase/11279.html"
+          ]
+        },
+        "富里市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.tomisato.lg.jp/",
+          "watch_urls": [
+            "https://www.city.tomisato.lg.jp/",
+            "https://www.city.tomisato.lg.jp/0000006709.html"
+          ]
+        },
+        "南房総市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.minamiboso.chiba.jp/",
+          "watch_urls": [
+            "https://www.city.minamiboso.chiba.jp/",
+            "https://www.city.minamiboso.chiba.jp/0000015888.html"
+          ]
+        },
+        "匝瑳市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.sosa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sosa.lg.jp/",
+            "https://www.city.sosa.lg.jp/page/page002485.html"
+          ]
+        },
+        "香取市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.katori.lg.jp/",
+          "watch_urls": [
+            "https://www.city.katori.lg.jp/",
+            "https://www.city.katori.lg.jp/shisetsu/sport_koen/koenjoho/kouenriyou.html"
+          ]
+        },
+        "山武市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.sammu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sammu.lg.jp/"
+          ]
+        },
+        "いすみ市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.isumi.lg.jp/",
+          "watch_urls": [
+            "https://www.city.isumi.lg.jp/"
+          ]
+        },
+        "大網白里市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.oamishirasato.lg.jp/",
+          "watch_urls": [
+            "https://www.city.oamishirasato.lg.jp/",
+            "https://www.city.oamishirasato.lg.jp/0000015315.html"
+          ]
+        },
+        "酒々井町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.shisui.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.shisui.chiba.jp/"
+          ]
+        },
+        "栄町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.sakae.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.sakae.chiba.jp/"
+          ]
+        },
+        "神崎町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kozaki.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.kozaki.chiba.jp/"
+          ]
+        },
+        "多古町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.tako.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.tako.chiba.jp/"
+          ]
+        },
+        "東庄町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.tohnosho.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.tohnosho.chiba.jp/"
+          ]
+        },
+        "九十九里町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.kujukuri.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.kujukuri.chiba.jp/",
+            "https://www.town.kujukuri.chiba.jp/0000008988.html"
+          ]
+        },
+        "芝山町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.shibayama.lg.jp/",
+          "watch_urls": [
+            "https://www.town.shibayama.lg.jp/",
+            "https://www.town.shibayama.lg.jp/0000002575.html"
+          ]
+        },
+        "横芝光町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yokoshibahikari.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.yokoshibahikari.chiba.jp/"
+          ]
+        },
+        "一宮町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ichinomiya.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.ichinomiya.chiba.jp/"
+          ]
+        },
+        "睦沢町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.mutsuzawa.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.mutsuzawa.chiba.jp/"
+          ]
+        },
+        "長生村": {
+          "category_current": "restricted",
+          "official_hp": "https://www.vill.chosei.chiba.jp/",
+          "watch_urls": [
+            "https://www.vill.chosei.chiba.jp/",
+            "https://www.vill.chosei.chiba.jp/0000002766.html"
+          ]
+        },
+        "白子町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.shirako.lg.jp/",
+          "watch_urls": [
+            "https://www.town.shirako.lg.jp/"
+          ]
+        },
+        "長柄町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.nagara.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.nagara.chiba.jp/"
+          ]
+        },
+        "長南町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.chonan.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.chonan.chiba.jp/"
+          ]
+        },
+        "大多喜町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.otaki.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.otaki.chiba.jp/"
+          ]
+        },
+        "御宿町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.onjuku.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.onjuku.chiba.jp/"
+          ]
+        },
+        "鋸南町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kyonan.chiba.jp/",
+          "watch_urls": [
+            "https://www.town.kyonan.chiba.jp/"
+          ]
+        }
+      }
     }
   }
 }
