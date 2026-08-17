@@ -38,6 +38,10 @@ CLASSIFIED = DATA / "discovery" / "classified.json"
 
 VALID_CATEGORIES = ("prohibited", "restricted", "unknown")
 RANK = {"unknown": 0, "restricted": 1, "prohibited": 2}
+# 市が「国の飛行禁止法/航空法の飛行ルール」を自サイトで案内しているページ。
+# 自治体独自の上乗せ規制ではないので色（区分）は付けないが、飛行者にとって有用な
+# 一次情報なので確認先（出典）としては拾う。舞鶴市・京田辺市の基地周辺案内が該当。
+NOTICE = "national_law_notice"
 MIN_QUOTE = 12          # これ未満の引用は根拠として弱い（"ドローン禁止" 等でも12字に届く）
 OK_CONFIDENCE = ("high", "medium")
 
@@ -55,11 +59,14 @@ def verify(v, pending_by_id):
         return None, f"未知のid: {pid}"
 
     cat = v.get("category")
-    if cat not in VALID_CATEGORIES:
+    if cat not in VALID_CATEGORIES and cat != NOTICE:
         return item, f"不正な区分: {cat}"
     if cat == "unknown":
         return item, "LLMがunknownと判定"
 
+    # prohibited / restricted / national_law_notice は同じ引用ゲートを通す。
+    # NOTICE も「引用が公式本文に逐語で存在し、ドローン語を含む」ことを要求する
+    # （色は付けないが、根拠の無い確認先を勝手に足さないため検証は同一）。
     if v.get("confidence") not in OK_CONFIDENCE:
         return item, f"確信度が低い: {v.get('confidence')}"
 
@@ -89,6 +96,23 @@ def apply_one(reg, item, cat, quote, summary):
     cur = munis.get(name)
 
     src = {"label": f"{name} 公式（自動分類 {TODAY} 確認）", "url": item["url"], "quote": quote}
+
+    if cat == NOTICE:
+        # 国法の案内ページ。色（区分）は付けず、確認先（出典）だけ追加する。
+        # 既存の色・要約（手で逐語確認したもの含む）は一切触らない。
+        if cur is None:
+            munis[name] = {"category": "unknown", "summary": summary,
+                           "確認日": TODAY, "sources": [src]}
+            us = reg.get("unknown_simple")
+            if isinstance(us, list) and name in us:
+                us.remove(name)
+            return True
+        urls = {s.get("url") for s in cur.setdefault("sources", [])}
+        if item["url"] in urls:
+            return False           # 既に同じ出典がある＝何もしない
+        cur["sources"].append(src)
+        cur["確認日"] = TODAY
+        return True
 
     if cur is None:
         munis[name] = {"category": cat, "summary": summary, "確認日": TODAY, "sources": [src]}
@@ -175,7 +199,8 @@ def main():
         changed = (True if args.dry_run
                    else apply_one(regs[item["pref"]], item, cat, quote, summary))
         if changed:
-            print(f"  + {tag}: {cat}{' ※dry-run' if args.dry_run else ''}", file=sys.stderr)
+            shown = "国法案内(確認先のみ・色なし)" if cat == NOTICE else cat
+            print(f"  + {tag}: {shown}{' ※dry-run' if args.dry_run else ''}", file=sys.stderr)
             applied.append((tag, cat))
         log_rows.append({"date": TODAY, "muni": item["muni"], "pref": item["pref"],
                          "url": item["url"], "result": cat, "quote": quote})
