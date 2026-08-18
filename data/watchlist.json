@@ -1034,19 +1034,21 @@
           ]
         },
         "松戸市": {
-          "category_current": "restricted",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.matsudo.chiba.jp/",
           "watch_urls": [
             "https://www.city.matsudo.chiba.jp/",
-            "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/mochikomikinnshi.html"
+            "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/mochikomikinnshi.html",
+            "https://www.city.matsudo.chiba.jp/shisetsu-guide/sports/nogikuno.html"
           ]
         },
         "野田市": {
-          "category_current": "unknown",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.noda.chiba.jp/",
           "watch_urls": [
             "https://www.city.noda.chiba.jp/",
-            "https://www.city.noda.chiba.jp/kurashi/oshirase/seikatsukankyo/1008211.html"
+            "https://www.city.noda.chiba.jp/kurashi/oshirase/seikatsukankyo/1008211.html",
+            "https://www.city.noda.chiba.jp/shisetsu/kouen/1001081.html"
           ]
         },
         "茂原市": {
@@ -1057,11 +1059,12 @@
           ]
         },
         "成田市": {
-          "category_current": "restricted",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.narita.chiba.jp/",
           "watch_urls": [
             "https://www.city.narita.chiba.jp/",
-            "https://www.city.narita.chiba.jp/content/000150795.pdf"
+            "https://www.city.narita.chiba.jp/content/000150795.pdf",
+            "https://www.city.narita.chiba.jp/kanko/page151300.html"
           ]
         },
         "佐倉市": {
@@ -1205,7 +1208,8 @@
           "official_hp": "https://www.city.inzai.lg.jp/",
           "watch_urls": [
             "https://www.city.inzai.lg.jp/",
-            "https://www.city.inzai.lg.jp/0000004130.html"
+            "https://www.city.inzai.lg.jp/0000004130.html",
+            "https://www.city.inzai.lg.jp/0000016141.html"
           ]
         },
         "白井市": {
@@ -1221,7 +1225,10 @@
           "official_hp": "https://www.city.tomisato.lg.jp/",
           "watch_urls": [
             "https://www.city.tomisato.lg.jp/",
-            "https://www.city.tomisato.lg.jp/0000006709.html"
+            "https://www.city.tomisato.lg.jp/0000006709.html",
+            "https://www.city.tomisato.lg.jp/category/8-8-14-0-0-0-0-0-0-0.html",
+            "https://www.city.tomisato.lg.jp/category/8-8-14-1-0-0-0-0-0-0.html",
+            "https://www.city.tomisato.lg.jp/category/2-8-14-2-0-0-0-0-0-0.html"
           ]
         },
         "南房総市": {

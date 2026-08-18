@@ -438,5 +438,61 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "松戸市",
+  "pref": "千葉県",
+  "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/sports/nogikuno.html",
+  "result": "prohibited",
+  "quote": "施設外のちば野菊の里浄水場内に物品を入れる（落ちる）恐れがある行為（ドローン・ラジコン、凧上げ、ボールの投げ入れ等）"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "野田市",
+  "pref": "千葉県",
+  "url": "https://www.city.noda.chiba.jp/shisetsu/kouen/1001081.html",
+  "result": "prohibited",
+  "quote": "なお、施設内でのドローン飛行及び撮影は原則禁止です。"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "成田市",
+  "pref": "千葉県",
+  "url": "https://www.city.narita.chiba.jp/kanko/page151300.html",
+  "result": "prohibited",
+  "quote": "無人航空機（ドローン、ラジコン等）の飛行"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000016141.html",
+  "result": "prohibited",
+  "quote": "都市公園内でのドローンの使用禁止について"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "富里市",
+  "pref": "千葉県",
+  "url": "https://www.city.tomisato.lg.jp/category/8-8-14-0-0-0-0-0-0-0.html",
+  "result": "prohibited",
+  "quote": "公園内における「ドローン」の取扱いは禁止です"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "富里市",
+  "pref": "千葉県",
+  "url": "https://www.city.tomisato.lg.jp/category/8-8-14-1-0-0-0-0-0-0.html",
+  "result": "prohibited",
+  "quote": "公園内における「ドローン」の取扱いは禁止です"
+ },
+ {
+  "date": "2026-08-19",
+  "muni": "富里市",
+  "pref": "千葉県",
+  "url": "https://www.city.tomisato.lg.jp/category/2-8-14-2-0-0-0-0-0-0.html",
+  "result": "prohibited",
+  "quote": "公園内における「ドローン」の取扱いは禁止です"
  }
 ]
