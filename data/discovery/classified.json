@@ -494,5 +494,29 @@
   "url": "https://www.city.tomisato.lg.jp/category/2-8-14-2-0-0-0-0-0-0.html",
   "result": "prohibited",
   "quote": "公園内における「ドローン」の取扱いは禁止です"
+ },
+ {
+  "date": "2026-08-20",
+  "muni": "芝山町",
+  "pref": "千葉県",
+  "url": "https://www.town.shibayama.lg.jp/0000000311.html",
+  "result": "unknown",
+  "reason": "引用が短すぎる: '11．ドローン等の使用'"
+ },
+ {
+  "date": "2026-08-20",
+  "muni": "御宿町",
+  "pref": "千葉県",
+  "url": "https://www.town.onjuku.chiba.jp/sub4/3/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-20",
+  "muni": "御宿町",
+  "pref": "千葉県",
+  "url": "https://www.town.onjuku.chiba.jp/sub4/3/2051.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
