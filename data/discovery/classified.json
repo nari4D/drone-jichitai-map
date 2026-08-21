@@ -518,5 +518,13 @@
   "url": "https://www.town.onjuku.chiba.jp/sub4/3/2051.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-22",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
