@@ -526,5 +526,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-23",
+  "muni": "日の出町",
+  "pref": "東京都",
+  "url": "https://www.town.hinode.tokyo.jp/0000004787.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
