@@ -534,5 +534,21 @@
   "url": "https://www.town.hinode.tokyo.jp/0000004787.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-24",
+  "muni": "船橋市",
+  "pref": "千葉県",
+  "url": "https://www.city.funabashi.lg.jp/machi/kouen/002/p149352.html",
+  "result": "prohibited",
+  "quote": "公園等での小型無人飛行機（ドローン等）の使用は禁止しております。"
+ },
+ {
+  "date": "2026-08-24",
+  "muni": "船橋市",
+  "pref": "千葉県",
+  "url": "https://www.city.funabashi.lg.jp/shisei/keikaku/004/p148986.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
