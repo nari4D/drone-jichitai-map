@@ -550,5 +550,13 @@
   "url": "https://www.city.funabashi.lg.jp/shisei/keikaku/004/p148986.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-25",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
