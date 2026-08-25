@@ -558,5 +558,37 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-26",
+  "muni": "多古町",
+  "pref": "千葉県",
+  "url": "https://www.town.tako.chiba.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-26",
+  "muni": "多古町",
+  "pref": "千葉県",
+  "url": "https://www.town.tako.chiba.jp/docs/2026081000027/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-26",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-26",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kosodate/education/gakkolink/torami-e/2.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
