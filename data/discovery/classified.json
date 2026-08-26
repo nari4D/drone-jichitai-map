@@ -590,5 +590,21 @@
   "url": "https://www.town.ichinomiya.chiba.jp/kosodate/education/gakkolink/torami-e/2.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-27",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-27",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/docs/2026062300306/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
