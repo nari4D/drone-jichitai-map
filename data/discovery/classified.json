@@ -606,5 +606,29 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/docs/2026062300306/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-30",
+  "muni": "瑞穂町",
+  "pref": "東京都",
+  "url": "https://www.town.mizuho.tokyo.jp/event/e001/p011872.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-30",
+  "muni": "日の出町",
+  "pref": "東京都",
+  "url": "https://www.town.hinode.tokyo.jp/0000004794.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-30",
+  "muni": "松戸市",
+  "pref": "千葉県",
+  "url": "https://www.city.matsudo.chiba.jp/shisei/toshiseubi/kouen/index.html",
+  "result": "prohibited",
+  "quote": "ドローン（ラジコンヘリ等）を飛ばすこと"
  }
 ]
