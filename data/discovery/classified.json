@@ -630,5 +630,21 @@
   "url": "https://www.city.matsudo.chiba.jp/shisei/toshiseubi/kouen/index.html",
   "result": "prohibited",
   "quote": "ドローン（ラジコンヘリ等）を飛ばすこと"
+ },
+ {
+  "date": "2026-08-31",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-08-31",
+  "muni": "富津市",
+  "pref": "千葉県",
+  "url": "https://www.city.futtsu.lg.jp/0000005487.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
