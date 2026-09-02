@@ -670,5 +670,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-03",
+  "muni": "小金井市",
+  "pref": "東京都",
+  "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/sakuraayumi/sakuradouga.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
