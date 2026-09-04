@@ -1,3 +1,15 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "千葉県",
+   "muni": "松戸市",
+   "url": "https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/rekisi-bunka/bunka/index.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "ミングワークショップ プログラミングコンテスト プログラミング体験フェス プログラミングチャレンジ コーダー道場まつど ドローン体験会 プログラミングカフェ 文化芸術イベント 中心市街地活性化 エリアマネジメントにぎわい創出事業 松戸宿坂川",
+   "via": "crawl",
+   "found": "2026-09-05"
+  }
+ ]
 }
