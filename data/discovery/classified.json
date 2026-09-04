@@ -678,5 +678,13 @@
   "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/sakuraayumi/sakuradouga.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-05",
+  "muni": "松戸市",
+  "pref": "千葉県",
+  "url": "https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/rekisi-bunka/bunka/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
