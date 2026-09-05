@@ -686,5 +686,53 @@
   "url": "https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/rekisi-bunka/bunka/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "浦安市",
+  "pref": "千葉県",
+  "url": "https://www.city.urayasu.lg.jp/shisetsu/kouen/1024550/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001700.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001709.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000016082.html",
+  "result": "prohibited",
+  "quote": "公園でのドローン（無人飛行機）の使用はやめましょう\n落下や衝突などによるケガのおそれがあるので、使用禁止としています。"
+ },
+ {
+  "date": "2026-09-06",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
