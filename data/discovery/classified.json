@@ -734,5 +734,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/kagakukan/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-07",
+  "muni": "大多喜町",
+  "pref": "千葉県",
+  "url": "https://www.town.otaki.chiba.jp/gyousei/otaki_shoukai/4/1301.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
