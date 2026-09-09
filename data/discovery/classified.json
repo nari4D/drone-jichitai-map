@@ -742,5 +742,21 @@
   "url": "https://www.town.otaki.chiba.jp/gyousei/otaki_shoukai/4/1301.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-10",
+  "muni": "多摩市",
+  "pref": "東京都",
+  "url": "http://www.city.tama.lg.jp/kurashi/kouen/riyou/1002525.html",
+  "result": "prohibited",
+  "quote": "多摩市内の公園及び緑地では、他の公園利用者の安全確保のために、無人航空機等（ドローン・ラジコン飛行機・その他遠隔操作または自動操縦により飛行させることができるもの）の使用は原則禁止しています。"
+ },
+ {
+  "date": "2026-09-10",
+  "muni": "瑞穂町",
+  "pref": "東京都",
+  "url": "https://www.town.mizuho.tokyo.jp/kurashi/004/001/p011916.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
