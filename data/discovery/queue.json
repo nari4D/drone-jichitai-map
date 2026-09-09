@@ -1,3 +1,28 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "東京都",
+   "muni": "多摩市",
+   "url": "http://www.city.tama.lg.jp/kurashi/kouen/riyou/1002525.html",
+   "hits": [
+    "ドローン",
+    "ラジコン",
+    "無人航空機"
+   ],
+   "snippet": "及び緑地内での無人航空機などの使用について 多摩市内の公園及び緑地では、他の公園利用者の安全確保のために、無人航空機等（ドローン・ラジコン飛行機・その他遠隔操作または自動操縦により飛行させることができるもの）の使用は原則禁止しています。 2",
+   "via": "crawl",
+   "found": "2026-09-10"
+  },
+  {
+   "pref": "東京都",
+   "muni": "瑞穂町",
+   "url": "https://www.town.mizuho.tokyo.jp/kurashi/004/001/p011916.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "ドローンを活用した防災・災害対策等に関する協定の締結について | 瑞穂町ホームページ Language 日本語 Engl",
+   "via": "sitemap",
+   "found": "2026-09-10"
+  }
+ ]
 }
