@@ -758,5 +758,13 @@
   "url": "https://www.town.mizuho.tokyo.jp/kurashi/004/001/p011916.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-11",
+  "muni": "茂原市",
+  "pref": "千葉県",
+  "url": "https://www.city.mobara.chiba.jp/0000007864.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
