@@ -774,5 +774,21 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-13",
+  "muni": "多古町",
+  "pref": "千葉県",
+  "url": "https://www.town.tako.chiba.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-13",
+  "muni": "多古町",
+  "pref": "千葉県",
+  "url": "https://www.town.tako.chiba.jp/docs/2026081000027/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
