@@ -790,5 +790,13 @@
   "url": "https://www.town.tako.chiba.jp/docs/2026081000027/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-16",
+  "muni": "足立区",
+  "pref": "東京都",
+  "url": "https://www.city.adachi.tokyo.jp/chusho/shigoto/chushokigyo/sogyo-plan-list.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
