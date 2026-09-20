@@ -1,3 +1,15 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "東京都",
+   "muni": "小金井市",
+   "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/oshirase/sakuradrone.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "文化財センターにおけるドローン撮影動画を公開しています：小金井市公式WEBへようこそ このページの先頭です このページの本文へ移動 本文ここか",
+   "via": "crawl",
+   "found": "2026-09-21"
+  }
+ ]
 }
