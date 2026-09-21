@@ -814,5 +814,13 @@
   "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-22",
+  "muni": "小金井市",
+  "pref": "東京都",
+  "url": "http://www.city.koganei.lg.jp/kankobunka/bunkazai/oshirase/sakuradrone.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
