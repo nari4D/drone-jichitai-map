@@ -838,5 +838,21 @@
   "url": "https://www.town.hinode.tokyo.jp/0000004708.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-27",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-27",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
