@@ -854,5 +854,21 @@
   "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-28",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-09-28",
+  "muni": "足立区",
+  "pref": "東京都",
+  "url": "https://www.city.adachi.tokyo.jp/citypro/ku/koho/daigakurenkei_relay_01.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
