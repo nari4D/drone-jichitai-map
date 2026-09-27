@@ -1,3 +1,26 @@
 {
- "pending": []
+ "pending": [
+  {
+   "pref": "東京都",
+   "muni": "渋谷区",
+   "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "ださい。 メモリアルキャンパス 校舎建替えに伴い、当時の校舎の景色や空気を「メモリアルキャンパス」として残しました。 「ドローン動画」や「360°VRツアー」で、校内の様子をご覧いただけます。 広尾中学校 松濤中学校 ▲ドローン動画（広尾中",
+   "via": "sitemap",
+   "found": "2026-09-28"
+  },
+  {
+   "pref": "東京都",
+   "muni": "足立区",
+   "url": "https://www.city.adachi.tokyo.jp/citypro/ku/koho/daigakurenkei_relay_01.html",
+   "hits": [
+    "ドローン"
+   ],
+   "snippet": "き３分」と「普通歩き３分」を交互に行うような緩急をつけた運動   第2５弾 文教大学リレーイベント企画「プログラミングでドローンをとばそう！！」 日時 2023年6月18日（日曜日） 場所 文教大学 東京あだちキャンパス 体育館 講師 文教",
+   "via": "sitemap",
+   "found": "2026-09-28"
+  }
+ ]
 }
