@@ -870,5 +870,13 @@
   "url": "https://www.city.adachi.tokyo.jp/citypro/ku/koho/daigakurenkei_relay_01.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-01",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
