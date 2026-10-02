@@ -878,5 +878,45 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-03",
+  "muni": "山武市",
+  "pref": "千葉県",
+  "url": "https://www.city.sammu.lg.jp/kankou/event/page005307.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-03",
+  "muni": "東庄町",
+  "pref": "千葉県",
+  "url": "https://www.town.tohnosho.chiba.jp/event_list/r8/7928.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-03",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-03",
+  "muni": "南足柄市",
+  "pref": "神奈川県",
+  "url": "https://www.city.minamiashigara.kanagawa.jp/kurashi/zeikin/furusato/p05525.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-03",
+  "muni": "綾瀬市",
+  "pref": "神奈川県",
+  "url": "https://www.city.ayase.kanagawa.jp/gyoseijoho/atsugikichi/2/24447.html",
+  "result": "national_law_notice",
+  "quote": "令和8年7月14日（火曜日）以降、小型無人機等の飛行が原則禁止される区域は、各対象防衛関係施設の周辺おおむね300メートルからおおむね1,000メートルに拡大されます。"
  }
 ]
