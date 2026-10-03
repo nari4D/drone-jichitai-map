@@ -918,5 +918,21 @@
   "url": "https://www.city.ayase.kanagawa.jp/gyoseijoho/atsugikichi/2/24447.html",
   "result": "national_law_notice",
   "quote": "令和8年7月14日（火曜日）以降、小型無人機等の飛行が原則禁止される区域は、各対象防衛関係施設の周辺おおむね300メートルからおおむね1,000メートルに拡大されます。"
+ },
+ {
+  "date": "2026-10-04",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/hiroo/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-04",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/shoto/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]

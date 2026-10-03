@@ -1,26 +1,3 @@
 {
- "pending": [
-  {
-   "pref": "東京都",
-   "muni": "渋谷区",
-   "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/hiroo/",
-   "hits": [
-    "ドローン"
-   ],
-   "snippet": "広尾中学校 | メモリアルキャンパス | 渋谷区ポータル 渋谷区立広尾中学校 ドローン動画 360°VRツアー 広尾中学校校歌 思い出ギャラリー  ドローン動画をPLAY   360°VRツアー",
-   "via": "sitemap",
-   "found": "2026-10-04"
-  },
-  {
-   "pref": "東京都",
-   "muni": "渋谷区",
-   "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/shoto/",
-   "hits": [
-    "ドローン"
-   ],
-   "snippet": "松濤中学校 | メモリアルキャンパス | 渋谷区ポータル 渋谷区立松濤中学校 ドローン動画 360°VRツアー 松濤中学校校歌 思い出ギャラリー  ドローン動画をPLAY   360°VRツアー",
-   "via": "sitemap",
-   "found": "2026-10-04"
-  }
- ]
+ "pending": []
 }
