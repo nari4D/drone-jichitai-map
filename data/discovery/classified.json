@@ -934,5 +934,13 @@
   "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/shoto/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-06",
+  "muni": "木津川市",
+  "pref": "京都府",
+  "url": "https://www.city.kizugawa.lg.jp/0000002274.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
