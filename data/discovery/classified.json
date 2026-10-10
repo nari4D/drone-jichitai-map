@@ -966,5 +966,21 @@
   "url": "https://www.city.minamiashigara.kanagawa.jp/kurashi/zeikin/furusato/p05525.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-11",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/kodomo/gakko-kyoiku/new-gakko/atarashii_gakko_dukuri.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-11",
+  "muni": "足立区",
+  "pref": "東京都",
+  "url": "https://www.city.adachi.tokyo.jp/chusho/shigoto/chushokigyo/sogyo-k-nyukyo.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
