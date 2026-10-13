@@ -982,5 +982,13 @@
   "url": "https://www.city.adachi.tokyo.jp/chusho/shigoto/chushokigyo/sogyo-k-nyukyo.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-14",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
