@@ -998,5 +998,29 @@
   "url": "https://www.town.tako.chiba.jp/docs/2023081600011/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-19",
+  "muni": "木津川市",
+  "pref": "京都府",
+  "url": "https://www.city.kizugawa.lg.jp/0000003400.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-19",
+  "muni": "松戸市",
+  "pref": "千葉県",
+  "url": "https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/shizen/midokoro/hanamatsuri.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-19",
+  "muni": "松戸市",
+  "pref": "千葉県",
+  "url": "https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/matsuri/summer/matsudohanabi.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
