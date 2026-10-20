@@ -20,6 +20,7 @@ PREFECTURES = [
     {"code": "13", "name": "東京都", "slug": "tokyo"},
     {"code": "26", "name": "京都府", "slug": "kyoto"},
     {"code": "12", "name": "千葉県", "slug": "chiba"},
+    {"code": "11", "name": "埼玉県", "slug": "saitama"},
 ]
 
 

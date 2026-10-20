@@ -1,0 +1,556 @@
+{
+ "_meta": {
+  "都道府県": "埼玉県",
+  "確認日": "2026-10-20",
+  "注記": "航空法・小型無人機等飛行禁止法とは別に、自治体・管理者が公園・海岸・河川・観光地・施設等に定める規制のまとめ。市域全体の空域禁止ではない。飛行前に必ず管理者へ最新情報を確認。",
+  "全域共通": [
+   {
+    "label": "埼玉県警察 ドローン等の飛行に関するルール(航空法・小型無人機等飛行禁止法、県内の対象施設一覧)",
+    "url": "https://www.police.pref.saitama.lg.jp/g0010/kurashi/kogatamujinki-201906.html"
+   },
+   {
+    "label": "埼玉県 大宮公園(県営) 利用にあたっての注意事項(ドローン等の飛行禁止)",
+    "url": "https://www.pref.saitama.lg.jp/omiya-park/oshirase/omiya-onegai.html"
+   },
+   {
+    "label": "埼玉県 総合治水事務所 Q&A(県管理河川の河川敷でのドローン飛行)",
+    "url": "https://www.pref.saitama.lg.jp/b1015/123yokuarusitumon.html"
+   },
+   {
+    "label": "埼玉県 さいたま県土整備事務所 道路・河川一時使用(芝川第一調節池はドローン飛行お断り)",
+    "url": "https://www.pref.saitama.lg.jp/b1001/kanri-top/ichijishiyou.html"
+   }
+  ],
+  "categories": {
+   "prohibited": {
+    "label": "市町管理公園等で原則禁止(公式確認済)",
+    "fill": "#6a1b9a",
+    "line": "#4a148c",
+    "fillOpacity": 0.55
+   },
+   "prohibited_secondary": {
+    "label": "公園条例等で原則禁止(二次情報・公式要確認)",
+    "fill": "#8e24aa",
+    "line": "#6a1b9a",
+    "fillOpacity": 0.42
+   },
+   "restricted": {
+    "label": "許可・届出制/施設ごとに要相談",
+    "fill": "#00838f",
+    "line": "#006064",
+    "fillOpacity": 0.4
+   },
+   "unknown": {
+    "label": "自治体独自の規制は確認されず(国の規制のみ)",
+    "fill": "#78909c",
+    "line": "#455a64",
+    "fillOpacity": 0.18
+   }
+  },
+  "_確認日の意味": "この県を一括で調査した日。個々の自治体を最後に確認した日は municipalities[].確認日 を見ること（無い場合はこの一括調査日）。"
+ },
+ "municipalities": {
+  "さいたま市": {
+   "category": "prohibited",
+   "summary": "市の都市公園でのドローン(無人航空機)の飛行は、都市公園条例第4条第9号を根拠に原則禁止。",
+   "sources": [
+    {
+     "label": "さいたま市 都市公園における無人航空機（ドローン等）の飛行は禁止です",
+     "url": "https://www.city.saitama.lg.jp/004/006/003/003/p066607.html",
+     "quote": "都市公園における無人航空機（ドローン等）の飛行は禁止です"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "熊谷市": {
+   "category": "prohibited",
+   "summary": "都市公園等でのドローン等の使用は都市公園条例第5条(9)の「管理に支障を及ぼす行為」にあたるとして原則禁止。",
+   "sources": [
+    {
+     "label": "熊谷市 公園内での無人航空機（ドローン）等の使用について",
+     "url": "https://www.city.kumagaya.lg.jp/about/soshiki/toshi/kouenryokuchi/doro-n.html",
+     "quote": "公園利用者の安全を確保する観点から、都市公園等における無人航空機（ドローン）等の使用は、熊谷市都市公園条例第5条（9）に規定する「都市公園の管理に支障を及ぼす行為をすること」と判断できるため、原則禁止とします。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "川口市": {
+   "category": "prohibited",
+   "summary": "市の公園でのドローンの使用は、公共性が高い場合等の特別な場合を除き禁止。",
+   "sources": [
+    {
+     "label": "川口市 公園内でのドローンの使用について",
+     "url": "https://www.city.kawaguchi.lg.jp/soshiki/01120/035/oshirase/30084.html",
+     "quote": "公園内でのドローンの使用につきましては、一般の公園利用者への影響等の理由により、公共性が高い場合等の特別な場合を除き禁止としております。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "東松山市": {
+   "category": "prohibited",
+   "summary": "市の公園での無人航空機(ドローン・ラジコン)の飛行は、利用者の安全確保のため原則禁止。",
+   "sources": [
+    {
+     "label": "東松山市 ひがしまつやま公園ガイド 公園に関するQ&A",
+     "url": "https://www.city.higashimatsuyama.lg.jp/site/parkguide/3997.html",
+     "quote": "Q.公園内で無人航空機（ドローンやラジコン）を飛ばすことはできますか。\n\nA.公園利用者の安全確保のため、原則禁止しています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "入間市": {
+   "category": "prohibited",
+   "summary": "市の公園でのドローン飛行は原則禁止。市内には航空自衛隊入間基地周辺の小型無人機等飛行禁止法の区域もある。",
+   "sources": [
+    {
+     "label": "入間市 市の公園でドローン飛行原則禁止",
+     "url": "https://www.city.iruma.saitama.jp/soshiki/toshikekakuka/koen/848.html",
+     "quote": "公園利用者への接触や周辺住宅への落下等、事故の恐れがあることから公園でのドローン飛行は原則禁止としています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "和光市": {
+   "category": "prohibited",
+   "summary": "市立公園でのドローン等の飛行は、市立公園条例第11条第9号の「管理に支障がある行為」として原則禁止。",
+   "sources": [
+    {
+     "label": "和光市 市立公園でのドローン飛行は原則禁止",
+     "url": "https://www.city.wako.lg.jp/machizukuri/midori/1005825/1011584.html",
+     "quote": "市立公園内で無人航空機（ドローン等）を飛行させることは、周囲に危険が及ぶ恐れがあるため、和光市立公園条例第11条第9号で規定する「市立公園の管理に支障があると認められる行為」として、原則禁止としています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "久喜市": {
+   "category": "prohibited",
+   "summary": "公園利用上のルールとして、公園でのドローン・ラジコンの飛行を禁止。",
+   "sources": [
+    {
+     "label": "久喜市 公園でのドローン飛行を禁止",
+     "url": "https://www.city.kuki.lg.jp/machizukuri/city_plan/park/1012835.html",
+     "quote": "7.ドローンの飛行やラジコンの飛行を禁止しておりますのでやめましょう。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "鶴ヶ島市": {
+   "category": "prohibited",
+   "summary": "市の公園の利用マナーとして、ラジコンヘリ・ドローン等の飛行を禁止。",
+   "sources": [
+    {
+     "label": "鶴ヶ島市 市の公園ではドローン等の飛行は禁止",
+     "url": "https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/kouen-ryokuchi/page002667.html",
+     "quote": "ラジコンヘリ、ドローン等の無線航空機の飛行は禁止します。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "白岡市": {
+   "category": "prohibited",
+   "summary": "都市公園等でのドローン等(200g未満の模型航空機を含む)の使用は、都市公園条例施行規則第11条第3号により禁止。",
+   "sources": [
+    {
+     "label": "白岡市 都市公園等におけるドローン等の使用について(まちづくり課)",
+     "url": "https://www.city.shiraoka.lg.jp/soshiki/toshiseibibu/machizukurika/1/2/1227.html",
+     "quote": "公園を御利用される方々の安心・安全を守るため、ドローン等（無人航空機（注釈1）及び模型航空機（注釈2））の使用は白岡市都市公園条例施行規則第11条第3号の規定により禁止しております。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "伊奈町": {
+   "category": "prohibited",
+   "summary": "町の都市公園等でのドローン等(200g未満の模型航空機を含む)の使用は、条例第8条第1項第9号の「管理に支障がある行為」として禁止(警察・消防・災害時・町が認める行事等を除く)。",
+   "sources": [
+    {
+     "label": "伊奈町 都市公園等におけるドローン等の使用に関する取扱い(都市計画課)",
+     "url": "https://www.town.saitama-ina.lg.jp/0000005023.html",
+     "quote": "町民の安全を確保する観点から、都市計画課所管の都市公園等におけるドローン等（無人航空機（※1）及び模型航空機（※2））の使用は、伊奈町都市公園の設置及び管理に関する条例第8条第1項第9号に規定する、都市公園の管理に支障がある行為とみなし、次の各号のいずれかに該当する場合を除き禁止します。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "小川町": {
+   "category": "prohibited",
+   "summary": "町内の都市公園でのドローンの使用は、落下の危険やプライバシー侵害の恐れから禁止。",
+   "sources": [
+    {
+     "label": "小川町 都市公園のよくある質問 Q4(都市政策課)",
+     "url": "https://www.town.ogawa.saitama.jp/gyosei/sosiki/13/8/1408.html",
+     "quote": "都市公園内で無人航空機（ドローン）を飛行させることは、利用者・近隣家屋等に落下する危険性や動画撮影等により近隣住民のプライバシーを侵害する恐れがあるため、使用禁止としております。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "行田市": {
+   "category": "restricted",
+   "summary": "田んぼアートでのドローン撮影は、アートの保護と安全のため遠慮を依頼。市の公園全体のルールではない。",
+   "sources": [
+    {
+     "label": "行田市 2025「田んぼアート」in行田（※ドローン撮影について）",
+     "url": "https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/nosei/gyomu/art/11120.html",
+     "quote": "田んぼアートのドローン撮影については、アートの保護や安全のため、ご遠慮いただいております。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "秩父市": {
+   "category": "restricted",
+   "summary": "羊山公園(芝桜の丘を含む)ではドローン等の使用を許可していない。当該公園に限定。",
+   "sources": [
+    {
+     "label": "秩父市 よくある質問～芝桜の丘～",
+     "url": "https://navi.city.chichibu.lg.jp/p_flower/1903/",
+     "quote": "羊山公園内（芝桜の丘を含む）では、ラジコン、ドローン等の使用は許可しておりません。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "越谷市": {
+   "category": "restricted",
+   "summary": "市内の公園(日本庭園花田苑を含む)では、ドローンを使った撮影をお断りしている(撮影目的に限った記述)。",
+   "sources": [
+    {
+     "label": "越谷市 市内の公園でドローン撮影お断り",
+     "url": "https://www.city.koshigaya.saitama.jp/citypromotion/film_commission/filming_support/film_commission.html",
+     "quote": "市内の公園（日本庭園花田苑を含む）では、無人航空機（ドローン等）を使用した撮影はお断りしています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "戸田市": {
+   "category": "restricted",
+   "summary": "川岸さつき通り広場の利用ルールでドローンの飛行を禁止。当該施設に限定。",
+   "sources": [
+    {
+     "label": "戸田市 特定施設（川岸さつき通り広場）でドローン飛行禁止",
+     "url": "https://www.city.toda.saitama.jp/soshiki/274/matikukaku-kawagishi-satukist-hiroba.html",
+     "quote": "ラジコン飛行機やドローンを飛ばさないでください。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "八潮市": {
+   "category": "restricted",
+   "summary": "公園使用上の禁止事項(他の利用者等に迷惑をかける行為)の例として、ドローン・ラジコン飛行機の使用を挙げている。",
+   "sources": [
+    {
+     "label": "八潮市 公園でのドローン使用を禁止事項に明記",
+     "url": "https://www.city.yashio.lg.jp/shisei/kouenmizutomidori/kouennosiyou.html",
+     "quote": "ドローンやラジコン飛行機の使用、スケートボード、花火をすること。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "三郷市": {
+   "category": "restricted",
+   "summary": "JR三郷駅周辺の江戸川河川敷でのドローン飛行は、実証実験終了(令和6年8月末)後は禁止。当該河川敷に限定。",
+   "sources": [
+    {
+     "label": "三郷市 JR三郷駅周辺の江戸川河川敷でのドローン飛行は禁止（実証実験終了後）",
+     "url": "https://www.city.misato.lg.jp/soshiki/chiikishinko/supotsushinko/2/9123.html",
+     "quote": "※JR三郷駅周辺の江戸川河川敷において、キャンプ、バーベキュー場、ドローン飛行場等の実証実験を行っておりましたが、実証実験は令和6年8月末をもって終了し、実証実験で認められていた行為は現在禁止されております。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "蓮田市": {
+   "category": "restricted",
+   "summary": "史跡黒浜貝塚でドローン等を飛行させる場合は行為許可申請が必要(許可制)。当該史跡に限定。",
+   "sources": [
+    {
+     "label": "蓮田市 史跡黒浜貝塚でドローンを飛ばす場合は行為許可申請が必要",
+     "url": "https://www.city.hasuda.saitama.jp/syogaikyoiku/kyouiku/bunkazai/kurohamakaidukariyousinsei.html",
+     "quote": "ドローン等を飛行させる場合"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "坂戸市": {
+   "category": "restricted",
+   "summary": "ドローンを使える市の公園は北浅羽桜堤公園のみで許可制(市のPRになる撮影等に限り、練習や飛行だけが目的の利用は不可)。",
+   "sources": [
+    {
+     "label": "坂戸市 ドローンを使える公園は北浅羽桜堤公園だけで許可制",
+     "url": "https://www.city.sakado.lg.jp/soshiki/38/37200.html",
+     "quote": "ドローンの操縦の練習や飛行させるだけが目的の場合には許可しておりませんので、民営の練習場等をご利用ください。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "幸手市": {
+   "category": "restricted",
+   "summary": "公民館では、安全管理上の理由からドローン等の飛行を伴う利用はできない。当該施設に限定。",
+   "sources": [
+    {
+     "label": "幸手市 公民館ではドローンの飛行を伴う利用はできない",
+     "url": "https://www.city.satte.lg.jp/soshiki/shakaikyouiku/kouminkan/index.html",
+     "quote": "利用者および施設の安全管理上の理由により、無人航空機(ドローン、ラジコン機等)の飛行を伴う利用はできません。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "飯能市": {
+   "category": "restricted",
+   "summary": "トーベ・ヤンソンあけぼの子どもの森公園ではドローンの使用を禁止。当該公園に限定。",
+   "sources": [
+    {
+     "label": "飯能市 トーベ・ヤンソンあけぼの子どもの森公園 よくあるご質問",
+     "url": "https://www.city.hanno.lg.jp/akebono/shitsumon/2114.html",
+     "quote": "ドローンの使用は禁止させていただいています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "加須市": {
+   "category": "restricted",
+   "summary": "加須はなさき水上公園では、公園管理事務局の許可のないドローン等の飛行は禁止(許可制)。当該公園に限定。",
+   "sources": [
+    {
+     "label": "加須市 加須はなさき水上公園(ジャンボこいのぼり見学会 注意事項)",
+     "url": "https://www.city.kazo.lg.jp/soshiki/shougyou_kankou/koinobori/18171.html",
+     "quote": "公園管理事務局の許可のない、公園内でのドローンなどの飛行は禁止されています"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "毛呂山町": {
+   "category": "restricted",
+   "summary": "町内観光地でドローンの飛行・撮影をする場合の注意点を案内。町が管理する宿谷の滝・鎌北湖は事前に町へ連絡が必要。",
+   "sources": [
+    {
+     "label": "毛呂山町 町内観光地のドローン等の撮影について(産業振興課)",
+     "url": "https://www.town.moroyama.saitama.jp/soshikikarasagasu/sangyoshinkoka/kanko_tokusan/1_1/9533.html",
+     "quote": "町内観光地での無人航空機（いわゆるドローンなど、遠隔操作や自動操縦により飛行するもの）での飛行・撮影をする場合は、以下の注意点をご確認ください。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "吉見町": {
+   "category": "restricted",
+   "summary": "吉見百穴の撮影に関する禁止事項にドローンによる撮影を明記。当該施設に限定。",
+   "sources": [
+    {
+     "label": "吉見町 吉見百穴 撮影に関する禁止事項(ドローン撮影)",
+     "url": "https://www.town.yoshimi.saitama.jp/soshiki/chiikishinkoka/1/2917.html",
+     "quote": "ドローンによる撮影（映像の提供は可能です。）"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "上尾市": {
+   "category": "restricted",
+   "summary": "上平広場ではドローンの使用はできない。当該施設に限定。",
+   "sources": [
+    {
+     "label": "上尾市 上平広場の利用について(みどり公園課)",
+     "url": "https://www.city.ageo.lg.jp/page/071101091901.html",
+     "quote": "○　ドローンの使用はできません。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "草加市": {
+   "category": "restricted",
+   "summary": "総合運動場の「こども遊び場開放事業」ではラジコン・ドローンなどは使用できない。当該施設に限定。",
+   "sources": [
+    {
+     "label": "草加市 総合運動場 こども遊び場開放事業 利用上の注意(スポーツ振興課)",
+     "url": "https://www.city.soka.saitama.jp/cont/s1404/PAGE000000000000084671.html",
+     "quote": "ラジコン・ドローンなどは使用できません。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "松伏町": {
+   "category": "restricted",
+   "summary": "まつぶし緑の丘公園(県営・町の管理センターが運営)では、ドローン等の無人飛行機を飛ばすことを禁止。当該公園に限定。",
+   "sources": [
+    {
+     "label": "松伏町 緑の丘公園でよくある質問（まつぶし緑の丘公園管理センター）",
+     "url": "https://www.town.matsubushi.lg.jp/iju/0000000065.html",
+     "quote": "ドローンに限らずラジコン機等の無人飛行機を飛ばすことは禁止しています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "新座市": {
+   "category": "unknown",
+   "summary": "市独自の上乗せ規制は確認されず(国の規制のみ)。市内の朝霞駐屯地・朝霞訓練場・大和田通信所の周囲おおむね1,000mは国の小型無人機等飛行禁止法で原則禁止で、市がこれを案内している。",
+   "sources": [
+    {
+     "label": "新座市 防衛関係施設周辺の飛行禁止（小型無人機等飛行禁止法）を案内",
+     "url": "https://www.city.niiza.lg.jp/soshiki/7/kichi-drone-kinshi.html",
+     "quote": "防衛大臣が指定する対象防衛関係施設の敷地又は区域及びその周囲おおむね1,000メートルの地域の上空においては、小型無人機（ドローン等）の飛行が禁止されています。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "狭山市": {
+   "category": "unknown",
+   "summary": "市独自の上乗せ規制は確認されず(国の規制のみ)。航空自衛隊入間基地の周囲おおむね1,000mは国の小型無人機等飛行禁止法で原則禁止(通報手続きが必要)で、市がこれを案内している。",
+   "sources": [
+    {
+     "label": "狭山市 入間基地周辺の小型無人機等飛行禁止法(1,000m)の案内(基地対策課)",
+     "url": "https://www.city.sayama.saitama.jp/kurashi/kichi/drone_regulated_area.html",
+     "quote": "狭山市内の飛行禁止区域内で小型無人機等を飛行させる場合"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "所沢市": {
+   "category": "unknown",
+   "summary": "市独自の上乗せ規制は確認されず(国の規制のみ)。米軍所沢通信施設の周囲おおむね1,000mは国の小型無人機等飛行禁止法で原則禁止で、市がこれを案内している。",
+   "sources": [
+    {
+     "label": "所沢市 防衛関係施設周辺における小型無人機(ドローンなど)等の飛行禁止について",
+     "url": "https://www.city.tokorozawa.saitama.jp/kurashi/dourokoutsuu/begunkichi/kogatamujinki.html",
+     "quote": "小型無人機（ドローンなど）等の飛行を行おうとする場合には、対象防衛関係施設管理者の同意を得るなど所定の手続が必要です。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "北本市": {
+   "category": "unknown",
+   "summary": "市独自の上乗せ規制は確認されず(国の規制のみ)。農薬散布等でドローンを使う際の国(航空法)への届出を市が案内している。",
+   "sources": [
+    {
+     "label": "北本市 農薬散布ドローンの国への届出を案内",
+     "url": "https://www.city.kitamoto.lg.jp/soshiki/shiminkeizai/sangyou/gyomu/g4/oshirase/18610.html",
+     "quote": "農薬散布等で無人航空機（ドローン・ラジコンヘリ等）を利用される際は、事前に所轄官庁へ届け出るようお願いいたします。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  },
+  "嵐山町": {
+   "category": "unknown",
+   "summary": "町独自の上乗せ規制は確認されず(国の規制のみ)。嵐山渓谷での撮影について、ドローンは個人の撮影でも関係法令・ガイドラインを守るよう町が案内している。",
+   "sources": [
+    {
+     "label": "嵐山町 嵐山渓谷における撮影について(企業支援課)",
+     "url": "https://www.town.ranzan.saitama.jp/0000007319.html",
+     "quote": "ドローンの撮影に関しては、個人的な撮影の範囲であっても、飛行に関する関係法令・ガイドライン等を遵守して行うようお願いいたします。"
+    }
+   ],
+   "確認日": "2026-10-20"
+  }
+ },
+ "unknown_simple": [
+  "川越市",
+  "本庄市",
+  "春日部市",
+  "羽生市",
+  "鴻巣市",
+  "深谷市",
+  "蕨市",
+  "朝霞市",
+  "志木市",
+  "桶川市",
+  "富士見市",
+  "日高市",
+  "吉川市",
+  "ふじみ野市",
+  "三芳町",
+  "越生町",
+  "滑川町",
+  "川島町",
+  "鳩山町",
+  "ときがわ町",
+  "横瀬町",
+  "皆野町",
+  "長瀞町",
+  "小鹿野町",
+  "東秩父村",
+  "美里町",
+  "神川町",
+  "上里町",
+  "寄居町",
+  "宮代町",
+  "杉戸町"
+ ],
+ "unknown_simple_summary": "公式ページでドローンに関する記載は確認されず(2026-10-20時点)。自治体独自の規制は確認されていないため、国の規制(航空法・小型無人機等飛行禁止法・空域)が適用される。公園条例の一般規定(危険・迷惑・管理支障行為の禁止)により管理者判断で個別に制限される場合はある。",
+ "default_sources": [
+  {
+   "label": "埼玉県警察 ドローン等の飛行に関するルール(航空法・小型無人機等飛行禁止法、県内の対象施設一覧)",
+   "url": "https://www.police.pref.saitama.lg.jp/g0010/kurashi/kogatamujinki-201906.html"
+  },
+  {
+   "label": "埼玉県 大宮公園(県営) 利用にあたっての注意事項(ドローン等の飛行禁止)",
+   "url": "https://www.pref.saitama.lg.jp/omiya-park/oshirase/omiya-onegai.html"
+  },
+  {
+   "label": "埼玉県 総合治水事務所 Q&A(県管理河川の河川敷でのドローン飛行)",
+   "url": "https://www.pref.saitama.lg.jp/b1015/123yokuarusitumon.html"
+  },
+  {
+   "label": "埼玉県 さいたま県土整備事務所 道路・河川一時使用(芝川第一調節池はドローン飛行お断り)",
+   "url": "https://www.pref.saitama.lg.jp/b1001/kanri-top/ichijishiyou.html"
+  }
+ ],
+ "official_hp": {
+  "さいたま市": "https://www.city.saitama.lg.jp/",
+  "川越市": "https://www.city.kawagoe.saitama.jp/",
+  "熊谷市": "https://www.city.kumagaya.lg.jp/",
+  "川口市": "https://www.city.kawaguchi.lg.jp/",
+  "行田市": "https://www.city.gyoda.lg.jp/",
+  "秩父市": "https://www.city.chichibu.lg.jp/",
+  "小鹿野町": "https://www.town.ogano.lg.jp/",
+  "東秩父村": "https://www.vill.higashichichibu.saitama.jp/",
+  "美里町": "https://www.town.saitama-misato.lg.jp/",
+  "神川町": "https://www.town.kamikawa.saitama.jp/",
+  "上里町": "https://www.town.kamisato.saitama.jp/",
+  "寄居町": "https://www.town.yorii.saitama.jp/",
+  "宮代町": "https://www.town.miyashiro.lg.jp/",
+  "杉戸町": "https://www.town.sugito.lg.jp/",
+  "松伏町": "https://www.town.matsubushi.lg.jp/",
+  "所沢市": "https://www.city.tokorozawa.saitama.jp/",
+  "飯能市": "https://www.city.hanno.lg.jp/",
+  "加須市": "https://www.city.kazo.lg.jp/",
+  "本庄市": "https://www.city.honjo.lg.jp/",
+  "東松山市": "https://www.city.higashimatsuyama.lg.jp/",
+  "春日部市": "https://www.city.kasukabe.lg.jp/",
+  "狭山市": "https://www.city.sayama.saitama.jp/",
+  "羽生市": "https://www.city.hanyu.lg.jp/",
+  "鴻巣市": "https://www.city.kounosu.saitama.jp/",
+  "深谷市": "https://www.city.fukaya.saitama.jp/",
+  "上尾市": "https://www.city.ageo.lg.jp/",
+  "草加市": "https://www.city.soka.saitama.jp/",
+  "越谷市": "https://www.city.koshigaya.saitama.jp/",
+  "蕨市": "https://www.city.warabi.saitama.jp/",
+  "戸田市": "https://www.city.toda.saitama.jp/",
+  "入間市": "https://www.city.iruma.saitama.jp/",
+  "朝霞市": "https://www.city.asaka.lg.jp/",
+  "志木市": "https://www.city.shiki.lg.jp/",
+  "和光市": "https://www.city.wako.lg.jp/",
+  "新座市": "https://www.city.niiza.lg.jp/",
+  "桶川市": "https://www.city.okegawa.lg.jp/",
+  "久喜市": "https://www.city.kuki.lg.jp/",
+  "北本市": "https://www.city.kitamoto.lg.jp/",
+  "八潮市": "https://www.city.yashio.lg.jp/",
+  "富士見市": "https://www.city.fujimi.saitama.jp/",
+  "三郷市": "https://www.city.misato.lg.jp/",
+  "蓮田市": "https://www.city.hasuda.saitama.jp/",
+  "坂戸市": "https://www.city.sakado.lg.jp/",
+  "幸手市": "https://www.city.satte.lg.jp/",
+  "鶴ヶ島市": "https://www.city.tsurugashima.lg.jp/",
+  "日高市": "https://www.city.hidaka.lg.jp/",
+  "吉川市": "https://www.city.yoshikawa.saitama.jp/",
+  "ふじみ野市": "https://www.city.fujimino.saitama.jp/",
+  "白岡市": "https://www.city.shiraoka.lg.jp/",
+  "伊奈町": "https://www.town.saitama-ina.lg.jp/",
+  "三芳町": "https://www.town.saitama-miyoshi.lg.jp/",
+  "毛呂山町": "https://www.town.moroyama.saitama.jp/",
+  "越生町": "https://www.town.ogose.saitama.jp/",
+  "滑川町": "https://www.town.namegawa.saitama.jp/",
+  "嵐山町": "https://www.town.ranzan.saitama.jp/",
+  "小川町": "https://www.town.ogawa.saitama.jp/",
+  "川島町": "https://www.town.kawajima.saitama.jp/",
+  "吉見町": "https://www.town.yoshimi.saitama.jp/",
+  "鳩山町": "https://www.town.hatoyama.saitama.jp/",
+  "ときがわ町": "https://www.town.tokigawa.lg.jp/",
+  "横瀬町": "https://www.town.yokoze.saitama.jp/",
+  "皆野町": "https://www.town.minano.saitama.jp/",
+  "長瀞町": "https://www.town.nagatoro.saitama.jp/"
+ },
+ "official_hp_source": null
+}

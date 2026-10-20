@@ -1405,6 +1405,489 @@
           ]
         }
       }
+    },
+    "埼玉県": {
+      "common_urls": [
+        "https://www.police.pref.saitama.lg.jp/g0010/kurashi/kogatamujinki-201906.html",
+        "https://www.pref.saitama.lg.jp/omiya-park/oshirase/omiya-onegai.html",
+        "https://www.pref.saitama.lg.jp/b1015/123yokuarusitumon.html",
+        "https://www.pref.saitama.lg.jp/b1001/kanri-top/ichijishiyou.html"
+      ],
+      "municipalities": {
+        "さいたま市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.saitama.lg.jp/",
+          "watch_urls": [
+            "https://www.city.saitama.lg.jp/",
+            "https://www.city.saitama.lg.jp/004/006/003/003/p066607.html"
+          ]
+        },
+        "川越市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kawagoe.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.kawagoe.saitama.jp/"
+          ]
+        },
+        "熊谷市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.kumagaya.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kumagaya.lg.jp/",
+            "https://www.city.kumagaya.lg.jp/about/soshiki/toshi/kouenryokuchi/doro-n.html"
+          ]
+        },
+        "川口市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.kawaguchi.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kawaguchi.lg.jp/",
+            "https://www.city.kawaguchi.lg.jp/soshiki/01120/035/oshirase/30084.html"
+          ]
+        },
+        "行田市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.gyoda.lg.jp/",
+          "watch_urls": [
+            "https://www.city.gyoda.lg.jp/",
+            "https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/nosei/gyomu/art/11120.html"
+          ]
+        },
+        "秩父市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.chichibu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.chichibu.lg.jp/",
+            "https://navi.city.chichibu.lg.jp/p_flower/1903/"
+          ]
+        },
+        "小鹿野町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ogano.lg.jp/",
+          "watch_urls": [
+            "https://www.town.ogano.lg.jp/"
+          ]
+        },
+        "東秩父村": {
+          "category_current": "unknown",
+          "official_hp": "https://www.vill.higashichichibu.saitama.jp/",
+          "watch_urls": [
+            "https://www.vill.higashichichibu.saitama.jp/"
+          ]
+        },
+        "美里町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.saitama-misato.lg.jp/",
+          "watch_urls": [
+            "https://www.town.saitama-misato.lg.jp/"
+          ]
+        },
+        "神川町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kamikawa.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.kamikawa.saitama.jp/"
+          ]
+        },
+        "上里町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kamisato.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.kamisato.saitama.jp/"
+          ]
+        },
+        "寄居町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yorii.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.yorii.saitama.jp/"
+          ]
+        },
+        "宮代町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.miyashiro.lg.jp/",
+          "watch_urls": [
+            "https://www.town.miyashiro.lg.jp/"
+          ]
+        },
+        "杉戸町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.sugito.lg.jp/",
+          "watch_urls": [
+            "https://www.town.sugito.lg.jp/"
+          ]
+        },
+        "松伏町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.matsubushi.lg.jp/",
+          "watch_urls": [
+            "https://www.town.matsubushi.lg.jp/",
+            "https://www.town.matsubushi.lg.jp/iju/0000000065.html"
+          ]
+        },
+        "所沢市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.tokorozawa.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.tokorozawa.saitama.jp/",
+            "https://www.city.tokorozawa.saitama.jp/kurashi/dourokoutsuu/begunkichi/kogatamujinki.html"
+          ]
+        },
+        "飯能市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.hanno.lg.jp/",
+          "watch_urls": [
+            "https://www.city.hanno.lg.jp/",
+            "https://www.city.hanno.lg.jp/akebono/shitsumon/2114.html"
+          ]
+        },
+        "加須市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.kazo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kazo.lg.jp/",
+            "https://www.city.kazo.lg.jp/soshiki/shougyou_kankou/koinobori/18171.html"
+          ]
+        },
+        "本庄市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.honjo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.honjo.lg.jp/"
+          ]
+        },
+        "東松山市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.higashimatsuyama.lg.jp/",
+          "watch_urls": [
+            "https://www.city.higashimatsuyama.lg.jp/",
+            "https://www.city.higashimatsuyama.lg.jp/site/parkguide/3997.html"
+          ]
+        },
+        "春日部市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kasukabe.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kasukabe.lg.jp/"
+          ]
+        },
+        "狭山市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.sayama.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.sayama.saitama.jp/",
+            "https://www.city.sayama.saitama.jp/kurashi/kichi/drone_regulated_area.html"
+          ]
+        },
+        "羽生市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.hanyu.lg.jp/",
+          "watch_urls": [
+            "https://www.city.hanyu.lg.jp/"
+          ]
+        },
+        "鴻巣市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kounosu.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.kounosu.saitama.jp/"
+          ]
+        },
+        "深谷市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fukaya.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.fukaya.saitama.jp/"
+          ]
+        },
+        "上尾市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.ageo.lg.jp/",
+          "watch_urls": [
+            "https://www.city.ageo.lg.jp/",
+            "https://www.city.ageo.lg.jp/page/071101091901.html"
+          ]
+        },
+        "草加市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.soka.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.soka.saitama.jp/",
+            "https://www.city.soka.saitama.jp/cont/s1404/PAGE000000000000084671.html"
+          ]
+        },
+        "越谷市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.koshigaya.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.koshigaya.saitama.jp/",
+            "https://www.city.koshigaya.saitama.jp/citypromotion/film_commission/filming_support/film_commission.html"
+          ]
+        },
+        "蕨市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.warabi.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.warabi.saitama.jp/"
+          ]
+        },
+        "戸田市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.toda.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.toda.saitama.jp/",
+            "https://www.city.toda.saitama.jp/soshiki/274/matikukaku-kawagishi-satukist-hiroba.html"
+          ]
+        },
+        "入間市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.iruma.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.iruma.saitama.jp/",
+            "https://www.city.iruma.saitama.jp/soshiki/toshikekakuka/koen/848.html"
+          ]
+        },
+        "朝霞市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.asaka.lg.jp/",
+          "watch_urls": [
+            "https://www.city.asaka.lg.jp/"
+          ]
+        },
+        "志木市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.shiki.lg.jp/",
+          "watch_urls": [
+            "https://www.city.shiki.lg.jp/"
+          ]
+        },
+        "和光市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.wako.lg.jp/",
+          "watch_urls": [
+            "https://www.city.wako.lg.jp/",
+            "https://www.city.wako.lg.jp/machizukuri/midori/1005825/1011584.html"
+          ]
+        },
+        "新座市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.niiza.lg.jp/",
+          "watch_urls": [
+            "https://www.city.niiza.lg.jp/",
+            "https://www.city.niiza.lg.jp/soshiki/7/kichi-drone-kinshi.html"
+          ]
+        },
+        "桶川市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.okegawa.lg.jp/",
+          "watch_urls": [
+            "https://www.city.okegawa.lg.jp/"
+          ]
+        },
+        "久喜市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.kuki.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kuki.lg.jp/",
+            "https://www.city.kuki.lg.jp/machizukuri/city_plan/park/1012835.html"
+          ]
+        },
+        "北本市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.kitamoto.lg.jp/",
+          "watch_urls": [
+            "https://www.city.kitamoto.lg.jp/",
+            "https://www.city.kitamoto.lg.jp/soshiki/shiminkeizai/sangyou/gyomu/g4/oshirase/18610.html"
+          ]
+        },
+        "八潮市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.yashio.lg.jp/",
+          "watch_urls": [
+            "https://www.city.yashio.lg.jp/",
+            "https://www.city.yashio.lg.jp/shisei/kouenmizutomidori/kouennosiyou.html"
+          ]
+        },
+        "富士見市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fujimi.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.fujimi.saitama.jp/"
+          ]
+        },
+        "三郷市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.misato.lg.jp/",
+          "watch_urls": [
+            "https://www.city.misato.lg.jp/",
+            "https://www.city.misato.lg.jp/soshiki/chiikishinko/supotsushinko/2/9123.html"
+          ]
+        },
+        "蓮田市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.hasuda.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.hasuda.saitama.jp/",
+            "https://www.city.hasuda.saitama.jp/syogaikyoiku/kyouiku/bunkazai/kurohamakaidukariyousinsei.html"
+          ]
+        },
+        "坂戸市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.sakado.lg.jp/",
+          "watch_urls": [
+            "https://www.city.sakado.lg.jp/",
+            "https://www.city.sakado.lg.jp/soshiki/38/37200.html"
+          ]
+        },
+        "幸手市": {
+          "category_current": "restricted",
+          "official_hp": "https://www.city.satte.lg.jp/",
+          "watch_urls": [
+            "https://www.city.satte.lg.jp/",
+            "https://www.city.satte.lg.jp/soshiki/shakaikyouiku/kouminkan/index.html"
+          ]
+        },
+        "鶴ヶ島市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.tsurugashima.lg.jp/",
+          "watch_urls": [
+            "https://www.city.tsurugashima.lg.jp/",
+            "https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/kouen-ryokuchi/page002667.html"
+          ]
+        },
+        "日高市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.hidaka.lg.jp/",
+          "watch_urls": [
+            "https://www.city.hidaka.lg.jp/"
+          ]
+        },
+        "吉川市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.yoshikawa.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.yoshikawa.saitama.jp/"
+          ]
+        },
+        "ふじみ野市": {
+          "category_current": "unknown",
+          "official_hp": "https://www.city.fujimino.saitama.jp/",
+          "watch_urls": [
+            "https://www.city.fujimino.saitama.jp/"
+          ]
+        },
+        "白岡市": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.city.shiraoka.lg.jp/",
+          "watch_urls": [
+            "https://www.city.shiraoka.lg.jp/",
+            "https://www.city.shiraoka.lg.jp/soshiki/toshiseibibu/machizukurika/1/2/1227.html"
+          ]
+        },
+        "伊奈町": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.town.saitama-ina.lg.jp/",
+          "watch_urls": [
+            "https://www.town.saitama-ina.lg.jp/",
+            "https://www.town.saitama-ina.lg.jp/0000005023.html"
+          ]
+        },
+        "三芳町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.saitama-miyoshi.lg.jp/",
+          "watch_urls": [
+            "https://www.town.saitama-miyoshi.lg.jp/"
+          ]
+        },
+        "毛呂山町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.moroyama.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.moroyama.saitama.jp/",
+            "https://www.town.moroyama.saitama.jp/soshikikarasagasu/sangyoshinkoka/kanko_tokusan/1_1/9533.html"
+          ]
+        },
+        "越生町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ogose.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.ogose.saitama.jp/"
+          ]
+        },
+        "滑川町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.namegawa.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.namegawa.saitama.jp/"
+          ]
+        },
+        "嵐山町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.ranzan.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.ranzan.saitama.jp/",
+            "https://www.town.ranzan.saitama.jp/0000007319.html"
+          ]
+        },
+        "小川町": {
+          "category_current": "prohibited",
+          "official_hp": "https://www.town.ogawa.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.ogawa.saitama.jp/",
+            "https://www.town.ogawa.saitama.jp/gyosei/sosiki/13/8/1408.html"
+          ]
+        },
+        "川島町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.kawajima.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.kawajima.saitama.jp/"
+          ]
+        },
+        "吉見町": {
+          "category_current": "restricted",
+          "official_hp": "https://www.town.yoshimi.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.yoshimi.saitama.jp/",
+            "https://www.town.yoshimi.saitama.jp/soshiki/chiikishinkoka/1/2917.html"
+          ]
+        },
+        "鳩山町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.hatoyama.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.hatoyama.saitama.jp/"
+          ]
+        },
+        "ときがわ町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.tokigawa.lg.jp/",
+          "watch_urls": [
+            "https://www.town.tokigawa.lg.jp/"
+          ]
+        },
+        "横瀬町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.yokoze.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.yokoze.saitama.jp/"
+          ]
+        },
+        "皆野町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.minano.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.minano.saitama.jp/"
+          ]
+        },
+        "長瀞町": {
+          "category_current": "unknown",
+          "official_hp": "https://www.town.nagatoro.saitama.jp/",
+          "watch_urls": [
+            "https://www.town.nagatoro.saitama.jp/"
+          ]
+        }
+      }
     }
   }
 }
