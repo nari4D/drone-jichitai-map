@@ -195,16 +195,21 @@
    "確認日": "2026-10-20"
   },
   "秩父市": {
-   "category": "restricted",
+   "category": "prohibited",
    "summary": "羊山公園(芝桜の丘を含む)ではドローン等の使用を許可していない。当該公園に限定。",
    "sources": [
     {
      "label": "秩父市 よくある質問～芝桜の丘～",
      "url": "https://navi.city.chichibu.lg.jp/p_flower/1903/",
      "quote": "羊山公園内（芝桜の丘を含む）では、ラジコン、ドローン等の使用は許可しておりません。"
+    },
+    {
+     "label": "秩父市 公式（自動分類 2026-10-22 確認）",
+     "url": "https://www.city.chichibu.lg.jp/dd.aspx?menuid=1853",
+     "quote": "ドローン・ラジコン等の使用"
     }
    ],
-   "確認日": "2026-10-20"
+   "確認日": "2026-10-22"
   },
   "越谷市": {
    "category": "restricted",

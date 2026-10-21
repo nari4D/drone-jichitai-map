@@ -1174,5 +1174,157 @@
   "url": "https://www.city.inzai.lg.jp/0000001746.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000011358.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001754.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001757.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001758.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000002096.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000003938.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000007726.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000001773.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000016166.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000005357.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "印西市",
+  "pref": "千葉県",
+  "url": "https://www.city.inzai.lg.jp/0000016246.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "川越市",
+  "pref": "埼玉県",
+  "url": "https://www.city.kawagoe.saitama.jp/kanko/k-promo/1011696/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "川越市",
+  "pref": "埼玉県",
+  "url": "https://www.city.kawagoe.saitama.jp/kanko/k-promo/1011696/1011700.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "川越市",
+  "pref": "埼玉県",
+  "url": "https://www.city.kawagoe.saitama.jp/kanko/k-promo/1011696/1011699.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "熊谷市",
+  "pref": "埼玉県",
+  "url": "https://www.city.kumagaya.lg.jp/about/soshiki/toshi/kouenryokuchi/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/dd.aspx?menuid=1853",
+  "result": "prohibited",
+  "quote": "ドローン・ラジコン等の使用"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/9720.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/11380.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-22",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/2815.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
