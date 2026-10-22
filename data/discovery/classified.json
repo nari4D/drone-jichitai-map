@@ -1326,5 +1326,125 @@
   "url": "https://www.city.chichibu.lg.jp/2815.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/1852.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/1853.html",
+  "result": "prohibited",
+  "quote": "ドローン・ラジコン等の使用"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/1857.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/9188.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/1832.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "秩父市",
+  "pref": "埼玉県",
+  "url": "https://www.city.chichibu.lg.jp/10166.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "越谷市",
+  "pref": "埼玉県",
+  "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/kasenchisui/files/system1-9.xlsm",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "越谷市",
+  "pref": "埼玉県",
+  "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/kasenchisui/files/system2-9.xlsm",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "越谷市",
+  "pref": "埼玉県",
+  "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/kasenchisui/files/system3-9.xlsm",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "越谷市",
+  "pref": "埼玉県",
+  "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/kasenchisui/files/system4-9.xlsm",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "和光市",
+  "pref": "埼玉県",
+  "url": "https://www.city.wako.lg.jp/machizukuri/midori/1005825/index.html",
+  "result": "prohibited",
+  "quote": "市立公園における無人航空機（ドローン等）の飛行は禁止です！"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/kurashi/kanko_sangyo/kanko_event/yashioshiminmatsuri/siminmatsuri.html",
+  "result": "unknown",
+  "reason": "確信度が低い: low"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/bohan_bosai/bosai/saigaijikyoutei/midorishi_sougoouen.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "伊奈町",
+  "pref": "埼玉県",
+  "url": "https://www.town.saitama-ina.lg.jp/soshiki/14-2-0-0-0_1.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-23",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]

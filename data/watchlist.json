@@ -1459,7 +1459,8 @@
           "watch_urls": [
             "https://www.city.chichibu.lg.jp/",
             "https://navi.city.chichibu.lg.jp/p_flower/1903/",
-            "https://www.city.chichibu.lg.jp/dd.aspx?menuid=1853"
+            "https://www.city.chichibu.lg.jp/dd.aspx?menuid=1853",
+            "https://www.city.chichibu.lg.jp/1853.html"
           ]
         },
         "小鹿野町": {
@@ -1667,7 +1668,8 @@
           "official_hp": "https://www.city.wako.lg.jp/",
           "watch_urls": [
             "https://www.city.wako.lg.jp/",
-            "https://www.city.wako.lg.jp/machizukuri/midori/1005825/1011584.html"
+            "https://www.city.wako.lg.jp/machizukuri/midori/1005825/1011584.html",
+            "https://www.city.wako.lg.jp/machizukuri/midori/1005825/index.html"
           ]
         },
         "新座市": {
