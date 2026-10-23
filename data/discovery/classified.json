@@ -1446,5 +1446,13 @@
   "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-24",
+  "muni": "品川区",
+  "pref": "東京都",
+  "url": "https://www.city.shinagawa.tokyo.jp/kankyo/koenryokka/1009601/1004619.html",
+  "result": "prohibited",
+  "quote": "16．ドローン・ラジコンの使用\n落下したときの危険性や騒音などの問題があるため、公園内では禁止しております。"
  }
 ]
