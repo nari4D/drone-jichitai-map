@@ -1454,5 +1454,13 @@
   "url": "https://www.city.shinagawa.tokyo.jp/kankyo/koenryokka/1009601/1004619.html",
   "result": "prohibited",
   "quote": "16．ドローン・ラジコンの使用\n落下したときの危険性や騒音などの問題があるため、公園内では禁止しております。"
+ },
+ {
+  "date": "2026-10-26",
+  "muni": "日の出町",
+  "pref": "東京都",
+  "url": "https://www.town.hinode.tokyo.jp/0000004881.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
