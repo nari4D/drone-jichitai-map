@@ -1470,5 +1470,77 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000001582.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000000874.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000001554.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000000589.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000002314.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000000811.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-10-31",
+  "muni": "長生村",
+  "pref": "千葉県",
+  "url": "https://www.vill.chosei.chiba.jp/0000000550.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
