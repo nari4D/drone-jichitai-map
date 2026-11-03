@@ -1542,5 +1542,13 @@
   "url": "https://www.vill.chosei.chiba.jp/0000000550.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-03",
+  "muni": "日の出町",
+  "pref": "東京都",
+  "url": "https://www.town.hinode.tokyo.jp/0000004889.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
