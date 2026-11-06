@@ -1558,5 +1558,109 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "羽生市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hanyu.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "久喜市",
+  "pref": "埼玉県",
+  "url": "https://www.city.kuki.lg.jp/machizukuri/seikatsu/animal/1013796.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/kurashi/sports_rec/sportsevent/kyoushitsu/awtum1day.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/080869.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/flowerarrangement.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/sadoukyoushitu.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/20250530.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "八潮市",
+  "pref": "埼玉県",
+  "url": "https://www.city.yashio.lg.jp/event/koen_koza/calendar/list_calendar.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/childcare_education/event/36200.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/childcare_education/event/33734.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-07",
+  "muni": "越生町",
+  "pref": "埼玉県",
+  "url": "https://www.town.ogose.saitama.jp/chousei/chouchou/1616491448869.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
