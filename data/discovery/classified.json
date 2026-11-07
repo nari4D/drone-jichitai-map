@@ -1662,5 +1662,21 @@
   "url": "https://www.town.ogose.saitama.jp/chousei/chouchou/1616491448869.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-08",
+  "muni": "多古町",
+  "pref": "千葉県",
+  "url": "https://www.town.tako.chiba.jp/docs/2023081600011/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-08",
+  "muni": "一宮町",
+  "pref": "千葉県",
+  "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
