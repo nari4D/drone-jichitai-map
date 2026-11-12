@@ -1678,5 +1678,13 @@
   "url": "https://www.town.ichinomiya.chiba.jp/kinkyu/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-12",
+  "muni": "木津川市",
+  "pref": "京都府",
+  "url": "https://www.city.kizugawa.lg.jp/0000003400.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
