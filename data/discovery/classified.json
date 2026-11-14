@@ -1694,5 +1694,13 @@
   "url": "https://www.city.kamogawa.lg.jp/index.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-15",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/childcare_education/event/35711.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
