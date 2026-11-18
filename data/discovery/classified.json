@@ -1702,5 +1702,37 @@
   "url": "https://www.city.hidaka.lg.jp/childcare_education/event/35711.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-18",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/hiroo/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-18",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/jinnan/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-18",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/shoto/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-18",
+  "muni": "渋谷区",
+  "pref": "東京都",
+  "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/yoyogi/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
