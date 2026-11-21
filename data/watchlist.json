@@ -1171,11 +1171,12 @@
           ]
         },
         "富津市": {
-          "category_current": "restricted",
+          "category_current": "prohibited",
           "official_hp": "https://www.city.futtsu.lg.jp/",
           "watch_urls": [
             "https://www.city.futtsu.lg.jp/",
-            "https://www.city.futtsu.lg.jp/0000006735.html"
+            "https://www.city.futtsu.lg.jp/0000006735.html",
+            "http://www.city.futtsu.lg.jp/0000006735.html"
           ]
         },
         "浦安市": {

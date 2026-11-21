@@ -1734,5 +1734,21 @@
   "url": "https://www.city.shibuya.tokyo.jp/contents/vr/vr_shibuyaku/yoyogi/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-21",
+  "muni": "鴨川市",
+  "pref": "千葉県",
+  "url": "https://www.city.kamogawa.lg.jp/index.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-21",
+  "muni": "富津市",
+  "pref": "千葉県",
+  "url": "http://www.city.futtsu.lg.jp/0000006735.html",
+  "result": "prohibited",
+  "quote": "※ドローン海上での撮影不可"
  }
 ]

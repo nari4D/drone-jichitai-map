@@ -260,16 +260,21 @@
    "確認日": "2026-08-17"
   },
   "富津市": {
-   "category": "restricted",
+   "category": "prohibited",
    "summary": "磯根崎・磯根海岸(大貫漁港区域)の撮影について、市が「ドローン海上での撮影不可」と明記。当該海岸に限定。",
    "sources": [
     {
      "label": "富津市 フィルムコミッション 撮影許可先一覧(商工観光課)",
      "url": "https://www.city.futtsu.lg.jp/0000006735.html",
      "quote": "ドローン海上での撮影不可"
+    },
+    {
+     "label": "富津市 公式（自動分類 2026-11-21 確認）",
+     "url": "http://www.city.futtsu.lg.jp/0000006735.html",
+     "quote": "※ドローン海上での撮影不可"
     }
    ],
-   "確認日": "2026-08-17"
+   "確認日": "2026-11-21"
   },
   "浦安市": {
    "category": "prohibited",
