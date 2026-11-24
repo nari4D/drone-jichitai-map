@@ -1750,5 +1750,13 @@
   "url": "http://www.city.futtsu.lg.jp/0000006735.html",
   "result": "prohibited",
   "quote": "※ドローン海上での撮影不可"
+ },
+ {
+  "date": "2026-11-24",
+  "muni": "日高市",
+  "pref": "埼玉県",
+  "url": "https://www.city.hidaka.lg.jp/childcare_education/event/35711.html",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
