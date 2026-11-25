@@ -1758,5 +1758,13 @@
   "url": "https://www.city.hidaka.lg.jp/childcare_education/event/35711.html",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-25",
+  "muni": "伊勢原市",
+  "pref": "神奈川県",
+  "url": "https://www.city.isehara.kanagawa.jp/mayors_room/docs/2026111800115/",
+  "result": "unknown",
+  "reason": "LLMがunknownと判定"
  }
 ]
