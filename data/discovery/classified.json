@@ -1766,5 +1766,13 @@
   "url": "https://www.city.isehara.kanagawa.jp/mayors_room/docs/2026111800115/",
   "result": "unknown",
   "reason": "LLMがunknownと判定"
+ },
+ {
+  "date": "2026-11-28",
+  "muni": "船橋市",
+  "pref": "千葉県",
+  "url": "https://www.city.funabashi.lg.jp/machi/kouen/002/p152071.html",
+  "result": "prohibited",
+  "quote": "公園等での小型無人飛行機（ドローン等）の使用は禁止しております。"
  }
 ]
